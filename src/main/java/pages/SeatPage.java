@@ -18,16 +18,43 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SeatPage extends CommonPage {
+    private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
+    private By byListSeatAtTicket = By.xpath("//span[contains(text(),'Ghế ')]");
+    private By byListSeat = By.xpath("//button[@type='button']");
+
     public SeatPage(WebDriver driver) {
         super(driver);
     }
+
     public void selectSeat(int numberSeat) {
         By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='"+numberSeat+"']");
+        waitForElementToBeClickable(bySeatAvailable);
         click(bySeatAvailable);
     }
     public String getSeatColor(int numberSeat) {
-        By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='"+numberSeat+"']");
-        return driver.findElement(bySeatAvailable).getCssValue("background-color");
+        By bySeatAvailable = By.xpath("//button[.//span[text()='"+numberSeat+"']]");
+        waitForVisibilityOfElementLocated(bySeatAvailable);
+        return driver.findElement(bySeatAvailable).getAttribute("style");
+    }
+    public String getSeatID(){
+        return getText(byLbSeat).replace(",", "");
+
+    }
+    public boolean isDisplayCorrectOfNumberSeat(){
+        List<WebElement> listSeaTickett=  driver.findElements(byListSeatAtTicket);
+        List<WebElement> listSeat = driver.findElements(byListSeat);
+        List<WebElement> result = new ArrayList<>();
+        for (WebElement seat : listSeat){
+            seat.getAttribute("style").contains("green");
+            listSeat.add(seat);
+
+        }
+        if(result.size()==listSeat.size()){
+            return true;
+        }
+        return false;
+
+
     }
 
 }

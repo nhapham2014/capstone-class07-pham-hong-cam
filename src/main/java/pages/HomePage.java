@@ -193,4 +193,16 @@ public class HomePage extends CommonPage {
         }
         return true;
     }
+    public void bookTicketAtListTheater(String brandCinema,String cinemaBranch, String movieName, String date, String time){
+        clickCinemaLogo(brandCinema);
+        selectCinemaBranch(cinemaBranch);
+        selectShowTime(movieName,date,time);
+
+    }
+    public void bookTicketByFilter(String movieName, String cinemaBranch, String showTime){
+        selectMovie(movieName);
+        selectCinema(cinemaBranch);
+        selectDate(showTime);
+        clickBuyTicket();
+    }
 }

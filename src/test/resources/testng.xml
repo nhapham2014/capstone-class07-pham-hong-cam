@@ -23,4 +23,9 @@
             <class name="testcases.showtime.TC_ShowTimeTest" />
         </classes>
     </test>
+    <test name="seat test" parallel="classes" thread-count="1">
+        <classes>
+            <class name="testcases.seat.TC_SeatTest" />
+        </classes>
+    </test>
 </suite>
