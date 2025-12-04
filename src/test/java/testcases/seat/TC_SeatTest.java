@@ -1,5 +1,7 @@
 package testcases.seat;
 import base.BaseTestWithLogin;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -11,6 +13,7 @@ import reports.ExtentReportManager;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TC_SeatTest extends BaseTestWithLogin {
@@ -28,8 +31,8 @@ public class TC_SeatTest extends BaseTestWithLogin {
         seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         //Step 1:
-        seatPage.selectSeat(90);
-        String color = seatPage.getSeatColor(90);
+        seatPage.selectSeat("90");
+        String color = seatPage.getSeatColor("90");
         Assert.assertTrue(color.contains("green"),
                 "Ghế không đổi màu xanh sau khi chọn");
     }
@@ -39,10 +42,10 @@ public class TC_SeatTest extends BaseTestWithLogin {
         seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         //Step 1:
-        seatPage.selectSeat(90);
+        seatPage.selectSeat("90");
         //Step 2:
-        seatPage.selectSeat(90);
-        String color = seatPage.getSeatColor(90);
+        seatPage.selectSeat("90");
+        String color = seatPage.getSeatColor("90");
         Assert.assertTrue(color.isEmpty(),
                 "Ghế vẫn màu xanh dù đã bỏ chọn");
     }
@@ -51,7 +54,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         homePage = new HomePage(driver);
         seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
-        seatPage.selectSeat(90);
+        seatPage.selectSeat("90");
         String seatnumber = seatPage.getSeatID();
         System.out.println(seatnumber);
         Assert.assertEquals(seatnumber, "Ghế 90","Không hiển thị đúng ghế");
@@ -61,9 +64,22 @@ public class TC_SeatTest extends BaseTestWithLogin {
         homePage= new HomePage(driver);
         seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
-        seatPage.selectSeat(90);
-        seatPage.selectSeat(91);
+        seatPage.selectSeat("90");
+        seatPage.selectSeat("91");
+        seatPage.selectSeat("92");
         Assert.assertTrue(seatPage.isDisplayCorrectOfNumberSeat(),"Hiển thị số luượng ghế không đúng tại thông tin vé");
 
     }
+    @Test
+    public void TC05_verifyDisplayCorrectPriceAtInformationOfTicket(){
+        homePage= new HomePage(driver);
+        seatPage = new SeatPage(driver);
+        selectMovieAndShowTime();
+        //User don't select any seat
+        Assert.assertEquals(seatPage.getDisplayedPriceSeat(),0,"Giá hiển thị không đúng");
+        //User select 1 VIP seat
+        seatPage.selectSeat("90");
+
+    }
+
 }

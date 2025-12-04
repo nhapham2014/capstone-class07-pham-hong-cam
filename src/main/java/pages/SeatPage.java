@@ -21,17 +21,18 @@ public class SeatPage extends CommonPage {
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
     private By byListSeatAtTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
+    private By byLbPrice = By.xpath(" //p[contains(normalize-space(), 'VND')]");
 
     public SeatPage(WebDriver driver) {
         super(driver);
     }
 
-    public void selectSeat(int numberSeat) {
+    public void selectSeat(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='"+numberSeat+"']");
         waitForElementToBeClickable(bySeatAvailable);
         click(bySeatAvailable);
     }
-    public String getSeatColor(int numberSeat) {
+    public String getSeatColor(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[.//span[text()='"+numberSeat+"']]");
         waitForVisibilityOfElementLocated(bySeatAvailable);
         return driver.findElement(bySeatAvailable).getAttribute("style");
@@ -44,17 +45,38 @@ public class SeatPage extends CommonPage {
         List<WebElement> listSeaTickett=  driver.findElements(byListSeatAtTicket);
         List<WebElement> listSeat = driver.findElements(byListSeat);
         List<WebElement> result = new ArrayList<>();
-        for (WebElement seat : listSeat){
-            seat.getAttribute("style").contains("green");
-            listSeat.add(seat);
-
+        for (WebElement seat : listSeat) {
+            if (seat.getAttribute("style").contains("green")) {
+                result.add(seat);
+            }
         }
-        if(result.size()==listSeat.size()){
+        if(result.size()==listSeaTickett.size()){
             return true;
         }
         return false;
-
-
     }
-
+    public int getDisplayedPriceSeat(){
+        waitForVisibilityOfElementLocated(byLbPrice);
+        String price = getText(byLbPrice).replace("\n","").trim();
+        price=price.replace("VND","").trim().replace(".","");
+        return Integer.parseInt(price);
+    }
+    public int getSelectedRegularSeatCount(String numberSeat){
+        By bySeatAvailable = By.xpath("//button[.//span[text()='"+numberSeat+"']]");
+       List<WebElement> result = new ArrayList<>();
+        List<WebElement> listSeat = driver.findElements(bySeatAvailable);
+        for (WebElement seat : listSeat) {
+            if (seat.getAttribute("style").contains("green")) {
+                result.add(seat);
+            }
+        }
+        if(numberSeat.equals("01")||numberSeat.equals("02")||numberSeat.equals("03")||numberSeat.equals("04")||numberSeat.equals("05")
+                ||numberSeat.equals("06")||numberSeat.equals("07")||numberSeat.equals("08")||numberSeat.equals("09")
+                ||numberSeat.equals("10")||numberSeat.equals("11")||numberSeat.equals("12")||numberSeat.equals("13")
+                ||numberSeat.equals("14")||numberSeat.equals("15")||numberSeat.equals("16")||numberSeat.equals("17")
+                ||numberSeat.equals("18")||numberSeat.equals("19")||numberSeat.equals("20")){
+            return result.size();
+        }
+return 0;
+    }
 }
