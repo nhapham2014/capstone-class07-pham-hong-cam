@@ -28,7 +28,12 @@ public class HomePage extends CommonPage {
     private By byCinemaOptions = By.xpath("//select[@name='cinema']/option");
     private By byDateOptions = By.xpath("//select[@name='date']/option");
     private By byFrameVideo = By.xpath("//iframe[contains(@src,'youtube') or contains(@src,'video')]");
-    private By byListCinemaNames = By.xpath("//div[@role='tabpanel']//div[@role='tablist']/button");
+    private By byListCinemaNames = By.xpath("//div[@role='tabpanel']//div[@role='tablist']//h4");
+    private By byLbSelectedCinemaBranch = By.xpath("//div[@role='tabpanel']//button[contains(@aria-selected,'true')]//h4");
+    private By byLbSelectedAddressCinema= By.xpath("//div[@role='tabpanel']//button[contains(@aria-selected,'true')]//h6");
+    private By byLbNameMovie = By.xpath("//div[contains(@class,'MuiBox')]//h2");
+    private By byLbDateShowTime = By.xpath("//div[contains(@class,'MuiBox')]//p[contains(text(),'-')]");
+    private By byLbTimeShowTime = By.xpath("//div[contains(@class,'MuiBox')]//h3[contains(text(),':')]");
     private By byListShowTimeByCinema = By.xpath("//div[contains(@class,'MuiBox')]//a[div[p[contains(text(),'-')]]]");
     private By byDateText = By.xpath(".//p[contains(text(),'-')]");
     private By byTimeText = By.xpath(".//h3");
@@ -204,5 +209,23 @@ public class HomePage extends CommonPage {
         selectCinema(cinemaBranch);
         selectDate(showTime);
         clickBuyTicket();
+    }
+    public String getNameCinemaBranch(){
+        return getText(byLbSelectedCinemaBranch);
+    }
+    public String getAddressCinemaBranch(){
+        return getText(byLbSelectedAddressCinema);
+    }
+    public String getNameMovie(String nameMovie){
+        By byLbNameMovie = By.xpath("//div[contains(@class,'MuiBox')]//div[img[contains(@alt,'"+nameMovie+"')]]//h2");
+        return getText(byLbNameMovie);
+    }
+    public String getDateOfShowTime(String nameMovie){
+        By byLbDateOfShowTime = By.xpath("//div[contains(@class,'MuiBox')]//div[img[contains(@alt,'"+nameMovie+"')]]//p[contains(text(), '-')]");
+        return getText(byLbDateOfShowTime);
+    }
+    public String getTimeOfShowTime(String nameMovie){
+        By byLbTimeOfShowTime = By.xpath("//div[contains(@class,'MuiBox')]//div[img[contains(@alt,'"+nameMovie+"')]]//h3[contains(text(), ':')]");
+        return getText(byLbTimeOfShowTime);
     }
 }

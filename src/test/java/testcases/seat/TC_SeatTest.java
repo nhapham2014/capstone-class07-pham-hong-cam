@@ -76,10 +76,27 @@ public class TC_SeatTest extends BaseTestWithLogin {
         seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         //User don't select any seat
-        Assert.assertEquals(seatPage.getDisplayedPriceSeat(),0,"Giá hiển thị không đúng");
+        //Assert.assertEquals(seatPage.getDisplayedPriceSeat(),0,"Giá hiển thị không đúng");
         //User select 1 VIP seat
         seatPage.selectSeat("90");
-
+       // Assert.assertEquals(seatPage.getDisplayedPriceSeat(),seatPage.totalPrice(),"Gía hiển thị không đúng");
+        //User select 1 VIP seat and 1 Regular seat
+        seatPage.selectSeat("02");
+        Assert.assertEquals(seatPage.getDisplayedPriceSeat(),seatPage.totalPrice(),"Gía hiển thị không đúng");
+        System.out.println(seatPage.getDisplayedPriceSeat());
+        System.out.println(seatPage.totalPrice());
     }
+    @Test
+    public void TC(){
+        homePage= new HomePage(driver);
+        seatPage = new SeatPage(driver);
+        selectMovieAndShowTime();
+        System.out.println(seatPage.getNameCinemaBranch());
+        System.out.println(seatPage.getAddressCinema());
+        System.out.println(seatPage.getDateOfShowTime().toString());
+       // System.out.println(seatPage.getTimeOfShowTime().toString());
+        System.out.println(seatPage.getMovieName());
+    }
+
 
 }

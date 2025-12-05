@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,61 +23,109 @@ public class SeatPage extends CommonPage {
     private By byListSeatAtTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
     private By byLbPrice = By.xpath(" //p[contains(normalize-space(), 'VND')]");
+    private By byLbCinemaBrach = By.xpath("//div[h3[contains(text(),'Cụm Rạp:')]]");
+    private By byLbAddress = By.xpath("//div[h3[contains(text(),'Địa chỉ:')]]");
+    private By byLbDate = By.xpath("//div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]");
+    private By byLbTime = By.xpath("//div[h3[contains(text(),'Ngày giờ chiếu')]]//span");
+    private By byLbNameMovie = By.xpath("//div[h3[contains(text(),'Tên Phim:')]]");
+
 
     public SeatPage(WebDriver driver) {
         super(driver);
     }
 
     public void selectSeat(String numberSeat) {
-        By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='"+numberSeat+"']");
+        By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='" + numberSeat + "']");
         waitForElementToBeClickable(bySeatAvailable);
         click(bySeatAvailable);
     }
+
     public String getSeatColor(String numberSeat) {
-        By bySeatAvailable = By.xpath("//button[.//span[text()='"+numberSeat+"']]");
+        By bySeatAvailable = By.xpath("//button[.//span[text()='" + numberSeat + "']]");
         waitForVisibilityOfElementLocated(bySeatAvailable);
         return driver.findElement(bySeatAvailable).getAttribute("style");
     }
-    public String getSeatID(){
+
+    public String getSeatID() {
         return getText(byLbSeat).replace(",", "");
 
     }
-    public boolean isDisplayCorrectOfNumberSeat(){
-        List<WebElement> listSeaTickett=  driver.findElements(byListSeatAtTicket);
+    public List<WebElement> listSelectedSeat(){
         List<WebElement> listSeat = driver.findElements(byListSeat);
-        List<WebElement> result = new ArrayList<>();
-        for (WebElement seat : listSeat) {
+        List<WebElement> listSelectedSeat = new ArrayList<>();
+        for (WebElement seat : listSeat){
             if (seat.getAttribute("style").contains("green")) {
-                result.add(seat);
+                listSelectedSeat.add(seat);
             }
         }
-        if(result.size()==listSeaTickett.size()){
+        return listSelectedSeat;
+    }
+
+    public boolean isDisplayCorrectOfNumberSeat() {
+        List<WebElement> listSeatTickett = driver.findElements(byListSeatAtTicket);
+        if (listSelectedSeat().size() == listSeatTickett.size()) {
             return true;
         }
         return false;
     }
-    public int getDisplayedPriceSeat(){
+
+    public int getDisplayedPriceSeat() {
         waitForVisibilityOfElementLocated(byLbPrice);
-        String price = getText(byLbPrice).replace("\n","").trim();
-        price=price.replace("VND","").trim().replace(".","");
+        String price = getText(byLbPrice).replace("\n", "").trim();
+        price = price.replace("VND", "").trim().replace(".", "");
         return Integer.parseInt(price);
     }
-    public int getSelectedRegularSeatCount(String numberSeat){
-        By bySeatAvailable = By.xpath("//button[.//span[text()='"+numberSeat+"']]");
-       List<WebElement> result = new ArrayList<>();
-        List<WebElement> listSeat = driver.findElements(bySeatAvailable);
-        for (WebElement seat : listSeat) {
-            if (seat.getAttribute("style").contains("green")) {
-                result.add(seat);
+
+    public boolean isVipSeat(String seatNumber) {
+        int num = Integer.parseInt(seatNumber);
+
+        return (num >= 35 && num <= 46) ||
+                (num >= 51 && num <= 62) ||
+                (num >= 67 && num <= 78) ||
+                (num >= 83 && num <= 94) ||
+                (num >= 99 && num <= 110) ||
+                (num >= 115 && num <= 126);
+    }
+
+    public int getSelectedVIPSeatCount() {
+        List<WebElement> listVIPSeat = new ArrayList<>();
+        for (WebElement element : listSelectedSeat()) {
+            if (isVipSeat(element.getText().trim())) {
+                listVIPSeat.add(element);
             }
         }
-        if(numberSeat.equals("01")||numberSeat.equals("02")||numberSeat.equals("03")||numberSeat.equals("04")||numberSeat.equals("05")
-                ||numberSeat.equals("06")||numberSeat.equals("07")||numberSeat.equals("08")||numberSeat.equals("09")
-                ||numberSeat.equals("10")||numberSeat.equals("11")||numberSeat.equals("12")||numberSeat.equals("13")
-                ||numberSeat.equals("14")||numberSeat.equals("15")||numberSeat.equals("16")||numberSeat.equals("17")
-                ||numberSeat.equals("18")||numberSeat.equals("19")||numberSeat.equals("20")){
-            return result.size();
-        }
-return 0;
+        return listVIPSeat.size();
     }
+    public int getSelectedRegularSeatCount() {
+        List<WebElement> listRegularSeat = new ArrayList<>();
+        for (WebElement element : listSelectedSeat()) {
+            if (!isVipSeat(element.getText().trim())) {
+                listRegularSeat.add(element);
+            }
+        }
+        return listRegularSeat.size();
+    }
+    public int totalPrice(){
+        int priceVIPSeat = 90000;
+        int priceRegularSeat = 75000;
+        return ((getSelectedVIPSeatCount()*priceVIPSeat) + (getSelectedRegularSeatCount()*priceRegularSeat));
+    }
+    public String getNameCinemaBranch(){
+        return getText(byLbCinemaBrach).replace("Cụm Rạp:", "").trim();
+    }
+    public String getAddressCinema(){
+        return getText(byLbAddress).replace("Địa chỉ:", "").trim();
+    }
+    public LocalDateTime getDateOfShowTime(){
+
+
+    }
+    public LocalDateTime getTimeOfShowTime(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        return LocalDateTime.parse((getText(byLbTime).trim()),formatter);
+    }
+    public String getMovieName(){
+        return getText(byLbNameMovie).replace("Tên Phim:","").trim();
+    }
+
 }
