@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
+import java.text.Normalizer;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,7 +31,6 @@ public class HomePage extends CommonPage {
     private By byFrameVideo = By.xpath("//iframe[contains(@src,'youtube') or contains(@src,'video')]");
     private By byListCinemaNames = By.xpath("//div[@role='tabpanel']//div[@role='tablist']//h4");
     private By byLbSelectedCinemaBranch = By.xpath("//div[@role='tabpanel']//button[contains(@aria-selected,'true')]//h4");
-    private By byLbSelectedAddressCinema= By.xpath("//div[@role='tabpanel']//button[contains(@aria-selected,'true')]//h6");
     private By byLbNameMovie = By.xpath("//div[contains(@class,'MuiBox')]//h2");
     private By byLbDateShowTime = By.xpath("//div[contains(@class,'MuiBox')]//p[contains(text(),'-')]");
     private By byLbTimeShowTime = By.xpath("//div[contains(@class,'MuiBox')]//h3[contains(text(),':')]");
@@ -210,22 +210,9 @@ public class HomePage extends CommonPage {
         selectDate(showTime);
         clickBuyTicket();
     }
-    public String getNameCinemaBranch(){
-        return getText(byLbSelectedCinemaBranch);
-    }
-    public String getAddressCinemaBranch(){
-        return getText(byLbSelectedAddressCinema);
-    }
-    public String getNameMovie(String nameMovie){
-        By byLbNameMovie = By.xpath("//div[contains(@class,'MuiBox')]//div[img[contains(@alt,'"+nameMovie+"')]]//h2");
-        return getText(byLbNameMovie);
-    }
-    public String getDateOfShowTime(String nameMovie){
-        By byLbDateOfShowTime = By.xpath("//div[contains(@class,'MuiBox')]//div[img[contains(@alt,'"+nameMovie+"')]]//p[contains(text(), '-')]");
-        return getText(byLbDateOfShowTime);
-    }
-    public String getTimeOfShowTime(String nameMovie){
-        By byLbTimeOfShowTime = By.xpath("//div[contains(@class,'MuiBox')]//div[img[contains(@alt,'"+nameMovie+"')]]//h3[contains(text(), ':')]");
-        return getText(byLbTimeOfShowTime);
-    }
+
+
+
+
+
 }

@@ -5,6 +5,7 @@ import org.testng.Reporter;
 import org.testng.annotations.*;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.SeatPage;
 import reports.ExtentReportManager;
 
 import java.time.LocalDateTime;
@@ -12,6 +13,7 @@ import java.util.List;
 public class TC_CinemaTest extends BaseTestWithLogin{
     HomePage homePage;
     LoginPage loginPage;
+    SeatPage seatPage;
     //TC01: Verify list cinema after user select a cinema logo
     @Test
     public void TC01_verifyListCinemaWhenSelectCinemaLogo(){
@@ -84,5 +86,23 @@ public class TC_CinemaTest extends BaseTestWithLogin{
         ExtentReportManager.info("Step 4: Verify navigate to seat page");
         LOG.info("Step 4: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase/"));
+    }
+    @Test
+    public void TC(){
+        homePage = new HomePage(driver);
+        homePage.clickCinemaLogo("cgv");
+        homePage.selectCinemaBranch("CGV - Golden Plaza");
+
+    }
+
+    @Test
+    public void TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema(){
+        homePage = new HomePage(driver);
+        seatPage = new SeatPage(driver);
+        homePage.bookTicketAtListTheater("cgv","CGV - Golden Plaza","AVATAR 2","15-10-2021", "08:42" );
+        Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - Golden Plaza", "Không hiển thị đúng tên cụm rạp");
+        Assert.assertEquals(seatPage.getAddressCinema(), "Tầng 4, Trung tâm thương mại Golden Plaza, 922 Nguyễn Trãi, P. 14, Q. 5", "Không hiển thị đúng địa chỉ cụm rạp");
+        Assert.assertEquals(seatPage.getDateOfShowTime(),"15-10-2021", "Không hiển thị đúng ngày chiếu");
+        Assert.assertEquals(seatPage.getTimeOfShowTime(),"08:42", "Không hiển thị đúng giờ chiếu");
     }
 }

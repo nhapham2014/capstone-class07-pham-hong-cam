@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.Normalizer;
 import java.time.Duration;
 import java.util.List;
 
@@ -24,6 +25,7 @@ public class BasePage {
 
     public WebElement waitForVisibilityOfElementLocated(By locator) {
         LOG.info("waitForVisibilityOfElementLocated: " + locator);
+
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
@@ -73,6 +75,14 @@ public class BasePage {
                 driver.findElements(locator).size() == 1
         );
     }
+    public void waitForPageLoaded() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(webDriver -> {
+            JavascriptExecutor js = (JavascriptExecutor) webDriver;
+            return js.executeScript("return document.readyState").toString().equals("complete");
+        });
+    }
     public int getOptionsCount(By locator) {
         List<WebElement> options = driver.findElements(locator);
         return options.size();
@@ -88,6 +98,20 @@ public class BasePage {
         waitForVisibilityOfElementLocated(locator);
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(locator)).perform();
+    }
+    public void browserBack() {
+        driver.navigate().back();
+        waitForPageLoaded();
+    }
+    public void reloadPage() {
+        driver.navigate().refresh();
+    }
+    public List<WebElement> waitForPresenceOfAllElmentsLocatedBy(By locator) {
+        LOG.info("waitForPresenceOfAllElmentsLocatedBy: " + locator);
+        return
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+                locator
+        ));
     }
 
 }

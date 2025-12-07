@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 public class SeatPage extends CommonPage {
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
-    private By byListSeatAtTicket = By.xpath("//span[contains(text(),'Ghế ')]");
+    private By byListSeatOnTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
     private By byLbPrice = By.xpath(" //p[contains(normalize-space(), 'VND')]");
     private By byLbCinemaBrach = By.xpath("//div[h3[contains(text(),'Cụm Rạp:')]]");
@@ -28,6 +28,9 @@ public class SeatPage extends CommonPage {
     private By byLbDate = By.xpath("//div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]");
     private By byLbTime = By.xpath("//div[h3[contains(text(),'Ngày giờ chiếu')]]//span");
     private By byLbNameMovie = By.xpath("//div[h3[contains(text(),'Tên Phim:')]]");
+    private By byBtnBookTicket = By.xpath("//button[span[contains(text(),'ĐẶT VÉ')]]");
+    private By byMsgError = By.xpath("//div[div[contains(@class,'error')]]/h2");
+    private By byMsgSuccess = By.xpath("//div[div[contains(@class,'success')]]/h2");
 
 
     public SeatPage(WebDriver driver) {
@@ -59,14 +62,6 @@ public class SeatPage extends CommonPage {
             }
         }
         return listSelectedSeat;
-    }
-
-    public boolean isDisplayCorrectOfNumberSeat() {
-        List<WebElement> listSeatTickett = driver.findElements(byListSeatAtTicket);
-        if (listSelectedSeat().size() == listSeatTickett.size()) {
-            return true;
-        }
-        return false;
     }
 
     public int getDisplayedPriceSeat() {
@@ -116,16 +111,67 @@ public class SeatPage extends CommonPage {
     public String getAddressCinema(){
         return getText(byLbAddress).replace("Địa chỉ:", "").trim();
     }
-    public LocalDateTime getDateOfShowTime(){
-
+    public String getDateOfShowTime(){
+        return getText(byLbDate).replace(" -","").replace("/","-").replace(getText(byLbTime),"").trim();
 
     }
-    public LocalDateTime getTimeOfShowTime(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-        return LocalDateTime.parse((getText(byLbTime).trim()),formatter);
+    public String getTimeOfShowTime(){
+        return getText(byLbTime).trim();
     }
     public String getMovieName(){
         return getText(byLbNameMovie).replace("Tên Phim:","").trim();
     }
+    public List<String> getListSelectedSeatOnTicket(){
+        waitForVisibilityOfElementLocated(byLbCinemaBrach);
+        List<WebElement> listSeatTicket = driver.findElements(byListSeatOnTicket);
+        List<String> listSeat = new ArrayList<>();
+        for (WebElement seat : listSeatTicket){
+            listSeat.add(seat.getText().replace("Ghế ","").replace(",","").trim());
+        }
+        return listSeat;
+    }
+    public boolean isDisplayCorrectSeatOnTicket(){
+        List<String> listSeatTicket = getListSelectedSeatOnTicket();
+        List<String> listSelectedSeat = listSelectedSeat().stream()
+                .map(e -> e.getText().trim().replace(",", ""))
+                    .collect(Collectors.toList());
+        return listSeatTicket.containsAll(listSelectedSeat)
+                && listSelectedSeat.containsAll(listSeatTicket);
+    }
+    public void clickBookTicketButton(){
+        waitForElementToBeClickable(byBtnBookTicket);
+        click(byBtnBookTicket);
+    }
+    public String getErrorMessage() {
+        waitForVisibilityOfElementLocated(byMsgError);
+        return getText(byMsgError).trim();
+    }
+    public String getSuccessMessage() {
+        waitForVisibilityOfElementLocated(byMsgSuccess);
+        return getText(byMsgSuccess).trim();
+    }
+    public void clickAgreeButtonInAlert(){
+        waitForElementToBeClickable(byBtnBookTicket);
+        click(byBtnBookTicket);
+
+    }
+    public boolean isDisableSeat(String numberSeat){
+        waitForVisibilityOfElementLocated(byLbCinemaBrach);
+        List<WebElement> seats = driver.findElements(
+                By.xpath("//button[span[text()='" + numberSeat + "']]")
+        );
+        if(seats.isEmpty()) {
+            return true; // không render -> coi như disabled
+        }
+
+        WebElement seat = seats.get(0);
+        return !seat.isEnabled()
+                || seat.getAttribute("disabled") != null
+                || seat.getAttribute("class").contains("disabled");
+    }
+    public void waitForSeatOptionsLoaded(){
+        waitForPresenceOfAllElmentsLocatedBy(byLbSeat);
+    }
+
 
 }
