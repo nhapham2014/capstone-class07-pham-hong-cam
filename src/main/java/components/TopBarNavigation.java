@@ -8,6 +8,7 @@ public class TopBarNavigation extends BasePage {
 
     private By byLnkLogin = By.xpath("//h3[text()='Đăng Nhập']");;
     private By byLnkRegister = By.xpath("//a[@href='/sign-up']");;
+    private By byLnkAccount = By.xpath("//a[@href='/account']");;
 
     public TopBarNavigation(WebDriver driver) {
         super(driver);
@@ -20,4 +21,8 @@ public class TopBarNavigation extends BasePage {
     public void navigateRegisterPage() {
         click(byLnkRegister);
     }
+    public void navigateHistoryPage() {
+        click(byLnkAccount);
+    }
+
 }

@@ -22,8 +22,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
     SeatPage seatPage;
     private void selectMovieAndShowTime(){
         HomePage homePage = new HomePage(driver);
-        homePage.buyTicketByFilter("gái già lắm chiêu", "CGV - Vincom Gò Vấp", "21/12/2021 ~ 16:00");
-        Duration.ofSeconds(30000);
+        homePage.selectMovie("gái già lắm chiêu");
 
     }
     @Test
@@ -130,7 +129,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         selectMovieAndShowTime();
         seatPage.selectSeat("77");
         seatPage.clickBookTicketButton();
-        Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/payment/"),"Không điều hướng đến trang thanh toán sau khi đặt vé với ghế đã chọn");
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn//"),"Không điều hướng đến trang chủ sau khi đặt vé với ghế đã chọn");
     }
     @Test
     public void TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(){

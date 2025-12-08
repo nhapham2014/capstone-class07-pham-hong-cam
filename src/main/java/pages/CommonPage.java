@@ -21,4 +21,7 @@ public class CommonPage extends BasePage {
     public void navigateRegisterPage() {
         topBarNavigation.navigateRegisterPage();
     }
+    public void navigateHistoryPage() {
+        topBarNavigation.navigateHistoryPage();
+    }
 }

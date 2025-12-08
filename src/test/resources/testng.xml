@@ -20,7 +20,7 @@
     </test>
     <test name="showtime test" parallel="classes" thread-count="1">
         <classes>
-            <class name="testcases.showtime.TC_ShowTimeTest" />
+            <class name="testcases.detailmovie.TC_ShowTimeTest" />
         </classes>
     </test>
     <test name="seat test" parallel="classes" thread-count="1">
@@ -30,7 +30,9 @@
     </test>
     <test name="full flow test" parallel="classes" thread-count="1">
         <classes>
-            <class name="testcases.fullflowbookingticket.TC_BookTicketByFilterMovie" />
+            <class name="testcases.fullflowbookingticket.TC_BookTicket_FromFilter" />
+            <class name="testcases.fullflowbookingticket.TC_BookTicket_FromListCinema" />
+            <class name="testcases.fullflowbookingticket.TC_BookTicket_FromPoster" />
         </classes>
     </test>
 </suite>

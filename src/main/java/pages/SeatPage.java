@@ -19,20 +19,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SeatPage extends CommonPage {
+    HomePage homePage;
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
     private By byListSeatOnTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
     private By byLbPrice = By.xpath(" //p[contains(normalize-space(), 'VND')]");
     private By byLbCinemaBrach = By.xpath("//div[h3[contains(text(),'Cụm Rạp:')]]");
     private By byLbAddress = By.xpath("//div[h3[contains(text(),'Địa chỉ:')]]");
+    private By byLbScreenID = By.xpath("//h3[normalize-space()='Rạp:']/following-sibling::h3");
     private By byLbDate = By.xpath("//div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]");
     private By byLbTime = By.xpath("//div[h3[contains(text(),'Ngày giờ chiếu')]]//span");
     private By byLbNameMovie = By.xpath("//div[h3[contains(text(),'Tên Phim:')]]");
     private By byBtnBookTicket = By.xpath("//button[span[contains(text(),'ĐẶT VÉ')]]");
     private By byMsgError = By.xpath("//div[div[contains(@class,'error')]]/h2");
-    private By byPopupSuccess = By.xpath("//div[contains(@class, 'success') and contains(@class,'popup')]");
     private By byMsgSuccess = By.xpath("//div[div[contains(@class,'success')]]/h2");
     private By byBtnAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
+
 
 
     public SeatPage(WebDriver driver) {
@@ -112,6 +114,9 @@ public class SeatPage extends CommonPage {
     }
     public String getAddressCinema(){
         return getText(byLbAddress).replace("Địa chỉ:", "").trim();
+    }
+    public String getScreenID(){
+        return getText(byLbScreenID).replace("Rạp:","").trim();
     }
     public String getDateOfShowTime(){
         return getText(byLbDate).replace(" -","").replace("/","-").replace(getText(byLbTime),"").trim();

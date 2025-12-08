@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.awt.event.WindowAdapter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -20,9 +21,7 @@ public class DetailMoviePage extends CommonPage {
     public String getMovieDetailTitle() {
         waitForVisibilityOfElementLocated(byLbMovieName);
 
-        return driver.findElement(byLbMovieName)
-                .getText()
-                .trim();
+        return getText(byLbMovieName);
     }
 
     public boolean isAllShowtimesInFuture() {

@@ -117,7 +117,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Click 'Mua Vé Ngay' button without select any filter
         ExtentReportManager.info("Step 1: Click 'Mua Vé Ngay' button without select any filter");
         LOG.info("Step 1: Click 'Mua Vé Ngay' button without select any filter");
-        homePage.clickBuyTicket();
+        homePage.clickBuyTicketExpectError();
         // Step 2: Verify warning popup displays
         ExtentReportManager.info("Step 2: Verify warning popup displays");
         LOG.info("Step 2: Verify warning popup displays");
@@ -135,7 +135,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 2: Click 'Mua Vé Ngay' button without select showtime
         ExtentReportManager.info("Step 2: Click 'Mua Vé Ngay' button without select cinema");
         LOG.info("Step 2: Click 'Mua Vé Ngay' button without select cinema");
-        homePage.clickBuyTicket();
+        homePage.clickBuyTicketExpectError();
         // Step 3: Verify warning popup displays
         ExtentReportManager.info("Step 3: Verify warning popup displays");
         LOG.info("Step 3: Verify warning popup displays");
@@ -157,7 +157,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 3: Click 'Mua Vé Ngay' button without select showtime
         ExtentReportManager.info("Step 3: Click 'Mua Vé Ngay' button without select showtime");
         LOG.info("Step 3: Click 'Mua Vé Ngay' button without select showtime");
-        homePage.clickBuyTicket();
+        homePage.clickBuyTicketExpectError();
         // Step 4: Verify warning popup displays
         ExtentReportManager.info("Step 4: Verify warning popup displays");
         LOG.info("Step 4: Verify warning popup displays");
@@ -168,7 +168,14 @@ public class TC_FilterTest extends BaseTestWithLogin {
     @Test
     public void TC08_navigateToSeatPageAfterClickBookTicketButton() {
         homePage = new HomePage(driver);
-        homePage.buyTicketByFilter("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
+       // homePage.buyTicketByFilter("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
+        homePage.selectMovie("AVATAR 2");
+        homePage.selectCinema("CGV - Golden Plaza");
+        homePage.selectDate("15/10/2021 ~ 08:42");
+        // Step 4: Click 'Mua Vé Ngay' button
+        ExtentReportManager.info("Step 4: Click 'Mua Vé Ngay' button");
+        LOG.info("Step 4: Click 'Mua Vé Ngay' button");
+        seatPage = homePage.clickBuyTicket();
         // Step 5: Verify navigate to seat page
         ExtentReportManager.info("Step 5: Verify navigate to seat page");
         LOG.info("Step 5: Verify navigate to seat page");
@@ -178,8 +185,11 @@ public class TC_FilterTest extends BaseTestWithLogin {
     @Test
     public void TC09_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByFilter(){
         homePage = new HomePage(driver);
-        seatPage = new SeatPage(driver);
-        homePage.buyTicketByFilter("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
+        //homePage.buyTicketByFilter("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
+        homePage.selectMovie("AVATAR 2");
+        homePage.selectCinema("CGV - Golden Plaza");
+        homePage.selectDate("15/10/2021 ~ 08:42");
+        seatPage = homePage.clickBuyTicket();
         Assert.assertEquals(seatPage.getMovieName(),"AVATAR 2", "Hiển thị không đúng tên phim");
         Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - Golden Plaza", "Không hiển thị đúng tên cụm rạp");
         Assert.assertEquals(seatPage.getAddressCinema(), "Tầng 4, Trung tâm thương mại Golden Plaza, 922 Nguyễn Trãi, P. 14, Q. 5", "Không hiển thị đúng địa chỉ cụm rạp");

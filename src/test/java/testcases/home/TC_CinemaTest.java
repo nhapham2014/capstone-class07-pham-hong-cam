@@ -21,7 +21,7 @@ public class TC_CinemaTest extends BaseTestWithLogin{
         //Step 1: Select a logo of cinema
         ExtentReportManager.info("Step 1: Select a logo of cinema");
         LOG.info("Step 1: Select a logo of cinema");
-        homePage.clickCinemaLogo("cgv");
+        homePage.selectCinemaLogo("cgv");
         //Step 2: Verify list cinema
         ExtentReportManager.info("Step 2: Verify list cinema ");
         LOG.info("Step 2: Verify list cinema ");
@@ -37,7 +37,7 @@ public class TC_CinemaTest extends BaseTestWithLogin{
         //Step 1: Select a logo of cinema
         ExtentReportManager.info("Step 1: Select a logo of cinema");
         LOG.info("Step 1: Select a logo of cinema");
-        homePage.clickCinemaLogo("bhd");
+        homePage.selectCinemaLogo("bhd");
         //Step 2: Select a cinema branch
         ExtentReportManager.info("Step 2: Select a cinema branch");
         LOG.info("Step 2: Select a cinema branch");
@@ -55,7 +55,7 @@ public class TC_CinemaTest extends BaseTestWithLogin{
         //Step 1: Select a logo of cinema
         ExtentReportManager.info("Step 1: Select a logo of cinema");
         LOG.info("Step 1: Select a logo of cinema");
-        homePage.clickCinemaLogo("bhd");
+        homePage.selectCinemaLogo("bhd");
         //Step 2: Select a cinema branch
         ExtentReportManager.info("Step 2: Select a cinema branch");
         LOG.info("Step 2: Select a cinema branch");
@@ -69,8 +69,11 @@ public class TC_CinemaTest extends BaseTestWithLogin{
     @Test
     public void TC04_navigateToSeatPageAfterSelectShowTime(){
         homePage = new HomePage(driver);
-        loginPage = new LoginPage(driver);
-        homePage.buyTicketAtListCinema("cgv","CGV - Pandora City","John Wick","15-10-2020","13:10" );
+
+       // homePage.buyTicketAtListCinema("cgv","CGV - Pandora City","John Wick","15-10-2020","13:10" );
+        homePage.selectCinemaLogo("cgv");
+        homePage.selectCinemaBranch("CGV - Pandora City");
+        seatPage = homePage.selectShowTime("John Wick","15-10-2021","13:10");
         //Step 4: Verify navigate to seat page
         ExtentReportManager.info("Step 4: Verify navigate to seat page");
         LOG.info("Step 4: Verify navigate to seat page");
@@ -80,8 +83,14 @@ public class TC_CinemaTest extends BaseTestWithLogin{
     @Test
     public void TC05_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketAtListCinema(){
         homePage = new HomePage(driver);
-        seatPage = new SeatPage(driver);
-        homePage.buyTicketAtListCinema("cgv","CGV - Golden Plaza","AVATAR 2","15-10-2021", "08:42" );
+
+//        homePage.buyTicketAtListCinema("cgv","CGV - Golden Plaza","AVATAR 2","15-10-2021", "08:42" );
+        homePage.selectCinemaLogo("cgv");
+        homePage.selectCinemaBranch("CGV - Golden Plaza");
+        seatPage = homePage.selectShowTime("AVATAR 2","15-10-2021","08:42");
+        //Step 4: Verify information on ticket at seat page
+        ExtentReportManager.info("Step 4: Verify information on ticket at seat page");
+        LOG.info("Step 4: Verify information on ticket at seat page");
         Assert.assertEquals(seatPage.getMovieName(),"AVATAR 2", "Hiển thị không đúng tên phim");
         Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - Golden Plaza", "Không hiển thị đúng tên cụm rạp");
         Assert.assertEquals(seatPage.getAddressCinema(), "Tầng 4, Trung tâm thương mại Golden Plaza, 922 Nguyễn Trãi, P. 14, Q. 5", "Không hiển thị đúng địa chỉ cụm rạp");

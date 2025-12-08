@@ -49,6 +49,7 @@ public class HomePage extends CommonPage {
     public String getUserProfileName() {
         return getText(byLblUserProfile);
     }
+    /// Filter section
     public void selectMovie(String movieName){
         // Wait for the option
         waitOptionsDropDownLoaded(byFilmOptions);
@@ -102,16 +103,27 @@ public class HomePage extends CommonPage {
     public boolean showtimeIsReset() {
         return getSelectedShowtime().equals("Ngày giờ chiếu");
     }
-    public void clickBuyTicket() {
+    public void clickBuyTicketExpectError() {
         click(byBtnBuyTicket);
     }
+    public SeatPage clickBuyTicket() {
+        waitForElementToBeClickable(byBtnBuyTicket);
+        click(byBtnBuyTicket);
+        waitForPageLoaded();
+        seatPage = new SeatPage(driver);
+        return seatPage;
+    }
+    /// Movie list section
     public String getMovieTitle(String imageMovie) {
         By byLbMovieTitle = By.xpath("//div[contains(@style,'" + imageMovie +"')]/following-sibling::div//div[span='C18']");
         return getText(byLbMovieTitle).replace("C18", "").trim();
     }
-    public void selectThumbnailMovie(String imageMovie){
+    public DetailMoviePage selectThumbnailMovie(String imageMovie){
         By byThumbnailMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]");
         click(byThumbnailMovie);
+        waitForPageLoaded();
+        detailMoviePage = new DetailMoviePage(driver);
+        return detailMoviePage;
     }
     public void clickTrailerMovie(String imageMovie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]");
@@ -127,13 +139,17 @@ public class HomePage extends CommonPage {
             return false;
         }
     }
-    public void clickBuyTicketAtMovie(String movie){
+    public DetailMoviePage clickBuyTicketAtMovie(String movie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]");
         By byBtnBookTicket = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
         hover(byImageMovie);
         click(byBtnBookTicket);
+        waitForPageLoaded();
+        detailMoviePage = new DetailMoviePage(driver);
+        return detailMoviePage;
     }
-    public void clickCinemaLogo(String brandCinema) {
+    /// List cinema section
+    public void selectCinemaLogo(String brandCinema) {
         By byCinemaLogo = By.xpath("//button[.//img[contains(@alt, '" + brandCinema.toLowerCase() + "')]]");
         click(byCinemaLogo);
     }
@@ -164,9 +180,12 @@ public class HomePage extends CommonPage {
         }
         return true;
     }
-    public void selectShowTime(String movieName, String date, String time){
+    public SeatPage selectShowTime(String movieName, String date, String time){
         By byShowTimeOption = By.xpath("//h2[contains(., '" + movieName +"')]/following-sibling::div//a[.//p[contains(text(),'" + date +"')]and .//h3[contains(text(),'" + time +"')]]");
         click(byShowTimeOption);
+        waitForPageLoaded();
+        seatPage = new SeatPage(driver);
+        return seatPage;
     }
     public boolean isShowtimeListUnique(String movieName) {
         By byShowTimesByMovie = By.xpath("//h2[contains(., '" + movieName +"')]/following-sibling::div//a[.//p[contains(text(),'-')]and .//h3[contains(text(),':')]]");
@@ -200,24 +219,24 @@ public class HomePage extends CommonPage {
         }
         return true;
     }
-    public void buyTicketAtListCinema(String brandCinema,String cinemaBranch, String movieName, String date, String time){
-        clickCinemaLogo(brandCinema);
-        selectCinemaBranch(cinemaBranch);
-        selectShowTime(movieName,date,time);
-
-    }
-    public void buyTicketByFilter(String movieName, String cinemaBranch, String showTime){
-        selectMovie(movieName);
-        selectCinema(cinemaBranch);
-        selectDate(showTime);
-        clickBuyTicket();
-    }
-    public void buyTicketAtListMovie(String movie, String cinemaLogo, String cinemaBranch, String date, String time){
-        detailMoviePage = new DetailMoviePage(driver);
-        clickBuyTicketAtMovie(movie);
-        detailMoviePage.clickCinemaLogo(cinemaLogo);
-        detailMoviePage.selectShowTime(cinemaBranch,date,time);
-    }
+//    public void buyTicketAtListCinema(String brandCinema,String cinemaBranch, String movieName, String date, String time){
+//        clickCinemaLogo(brandCinema);
+//        selectCinemaBranch(cinemaBranch);
+//        selectShowTime(movieName,date,time);
+//
+//    }
+//    public void buyTicketByFilter(String movieName, String cinemaBranch, String showTime){
+//        selectMovie(movieName);
+//        selectCinema(cinemaBranch);
+//        selectDate(showTime);
+//        clickBuyTicket();
+//    }
+//    public void buyTicketAtListMovie(String movie, String cinemaLogo, String cinemaBranch, String date, String time){
+//        detailMoviePage = new DetailMoviePage(driver);
+//        clickBuyTicketAtMovie(movie);
+//        detailMoviePage.clickCinemaLogo(cinemaLogo);
+//        detailMoviePage.selectShowTime(cinemaBranch,date,time);
+//    }
 
 
 

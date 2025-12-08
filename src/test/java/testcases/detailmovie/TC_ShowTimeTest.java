@@ -1,4 +1,4 @@
-package testcases.showtime;
+package testcases.detailmovie;
 
 import base.BaseTestWithLogin;
 import org.testng.Assert;
@@ -6,9 +6,6 @@ import org.testng.annotations.Test;
 import pages.DetailMoviePage;
 import pages.HomePage;
 import reports.ExtentReportManager;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 public class TC_ShowTimeTest extends BaseTestWithLogin {
     HomePage homePage;
