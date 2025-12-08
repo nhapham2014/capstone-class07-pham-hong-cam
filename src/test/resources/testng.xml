@@ -28,4 +28,9 @@
             <class name="testcases.seat.TC_SeatTest" />
         </classes>
     </test>
+    <test name="full flow test" parallel="classes" thread-count="1">
+        <classes>
+            <class name="testcases.fullflowbookingticket.TC_BookTicketByFilterMovie" />
+        </classes>
+    </test>
 </suite>

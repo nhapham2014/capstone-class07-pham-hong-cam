@@ -19,6 +19,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class HomePage extends CommonPage {
+    DetailMoviePage detailMoviePage;
+    SeatPage seatPage;
 
     private By byLblUserProfile = By.xpath("//a[@href='/account']/h3");
     private By byDrdnFilm = By.xpath("//select[@name='film']");
@@ -198,18 +200,25 @@ public class HomePage extends CommonPage {
         }
         return true;
     }
-    public void bookTicketAtListTheater(String brandCinema,String cinemaBranch, String movieName, String date, String time){
+    public void buyTicketAtListCinema(String brandCinema,String cinemaBranch, String movieName, String date, String time){
         clickCinemaLogo(brandCinema);
         selectCinemaBranch(cinemaBranch);
         selectShowTime(movieName,date,time);
 
     }
-    public void bookTicketByFilter(String movieName, String cinemaBranch, String showTime){
+    public void buyTicketByFilter(String movieName, String cinemaBranch, String showTime){
         selectMovie(movieName);
         selectCinema(cinemaBranch);
         selectDate(showTime);
         clickBuyTicket();
     }
+    public void buyTicketAtListMovie(String movie, String cinemaLogo, String cinemaBranch, String date, String time){
+        detailMoviePage = new DetailMoviePage(driver);
+        clickBuyTicketAtMovie(movie);
+        detailMoviePage.clickCinemaLogo(cinemaLogo);
+        detailMoviePage.selectShowTime(cinemaBranch,date,time);
+    }
+
 
 
 

@@ -7,7 +7,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.DetailMoviePage;
 import pages.HomePage;
-import pages.LoginPage;
+
 import pages.SeatPage;
 import reports.ExtentReportManager;
 
@@ -22,7 +22,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
     SeatPage seatPage;
     private void selectMovieAndShowTime(){
         HomePage homePage = new HomePage(driver);
-        homePage.bookTicketByFilter("AVATAR 2", "CGV - Golden Plaza", "15/10/2021 ~ 08:42");
+        homePage.buyTicketByFilter("gái già lắm chiêu", "CGV - Vincom Gò Vấp", "21/12/2021 ~ 16:00");
         Duration.ofSeconds(30000);
 
     }
@@ -137,11 +137,13 @@ public class TC_SeatTest extends BaseTestWithLogin {
         homePage= new HomePage(driver);
         seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
-        seatPage.selectSeat("32");
+        seatPage.selectSeat("23");
         seatPage.clickBookTicketButton();
-
-        seatPage.waitForSeatOptionsLoaded();
-        Assert.assertTrue(seatPage.isDisableSeat("32"),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
+        seatPage.clickAgreeButtonInAlert();
+        Assert.assertTrue(seatPage.isDisableSeat("23"),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
+        int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
+        System.out.println(numberOfSelectedSeat);
+        Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được reset sau khi đặt vé thành công");
 
     }
 

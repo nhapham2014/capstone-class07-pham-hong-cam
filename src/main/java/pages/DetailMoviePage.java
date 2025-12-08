@@ -47,8 +47,8 @@ public class DetailMoviePage extends CommonPage {
         }
         return true;
     }
-    public void selectShowTime(String date, String time){
-        By byShowTimeOption = By.xpath("//a[p[normalize-space()='" + date +"'] and p[normalize-space()='" + time +"']]");
+    public void selectShowTime(String cinemaBranch, String date, String time){
+        By byShowTimeOption = By.xpath("//div[div[h3[contains(text(),'"+cinemaBranch+"')]]]//a[p[normalize-space()='"+date+"'] and p[normalize-space()='"+time+"']]");
         click(byShowTimeOption);
 
     }

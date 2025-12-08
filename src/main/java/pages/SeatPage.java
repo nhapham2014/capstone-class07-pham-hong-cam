@@ -30,7 +30,9 @@ public class SeatPage extends CommonPage {
     private By byLbNameMovie = By.xpath("//div[h3[contains(text(),'Tên Phim:')]]");
     private By byBtnBookTicket = By.xpath("//button[span[contains(text(),'ĐẶT VÉ')]]");
     private By byMsgError = By.xpath("//div[div[contains(@class,'error')]]/h2");
+    private By byPopupSuccess = By.xpath("//div[contains(@class, 'success') and contains(@class,'popup')]");
     private By byMsgSuccess = By.xpath("//div[div[contains(@class,'success')]]/h2");
+    private By byBtnAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
 
 
     public SeatPage(WebDriver driver) {
@@ -151,12 +153,12 @@ public class SeatPage extends CommonPage {
         return getText(byMsgSuccess).trim();
     }
     public void clickAgreeButtonInAlert(){
-        waitForElementToBeClickable(byBtnBookTicket);
-        click(byBtnBookTicket);
+        waitForElementToBeClickable(byBtnAgree);
+        click(byBtnAgree);
 
     }
     public boolean isDisableSeat(String numberSeat){
-        waitForVisibilityOfElementLocated(byLbCinemaBrach);
+        waitForVisibilityOfElementLocated(byLbSeat);
         List<WebElement> seats = driver.findElements(
                 By.xpath("//button[span[text()='" + numberSeat + "']]")
         );
@@ -165,13 +167,13 @@ public class SeatPage extends CommonPage {
         }
 
         WebElement seat = seats.get(0);
+
         return !seat.isEnabled()
                 || seat.getAttribute("disabled") != null
                 || seat.getAttribute("class").contains("disabled");
     }
-    public void waitForSeatOptionsLoaded(){
-        waitForPresenceOfAllElmentsLocatedBy(byLbSeat);
-    }
+
+
 
 
 }

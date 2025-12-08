@@ -70,36 +70,19 @@ public class TC_CinemaTest extends BaseTestWithLogin{
     public void TC04_navigateToSeatPageAfterSelectShowTime(){
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-        //Step 1: Select a logo of cinema
-        ExtentReportManager.info("Step 1: Select a logo of cinema");
-        LOG.info("Step 1: Select a logo of cinema");
-        homePage.clickCinemaLogo("cgv");
-        //Step 2: Select a cinema branch
-        ExtentReportManager.info("Step 2: Select a cinema branch");
-        LOG.info("Step 2: Select a cinema branch");
-        homePage.selectCinemaBranch("CGV - Pandora City");
-        //Step 3: Select a show time
-        ExtentReportManager.info("Step 3: Select a show time");
-        LOG.info("Step 3: Select a show time");
-        homePage.selectShowTime("John Wick","15-10-2020","13:10");
+        homePage.buyTicketAtListCinema("cgv","CGV - Pandora City","John Wick","15-10-2020","13:10" );
         //Step 4: Verify navigate to seat page
         ExtentReportManager.info("Step 4: Verify navigate to seat page");
         LOG.info("Step 4: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase/"));
     }
-    @Test
-    public void TC(){
-        homePage = new HomePage(driver);
-        homePage.clickCinemaLogo("cgv");
-        homePage.selectCinemaBranch("CGV - Golden Plaza");
-
-    }
 
     @Test
-    public void TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema(){
+    public void TC05_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketAtListCinema(){
         homePage = new HomePage(driver);
         seatPage = new SeatPage(driver);
-        homePage.bookTicketAtListTheater("cgv","CGV - Golden Plaza","AVATAR 2","15-10-2021", "08:42" );
+        homePage.buyTicketAtListCinema("cgv","CGV - Golden Plaza","AVATAR 2","15-10-2021", "08:42" );
+        Assert.assertEquals(seatPage.getMovieName(),"AVATAR 2", "Hiển thị không đúng tên phim");
         Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - Golden Plaza", "Không hiển thị đúng tên cụm rạp");
         Assert.assertEquals(seatPage.getAddressCinema(), "Tầng 4, Trung tâm thương mại Golden Plaza, 922 Nguyễn Trãi, P. 14, Q. 5", "Không hiển thị đúng địa chỉ cụm rạp");
         Assert.assertEquals(seatPage.getDateOfShowTime(),"15-10-2021", "Không hiển thị đúng ngày chiếu");

@@ -40,10 +40,14 @@ public class TC_ShowTimeTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
         LOG.info("Step 1: Click 'Mua Vé' button at a movie");
         homePage.clickBuyTicketAtMovie("avatar-2_gp09");
-        // Step 2: Select a show time
-        ExtentReportManager.info("Step 2: Select a show time");
-        LOG.info("Step 2: Select a show time");
-        detailMoviePage.selectShowTime("17-10-2021","08:43");
+        // Step 2: Select a cinema logo
+        ExtentReportManager.info("Step 2: Select a cinema logo");
+        LOG.info("Step 2: Select a cinema logo");
+        detailMoviePage.clickCinemaLogo("cgv");
+        // Step 3: Select a show time
+        ExtentReportManager.info("Step 3: Select a show time");
+        LOG.info("Step 3: Select a show time");
+        detailMoviePage.selectShowTime("CGV - VivoCity","07-10-2021","08:25");
         // Step 3: Verify navigate to seat page
         ExtentReportManager.info("Step 3: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"));

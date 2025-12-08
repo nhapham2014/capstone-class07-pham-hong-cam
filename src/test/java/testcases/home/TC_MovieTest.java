@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import pages.DetailMoviePage;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.SeatPage;
 import reports.ExtentReportManager;
 
 import java.time.LocalDateTime;
@@ -14,8 +15,8 @@ import java.util.List;
 
 public class TC_MovieTest extends BaseTestWithLogin {
     HomePage homePage;
-    LoginPage loginPage;
     DetailMoviePage detailMoviePage;
+    SeatPage seatPage;
 
     @Test
     public void TC01_verifyMovieNameAtDetailPage() {
@@ -63,6 +64,17 @@ public class TC_MovieTest extends BaseTestWithLogin {
         Assert.assertTrue(driver.getCurrentUrl().contains("detail"),
                 "Không chuyển sang màn hình chi tiết phim sau khi bấm nút Mua Vé");
 
+    }
+    @Test
+    public void TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(){
+        homePage = new HomePage(driver);
+        seatPage = new SeatPage(driver);
+        homePage.buyTicketAtListMovie("avatar-2_gp09","cgv","CGV - VivoCity","07-10-2021","08:25");
+        Assert.assertEquals(seatPage.getMovieName(),"AVATAR 2", "Hiển thị không đúng tên phim");
+        Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - VivoCity", "Không hiển thị đúng tên cụm rạp");
+        Assert.assertEquals(seatPage.getAddressCinema(), "Lầu 5, Trung tâm thương mại SC VivoCity - 1058 Nguyễn Văn Linh, Q. 7", "Không hiển thị đúng địa chỉ cụm rạp");
+        Assert.assertEquals(seatPage.getDateOfShowTime(),"07-10-2021", "Không hiển thị đúng ngày chiếu");
+        Assert.assertEquals(seatPage.getTimeOfShowTime(),"08:25", "Không hiển thị đúng giờ chiếu");
     }
 
 
