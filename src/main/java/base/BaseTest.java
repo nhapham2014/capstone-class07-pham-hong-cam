@@ -10,6 +10,7 @@ import org.testng.annotations.*;
 import pages.HomePage;
 import pages.LoginPage;
 import reports.ExtentReportManager;
+import utils.ScenarioContext;
 
 import java.lang.reflect.Method;
 
@@ -20,6 +21,7 @@ public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected ScenarioContext context;
 
     @BeforeSuite
     public void beforeSuite() {
@@ -41,6 +43,9 @@ public class BaseTest {
     public void beforeMethod(Method method) {
         LOG.info("Before Method executed");
         ExtentReportManager.createTest(method.getName());
+    }
+    public void setupContext() {
+        context = new ScenarioContext();
     }
 
     @AfterMethod

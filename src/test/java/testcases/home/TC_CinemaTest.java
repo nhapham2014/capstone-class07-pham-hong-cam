@@ -69,11 +69,10 @@ public class TC_CinemaTest extends BaseTestWithLogin{
     @Test
     public void TC04_navigateToSeatPageAfterSelectShowTime(){
         homePage = new HomePage(driver);
-
        // homePage.buyTicketAtListCinema("cgv","CGV - Pandora City","John Wick","15-10-2020","13:10" );
         homePage.selectCinemaLogo("cgv");
         homePage.selectCinemaBranch("CGV - Pandora City");
-        seatPage = homePage.selectShowTime("John Wick","15-10-2021","13:10");
+        seatPage = homePage.selectShowTime("John Wick","15-10-2020","13:10");
         //Step 4: Verify navigate to seat page
         ExtentReportManager.info("Step 4: Verify navigate to seat page");
         LOG.info("Step 4: Verify navigate to seat page");
@@ -83,8 +82,6 @@ public class TC_CinemaTest extends BaseTestWithLogin{
     @Test
     public void TC05_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketAtListCinema(){
         homePage = new HomePage(driver);
-
-//        homePage.buyTicketAtListCinema("cgv","CGV - Golden Plaza","AVATAR 2","15-10-2021", "08:42" );
         homePage.selectCinemaLogo("cgv");
         homePage.selectCinemaBranch("CGV - Golden Plaza");
         seatPage = homePage.selectShowTime("AVATAR 2","15-10-2021","08:42");

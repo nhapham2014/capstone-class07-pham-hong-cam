@@ -15,26 +15,15 @@ public class TC02_LoginTest extends BaseTest {
 
     @Test
     public void testValidLogin() {
-        loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-
         //Step 1: Go to https://demo1.cybersoft.edu.vn
         System.out.println("driver = " + driver);
         Reporter.log("Step 1: Go to https://demo1.cybersoft.edu.vn");
         driver.get("https://demo1.cybersoft.edu.vn");
 
         //Step 2: Click 'Đăng Nhập' link
-        homePage.navigateLoginPage();
-
-        //Step 3: Enter account
-        String newAcount = "cam";
-        loginPage.enterAccount(newAcount);
-
-        //Step 4: Enter password
-        loginPage.enterPassword("123456");
-
-        //Step 5: Click login
-        loginPage.clickLogin();
+        loginPage = homePage.navigateLoginPage();
+        loginPage.login("cam","123456");
 
         //Step 6: Verify login successully
         //VP1: "Đăng nhập thành công" message displays

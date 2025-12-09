@@ -23,14 +23,14 @@ public class TC_SeatTest extends BaseTestWithLogin {
     private void selectMovieAndShowTime(){
         HomePage homePage = new HomePage(driver);
         homePage.selectMovie("gái già lắm chiêu");
+        homePage.selectCinema("CGV - Vincom Gò Vấp");
+        homePage.selectDate("21/12/2021 ~ 16:00");
+        seatPage = homePage.clickBuyTicket();
 
     }
     @Test
     public void TC01_verifyColorOfSeatAfterSelected() {
-        homePage = new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
-
         //Step 1:
         seatPage.selectSeat("90");
         String color = seatPage.getSeatColor("90");
@@ -39,8 +39,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC02_verifyColorOfSeatAfterUnselectSeat() {
-        homePage = new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         //Step 1:
         seatPage.selectSeat("90");
@@ -53,8 +51,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC03_verifySelectedSeatShowsOnTicket(){
-        homePage = new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         seatPage.selectSeat("90");
         seatPage.selectSeat("91");
@@ -63,8 +59,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC05_verifyDisplayCorrectPriceAtInformationOfTicket(){
-        homePage= new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         //User don't select any seat
         //Assert.assertEquals(seatPage.getDisplayedPriceSeat(),0,"Giá hiển thị không đúng");
@@ -79,8 +73,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC_verifySeatClearedWhenBrowserBack(){
-        homePage = new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         seatPage.selectSeat("90");
         seatPage.selectSeat("91");
@@ -93,8 +85,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC_verifySeatClearedWhenReloadPage(){
-        homePage= new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         seatPage.selectSeat("90");
         seatPage.reloadPage();
@@ -105,8 +95,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
 
     @Test
     public void TC_verifyErrorMessageWhenBookTicketWithoutSelectingSeat(){
-        homePage= new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         seatPage.clickBookTicketButton();
         String errorMessage = seatPage.getErrorMessage();
@@ -114,8 +102,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC_verifySuccessMessageWhenBookTicketWithSelectingSeat(){
-        homePage= new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         seatPage.selectSeat("91");
         seatPage.clickBookTicketButton();
@@ -124,8 +110,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC_navigateToPaymentPageAfterBookTicketWithSelectingSeat(){
-        homePage= new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
         seatPage.selectSeat("77");
         seatPage.clickBookTicketButton();
@@ -133,13 +117,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
     }
     @Test
     public void TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(){
-        homePage= new HomePage(driver);
-        seatPage = new SeatPage(driver);
         selectMovieAndShowTime();
-        seatPage.selectSeat("23");
+        seatPage.selectSeat("60");
         seatPage.clickBookTicketButton();
         seatPage.clickAgreeButtonInAlert();
-        Assert.assertTrue(seatPage.isDisableSeat("23"),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
+        Assert.assertTrue(seatPage.isDisableSeat("60"),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
         System.out.println(numberOfSelectedSeat);
         Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được reset sau khi đặt vé thành công");

@@ -7,8 +7,12 @@
     <test name="register test" parallel="classes" thread-count="2">
         <classes>
             <class name="testcases.register.TC01_RegisterTest" />
-            <class name="testcases.login.TC02_LoginTest" />
 
+        </classes>
+    </test>
+    <test name="login test" parallel="classes" thread-count="2">
+        <classes>
+            <class name="testcases.login.TC02_LoginTest" />
         </classes>
     </test>
     <test name="home test" parallel="classes" thread-count="1">
@@ -20,7 +24,7 @@
     </test>
     <test name="showtime test" parallel="classes" thread-count="1">
         <classes>
-            <class name="testcases.detailmovie.TC_ShowTimeTest" />
+            <class name="testcases.detailmovie.TC_DetailMovieTest" />
         </classes>
     </test>
     <test name="seat test" parallel="classes" thread-count="1">
@@ -28,11 +32,9 @@
             <class name="testcases.seat.TC_SeatTest" />
         </classes>
     </test>
-    <test name="full flow test" parallel="classes" thread-count="1">
+    <test name="history test" parallel="classes" thread-count="1">
         <classes>
-            <class name="testcases.fullflowbookingticket.TC_BookTicket_FromFilter" />
-            <class name="testcases.fullflowbookingticket.TC_BookTicket_FromListCinema" />
-            <class name="testcases.fullflowbookingticket.TC_BookTicket_FromPoster" />
+            <class name="testcases.history.TC_HistoryTest" />
         </classes>
     </test>
 </suite>

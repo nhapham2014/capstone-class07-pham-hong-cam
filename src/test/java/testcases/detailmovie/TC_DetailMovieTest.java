@@ -5,11 +5,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DetailMoviePage;
 import pages.HomePage;
+import pages.SeatPage;
 import reports.ExtentReportManager;
 
-public class TC_ShowTimeTest extends BaseTestWithLogin {
+public class TC_DetailMovieTest extends BaseTestWithLogin {
     HomePage homePage;
     DetailMoviePage detailMoviePage;
+    SeatPage seatPage;
     @Test
     public void TC01_verifyAllShowtimesAreAfterCurrentTime() {
         homePage = new HomePage(driver);
@@ -32,11 +34,10 @@ public class TC_ShowTimeTest extends BaseTestWithLogin {
     @Test
     public void TC02_navigateToSeatPageAfterSelectShowTime(){
         homePage = new HomePage(driver);
-        detailMoviePage = new DetailMoviePage(driver);
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
         LOG.info("Step 1: Click 'Mua Vé' button at a movie");
-        homePage.clickBuyTicketAtMovie("avatar-2_gp09");
+        detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
         // Step 2: Select a cinema logo
         ExtentReportManager.info("Step 2: Select a cinema logo");
         LOG.info("Step 2: Select a cinema logo");
@@ -44,7 +45,7 @@ public class TC_ShowTimeTest extends BaseTestWithLogin {
         // Step 3: Select a show time
         ExtentReportManager.info("Step 3: Select a show time");
         LOG.info("Step 3: Select a show time");
-        detailMoviePage.selectShowTime("CGV - VivoCity","07-10-2021","08:25");
+        seatPage = detailMoviePage.selectShowTime("CGV - VivoCity","07-10-2021","08:25");
         // Step 3: Verify navigate to seat page
         ExtentReportManager.info("Step 3: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"));
@@ -53,11 +54,10 @@ public class TC_ShowTimeTest extends BaseTestWithLogin {
     @Test
     public void TC03_verifyListCinemaWhenSelectCinemaLogoAtDetailMoviePage(){
         homePage = new HomePage(driver);
-        detailMoviePage = new DetailMoviePage(driver);
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
         LOG.info("Step 1: Click 'Mua Vé' button at a movie");
-        homePage.clickBuyTicketAtMovie("avatar-2_gp09");
+        detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
         //Step 2: Select a logo of cinema
         ExtentReportManager.info("Step 2: Select a logo of cinema");
         LOG.info("Step 2: Select a logo of cinema");

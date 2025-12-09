@@ -19,7 +19,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SeatPage extends CommonPage {
-    HomePage homePage;
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
     private By byListSeatOnTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
@@ -148,6 +147,7 @@ public class SeatPage extends CommonPage {
     public void clickBookTicketButton(){
         waitForElementToBeClickable(byBtnBookTicket);
         click(byBtnBookTicket);
+
     }
     public String getErrorMessage() {
         waitForVisibilityOfElementLocated(byMsgError);
@@ -177,6 +177,7 @@ public class SeatPage extends CommonPage {
                 || seat.getAttribute("disabled") != null
                 || seat.getAttribute("class").contains("disabled");
     }
+
 
 
 

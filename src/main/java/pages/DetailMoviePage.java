@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailMoviePage extends CommonPage {
+    SeatPage seatPage;
     private By byLbMovieName = By.xpath("//h1[contains(@class,'MuiTypography-h1')]");
     private By byListShowTime = By.xpath("//div[contains(@class,'MuiGrid-item')]//a[p[contains(text(),'-')]]");
     private By byDateText = By.xpath(".//p[contains(text(),'-')]");
@@ -46,9 +47,12 @@ public class DetailMoviePage extends CommonPage {
         }
         return true;
     }
-    public void selectShowTime(String cinemaBranch, String date, String time){
+    public SeatPage selectShowTime(String cinemaBranch, String date, String time){
         By byShowTimeOption = By.xpath("//div[div[h3[contains(text(),'"+cinemaBranch+"')]]]//a[p[normalize-space()='"+date+"'] and p[normalize-space()='"+time+"']]");
         click(byShowTimeOption);
+        waitForPageLoaded();
+         seatPage = new SeatPage(driver);
+        return seatPage;
 
     }
     public void clickCinemaLogo(String cinemaLogo){

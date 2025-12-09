@@ -69,8 +69,6 @@ public class TC_MovieTest extends BaseTestWithLogin {
     @Test
     public void TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(){
         homePage = new HomePage(driver);
-
-
        // homePage.buyTicketAtListMovie("avatar-2_gp09","cgv","CGV - VivoCity","07-10-2021","08:25");
         detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
         detailMoviePage.clickCinemaLogo("cgv");

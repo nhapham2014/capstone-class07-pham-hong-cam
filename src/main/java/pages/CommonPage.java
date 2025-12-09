@@ -14,14 +14,15 @@ public class CommonPage extends BasePage {
         topBarNavigation = new TopBarNavigation(driver);
     }
 
-    public void navigateLoginPage() {
-        topBarNavigation.navigateLoginPage();
+    public LoginPage navigateLoginPage() {
+        return topBarNavigation.navigateLoginPage();
     }
 
-    public void navigateRegisterPage() {
-        topBarNavigation.navigateRegisterPage();
+    public RegisterPage navigateRegisterPage() {
+        return topBarNavigation.navigateRegisterPage();
     }
-    public void navigateHistoryPage() {
-        topBarNavigation.navigateHistoryPage();
+    public HistoryPage navigateHistoryPage() {
+        return topBarNavigation.navigateHistoryPage();
     }
+    public HomePage logOutPage(){return topBarNavigation.logOutPage();}
 }
