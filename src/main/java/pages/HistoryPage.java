@@ -40,9 +40,74 @@ public class HistoryPage extends CommonPage {
         if(listTickets.isEmpty()){
             return "";
         }
-        WebElement latestTicket = listTickets.get(0);
+        WebElement latestTicket = listTickets.get(listTickets.size()-1);
+        scrollToElement(latestTicket);
 
-        String dateOrderText = latestTicket.findElement(byLbDateOrder).getText();
-        return dateOrderText.replace("Ngày đặt: ","").trim();
+        String dateOrderText = latestTicket.findElement(byLbDateOrder).getText().replace("Ngày đặt: ","").replace("|","").replaceAll("\\s+", " ").trim();
+        return dateOrderText;
+    }
+    public String getLatestTicketMovieName(){
+        waitForVisibilityOfElementLocated(byListTicketHistory);
+        List<WebElement> listTickets = driver.findElements(byListTicketHistory);
+        if(listTickets.isEmpty()){
+            return "";
+        }
+        WebElement latestTicket = listTickets.get(listTickets.size()-1);
+        scrollToElement(latestTicket);
+
+        String movieNameText = latestTicket.findElement(byLbMovieName).getText().replace("Tên phim: ","").trim();
+        return movieNameText;
+    }
+    public int getLatestTicketTotalPrice(){
+        waitForVisibilityOfElementLocated(byListTicketHistory);
+        List<WebElement> listTickets = driver.findElements(byListTicketHistory);
+        if(listTickets.isEmpty()){
+            return 0;
+        }
+        WebElement latestTicket = listTickets.get(listTickets.size()-1);
+        scrollToElement(latestTicket);
+
+        String totalPrice = latestTicket.findElement(byLbTotal).getText().replace("\n", "").trim();
+        totalPrice= totalPrice.replace("Giá vé: ","").replace(" VND","").trim().replace(".", "");
+        return Integer.parseInt(totalPrice);
+    }
+    public String getLatestTicketCinemaBranch(){
+        waitForVisibilityOfElementLocated(byListTicketHistory);
+        List<WebElement> listTickets = driver.findElements(byListTicketHistory);
+        if(listTickets.isEmpty()){
+            return "";
+        }
+        WebElement latestTicket = listTickets.get(listTickets.size()-1);
+        scrollToElement(latestTicket);
+
+        String cinemaBranchText = latestTicket.findElement(byLbCinemaBranch).getText().trim();
+        return cinemaBranchText;
+    }
+    public String getLatestTicketScreenID(){
+        waitForVisibilityOfElementLocated(byListTicketHistory);
+        List<WebElement> listTickets = driver.findElements(byListTicketHistory);
+        if(listTickets.isEmpty()){
+            return "";
+        }
+        WebElement latestTicket = listTickets.get(listTickets.size()-1);
+        scrollToElement(latestTicket);
+
+        String screenIDText = latestTicket.findElement(byLbScreenID).getText().replace("Rạp: ","").trim();
+        return screenIDText;
+    }
+    public List<String> getLatestListSeat(){
+        waitForVisibilityOfElementLocated(byListTicketHistory);
+        List<WebElement> listTickets = driver.findElements(byListTicketHistory);
+        if(listTickets.isEmpty()){
+            return new ArrayList<>();
+        }
+        WebElement latestTicket = listTickets.get(listTickets.size()-1);
+        scrollToElement(latestTicket);
+
+        String seatText = latestTicket.findElement(byLbSeatID).getText().replace("Ghế số:","").trim();
+        List<String> listSeat = Arrays.stream(seatText.split(","))
+                .map(String::trim)
+                .collect(Collectors.toList());
+        return listSeat;
     }
 }

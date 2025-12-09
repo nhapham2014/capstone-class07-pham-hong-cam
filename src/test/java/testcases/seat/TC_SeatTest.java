@@ -13,6 +13,7 @@ import reports.ExtentReportManager;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,6 +126,18 @@ public class TC_SeatTest extends BaseTestWithLogin {
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
         System.out.println(numberOfSelectedSeat);
         Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được reset sau khi đặt vé thành công");
+
+    }
+    @Test
+    public void TC(){
+        selectMovieAndShowTime();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        seatPage.selectSeat("17");
+        seatPage.clickBookTicketButton();
+        context.set("bookingTime", LocalDateTime.now().format(formatter));
+        String time = context.get("bookingTime", String.class);
+        System.out.println(time);
+
 
     }
 

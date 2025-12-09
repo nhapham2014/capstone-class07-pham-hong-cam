@@ -83,6 +83,9 @@ public class BasePage {
             return js.executeScript("return document.readyState").toString().equals("complete");
         });
     }
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
     public int getOptionsCount(By locator) {
         List<WebElement> options = driver.findElements(locator);
         return options.size();

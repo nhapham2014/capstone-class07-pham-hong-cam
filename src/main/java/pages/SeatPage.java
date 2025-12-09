@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.ScenarioContext;
 
 import javax.swing.*;
 import java.time.Duration;
@@ -36,8 +37,11 @@ public class SeatPage extends CommonPage {
 
 
 
+
     public SeatPage(WebDriver driver) {
         super(driver);
+
+
     }
 
     public void selectSeat(String numberSeat) {
@@ -148,6 +152,7 @@ public class SeatPage extends CommonPage {
         waitForElementToBeClickable(byBtnBookTicket);
         click(byBtnBookTicket);
 
+
     }
     public String getErrorMessage() {
         waitForVisibilityOfElementLocated(byMsgError);
@@ -177,8 +182,6 @@ public class SeatPage extends CommonPage {
                 || seat.getAttribute("disabled") != null
                 || seat.getAttribute("class").contains("disabled");
     }
-
-
 
 
 

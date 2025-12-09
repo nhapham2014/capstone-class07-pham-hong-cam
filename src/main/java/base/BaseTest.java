@@ -44,7 +44,9 @@ public class BaseTest {
         LOG.info("Before Method executed");
         ExtentReportManager.createTest(method.getName());
     }
+    @BeforeMethod
     public void setupContext() {
+
         context = new ScenarioContext();
     }
 
