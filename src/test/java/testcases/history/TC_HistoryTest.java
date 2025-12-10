@@ -1,27 +1,24 @@
 package testcases.history;
-import base.BaseTest;
 import base.BaseTestWithLogin;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.*;
-
 import reports.ExtentReportManager;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 public class TC_HistoryTest extends BaseTestWithLogin {
     HomePage homePage;
     LoginPage loginPage;
     DetailMoviePage detailMoviePage;
     SeatPage seatPage;
     HistoryPage historyPage;
-    private void selectMovieAndShowTime(){
+
+    private void selectMovieAndShowTime() {
         HomePage homePage = new HomePage(driver);
         homePage.selectMovie("gái già lắm chiêu");
         homePage.selectCinema("CGV - Vincom Gò Vấp");
@@ -29,27 +26,32 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         seatPage = homePage.clickBuyTicket();
 
     }
+
     @Test
-    public void TC01_verifyNumberBookingAtHistoryPage(){
+    public void TC01_verifyNumberBookingAtHistoryPage() {
         homePage = new HomePage(driver);
         historyPage = homePage.navigateHistoryPage();
         int numberBooking = historyPage.getNumberOfTicketsInHistory();
-        Assert.assertEquals(numberBooking,32, "Hiển thị sai số lượng booking");
+        Assert.assertEquals(numberBooking, 32, "Hiển thị sai số lượng booking");
     }
+
     @Test
-    public void TC(){
+    public void TC() {
         homePage = new HomePage(driver);
         historyPage = homePage.navigateHistoryPage();
         System.out.println(historyPage.getLatestTicketDate());
     }
+
     @Test
-    public void TC02_verifyLatestBookingDateAtHistoryPage(){
+    public void TC02_verifyLatestBookingDateAtHistoryPage() {
         homePage = new HomePage(driver);
         selectMovieAndShowTime();
-        seatPage.selectSeat("16");
+        seatPage.selectSeat("26");
+        //seatPage.selectSeat("30");
         String expectNameMovie = seatPage.getMovieName();
         System.out.println(expectNameMovie);
-        //int expectTotalPrice = seatPage.totalPrice();
+        int expectTotalPrice = seatPage.getDisplayedPriceSeat();
+        System.out.println(expectTotalPrice);
         String expectCinemaBranch = seatPage.getNameCinemaBranch();
         System.out.println(expectCinemaBranch);
         String expectScreenID = seatPage.getScreenID();
@@ -67,7 +69,8 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         System.out.println(actualOrderTime);
         String actualNameMovie = historyPage.getLatestTicketMovieName();
         System.out.println(actualNameMovie);
-        //int actualTotalPrice = historyPage.getLatestTicketTotalPrice();
+        int actualTotalPrice = historyPage.getLatestTicketTotalPrice();
+        System.out.println(actualTotalPrice);
         String actualCinemaBranch = historyPage.getLatestTicketCinemaBranch();
         System.out.println(actualCinemaBranch);
         String actualScreenID = historyPage.getLatestTicketScreenID();
@@ -75,12 +78,12 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         List<String> actualSeatID = historyPage.getLatestListSeat();
         System.out.println(actualSeatID);
 
-       Assert.assertEquals(actualOrderTime,expectOrderTime,"Ngày đặt vé mới nhất không đúng");
-       Assert.assertEquals(actualNameMovie,expectNameMovie,"Tên phim không đúng");
-      // Assert.assertEquals(actualTotalPrice,expectTotalPrice,"Tổng giá vé không đúng");
-       Assert.assertEquals(actualCinemaBranch,expectCinemaBranch,"Cụm rạp không đúng");
-       Assert.assertEquals(actualScreenID,expectScreenID,"Mã rạp không đúng");
-         Assert.assertEquals(actualSeatID,expectSeatID,"Mã ghế không đúng");
+        Assert.assertEquals(actualOrderTime, expectOrderTime, "Ngày đặt vé mới nhất không đúng");
+        Assert.assertEquals(actualNameMovie, expectNameMovie, "Tên phim không đúng");
+        Assert.assertEquals(actualTotalPrice, expectTotalPrice, "Tổng giá vé không đúng");
+        Assert.assertEquals(actualCinemaBranch, expectCinemaBranch, "Cụm rạp không đúng");
+        Assert.assertEquals(actualScreenID, expectScreenID, "Mã rạp không đúng");
+        Assert.assertEquals(actualSeatID.toArray(), expectSeatID.toArray(), "Mã ghế không đúng");
     }
 
 }

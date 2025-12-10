@@ -1,0 +1,1196 @@
+[2025-12-08 10:45:00] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:45:00] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:45:00] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:45:04] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:45:04] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:45:04] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 10:45:04] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 10:45:04] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 10:45:04] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 10:45:04] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 10:45:04] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 10:45:04] [INFO ] LoginPage - clickLogin
+[2025-12-08 10:45:04] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:45:04] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:45:04] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 10:45:04] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:45:04] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 10:45:09] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 10:45:09] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 10:45:09] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 10:45:10] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 10:45:10] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 10:45:10] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:45:10] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:45:10] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='33']
+[2025-12-08 10:45:12] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='33']
+[2025-12-08 10:45:12] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='33']
+[2025-12-08 10:45:13] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:45:13] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:45:13] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:45:13] [INFO ] SeatPage - waitForPresenceOfAllElmentsLocatedBy: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:45:13] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 10:45:13] [ERROR] TestListener - ===== FAILED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+java.lang.AssertionError: Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at testcases.seat.TC_SeatTest.TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(TC_SeatTest.java:144)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 10:45:13] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 10:45:13] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 10:45:13] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 10:45:14] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 10:46:19] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:46:20] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:46:20] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:46:22] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:46:22] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:46:22] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 10:46:22] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 10:46:22] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 10:46:22] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 10:46:22] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 10:46:22] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 10:46:22] [INFO ] LoginPage - clickLogin
+[2025-12-08 10:46:22] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:46:22] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:46:22] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 10:46:22] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:46:22] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 10:46:27] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 10:46:27] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 10:46:27] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 10:46:27] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 10:46:27] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 10:46:27] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:46:27] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:46:28] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='34']
+[2025-12-08 10:46:30] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='34']
+[2025-12-08 10:46:30] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='34']
+[2025-12-08 10:46:30] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:46:30] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:46:30] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:46:30] [INFO ] SeatPage - waitForPresenceOfAllElmentsLocatedBy: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:46:30] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:46:30] [ERROR] TestListener - ===== FAILED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+java.lang.AssertionError: Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at testcases.seat.TC_SeatTest.TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(TC_SeatTest.java:144)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 10:46:30] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 10:46:30] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 10:46:30] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 10:46:31] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 10:50:20] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:50:20] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:50:20] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:50:23] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:50:23] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:50:23] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 10:50:23] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 10:50:23] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 10:50:23] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 10:50:23] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 10:50:23] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 10:50:23] [INFO ] LoginPage - clickLogin
+[2025-12-08 10:50:23] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:50:23] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:50:23] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 10:50:23] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:50:23] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 10:50:27] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 10:50:27] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 10:50:28] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 10:50:28] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 10:50:28] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 10:50:28] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:50:28] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:50:28] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='35']
+[2025-12-08 10:50:30] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='35']
+[2025-12-08 10:50:30] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='35']
+[2025-12-08 10:50:30] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:50:30] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:50:30] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:50:30] [INFO ] SeatPage - waitForPresenceOfAllElmentsLocatedBy: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:50:30] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:50:30] [ERROR] TestListener - ===== FAILED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+java.lang.AssertionError: Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at testcases.seat.TC_SeatTest.TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(TC_SeatTest.java:144)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 10:50:30] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 10:50:30] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 10:50:31] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 10:50:31] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 10:53:07] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:53:07] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:53:07] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:53:09] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:53:09] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:53:09] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 10:53:09] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 10:53:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 10:53:10] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 10:53:10] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 10:53:10] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 10:53:10] [INFO ] LoginPage - clickLogin
+[2025-12-08 10:53:10] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:53:10] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:53:10] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 10:53:10] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:53:10] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 10:53:14] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 10:53:14] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 10:53:14] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 10:53:14] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 10:53:14] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 10:53:14] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:53:14] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:53:15] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='36']
+[2025-12-08 10:53:17] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='36']
+[2025-12-08 10:53:17] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='36']
+[2025-12-08 10:53:17] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:53:17] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:53:17] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 10:53:17] [INFO ] SeatPage - waitForPresenceOfAllElmentsLocatedBy: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:53:17] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 10:53:17] [ERROR] TestListener - ===== FAILED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+java.lang.AssertionError: Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at testcases.seat.TC_SeatTest.TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(TC_SeatTest.java:144)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 10:53:17] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 10:53:17] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 10:53:17] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 10:53:18] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 10:57:35] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:57:35] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:57:35] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:57:37] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:57:37] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:57:41] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 10:57:41] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 10:57:41] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 10:57:41] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 10:57:41] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 10:57:41] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 10:57:41] [INFO ] LoginPage - clickLogin
+[2025-12-08 10:57:41] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:57:41] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:57:41] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 10:57:41] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:57:54] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 10:57:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 10:57:54] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 10:57:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 10:57:55] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 10:57:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 10:57:55] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:57:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:58:21] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:58:21] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:58:21] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:58:23] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:58:23] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:58:23] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:58:23] [WARN ] TestListener - ===== SKIPPED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:58:23] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 10:58:24] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 10:58:38] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 10:58:38] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 10:58:38] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 10:58:40] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:58:40] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 10:58:40] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 10:58:40] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 10:58:40] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 10:58:41] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 10:58:41] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 10:58:41] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 10:58:41] [INFO ] LoginPage - clickLogin
+[2025-12-08 10:58:41] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:58:41] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 10:58:41] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 10:58:41] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 10:58:53] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 10:58:53] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 10:58:53] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 10:58:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 10:58:54] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 10:58:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 10:58:54] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:58:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 10:58:57] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='37']
+[2025-12-08 10:58:57] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='37']
+[2025-12-08 10:58:57] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='37']
+[2025-12-08 11:03:34] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:03:34] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:03:34] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:03:38] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:03:38] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:03:38] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:03:39] [ERROR] TestListener - ===== FAILED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="MuiButtonBase-root MuiButton-root MuiButton-text jss301" tabindex="0" type="button">...</button> is not clickable at point (1599, 623). Other element would receive the click: <div class="swal2-container swal2-center swal2-backdrop-show" style="overflow-y: auto;">...</div>
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a0791173f16d4bec7336ec93d99e8b3f, clickElement {id=f.8052942F1C51BAD96A40A0394DCD93B1.d.711767929F7A1B078520A7696B6AB6A3.e.193}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57932}, goog:processID: 12112, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57932/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (a0791173f16d4bec7336ec93d99e8b3f)] -> xpath: //button[span[contains(text(),'ĐẶT VÉ')]]]
+Session ID: a0791173f16d4bec7336ec93d99e8b3f
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at base.BasePage.click(BasePage.java:51)
+	at pages.SeatPage.clickAgreeButtonInAlert(SeatPage.java:155)
+	at testcases.seat.TC_SeatTest.TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(TC_SeatTest.java:142)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:317)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 11:03:39] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 11:03:39] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 11:03:39] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 11:03:40] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 11:11:47] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 11:11:48] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 11:11:48] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 11:11:51] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:11:51] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:11:51] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 11:11:51] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 11:11:51] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 11:11:51] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 11:11:51] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 11:11:51] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 11:11:51] [INFO ] LoginPage - clickLogin
+[2025-12-08 11:11:51] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:11:51] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:11:51] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 11:11:51] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:12:04] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 11:12:04] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 11:12:04] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 11:12:05] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 11:12:05] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 11:12:05] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 11:12:05] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:12:05] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:12:08] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='20']
+[2025-12-08 11:12:08] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='20']
+[2025-12-08 11:12:08] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='20']
+[2025-12-08 11:12:09] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:12:09] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:12:09] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:12:10] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:12:10] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:12:10] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:12:13] [INFO ] SeatPage - waitForPresenceOfAllElmentsLocatedBy: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 11:12:15] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 11:12:16] [INFO ] TestListener - ===== PASSED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:12:16] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 11:12:16] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 11:12:16] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 11:12:16] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 11:13:12] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 11:13:12] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 11:13:12] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 11:13:14] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:13:14] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:13:15] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 11:13:15] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 11:13:15] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 11:13:15] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 11:13:15] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 11:13:15] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 11:13:15] [INFO ] LoginPage - clickLogin
+[2025-12-08 11:13:15] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:13:15] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:13:15] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 11:13:15] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:13:15] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 11:13:19] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 11:13:19] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 11:13:20] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 11:13:20] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 11:13:20] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 11:13:20] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:13:20] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:13:20] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='21']
+[2025-12-08 11:13:21] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='21']
+[2025-12-08 11:13:21] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='21']
+[2025-12-08 11:13:22] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:13:22] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:13:22] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:13:22] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:13:22] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:13:22] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:13:22] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 11:13:23] [INFO ] TestListener - ===== PASSED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:13:23] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 11:13:23] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 11:13:24] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 11:13:24] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 11:14:16] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 11:14:17] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 11:14:17] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 11:14:19] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:14:19] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:14:19] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 11:14:19] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 11:14:19] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 11:14:19] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 11:14:19] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 11:14:19] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 11:14:19] [INFO ] LoginPage - clickLogin
+[2025-12-08 11:14:19] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:14:19] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:14:19] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 11:14:19] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:14:19] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 11:14:24] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 11:14:24] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 11:14:24] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 11:14:25] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 11:14:25] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 11:14:25] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:14:25] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:14:25] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='22']
+[2025-12-08 11:14:27] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='22']
+[2025-12-08 11:14:27] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='22']
+[2025-12-08 11:14:27] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:14:27] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:14:27] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:14:27] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:14:27] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:14:27] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:14:27] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 11:14:29] [INFO ] TestListener - ===== PASSED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:14:29] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 11:14:29] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 11:14:29] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 11:14:30] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 11:16:02] [INFO ] TC_SeatTest - Before Suite executed
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 11:16:03] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 11:16:03] [INFO ] TC_SeatTest - Before class executed
+[2025-12-08 11:16:05] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:16:05] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 11:16:05] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 11:16:05] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 11:16:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 11:16:05] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 11:16:05] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 11:16:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 11:16:05] [INFO ] LoginPage - clickLogin
+[2025-12-08 11:16:05] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:16:05] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 11:16:05] [INFO ] TC_SeatTest - Before Method executed
+[2025-12-08 11:16:05] [INFO ] TestListener - ===== START TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+[2025-12-08 11:16:05] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 11:16:09] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 11:16:09] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 11:16:10] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 11:16:10] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 11:16:10] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 11:16:10] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:16:10] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 11:16:10] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='23']
+[2025-12-08 11:16:11] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='23']
+[2025-12-08 11:16:11] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='23']
+[2025-12-08 11:16:11] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:16:12] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:16:12] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-08 11:16:12] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:16:12] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:16:12] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-08 11:16:12] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[span[contains(text(),'Ghế ')]]
+[2025-12-08 11:16:14] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 11:16:14] [ERROR] TestListener - ===== FAILED TEST: TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully =====
+java.lang.AssertionError: Ghế không được bỏ chọn khi quay lại trang trước đó expected [0] but found [1]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at testcases.seat.TC_SeatTest.TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(TC_SeatTest.java:146)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 11:16:14] [INFO ] TC_SeatTest - After Method executed
+[2025-12-08 11:16:14] [INFO ] TC_SeatTest - After class executed
+[2025-12-08 11:16:14] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 11:16:15] [INFO ] TC_SeatTest - Test Suite completed
+[2025-12-08 14:23:28] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 14:23:28] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 14:23:28] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 14:23:28] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 14:23:28] [INFO ] TC_FilterTest - Before class executed
+[2025-12-08 14:23:34] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 14:23:34] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 14:23:35] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 14:23:35] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 14:23:35] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 14:23:35] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 14:23:35] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 14:23:35] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 14:23:35] [INFO ] LoginPage - clickLogin
+[2025-12-08 14:23:35] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 14:23:35] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 14:23:35] [INFO ] TC_FilterTest - Before Method executed
+[2025-12-08 14:23:35] [INFO ] TestListener - ===== START TEST: TC08_navigateToSeatPageAfterClickBookTicketButton =====
+[2025-12-08 14:23:35] [INFO ] TC_FilterTest - Step 1: Select film
+[2025-12-08 14:23:35] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 14:23:40] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 14:23:40] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 14:23:41] [INFO ] TC_FilterTest - Step 2: Select cinema
+[2025-12-08 14:23:41] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 14:23:41] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 14:23:41] [INFO ] TC_FilterTest - Step 3: Select date time
+[2025-12-08 14:23:41] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 14:23:41] [INFO ] TC_FilterTest - Step 4: Click 'Mua Vé Ngay' button
+[2025-12-08 14:23:41] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 14:23:41] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 14:23:41] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 14:23:41] [INFO ] TC_FilterTest - Step 5: Verify navigate to seat page
+[2025-12-08 14:23:41] [INFO ] TestListener - ===== PASSED TEST: TC08_navigateToSeatPageAfterClickBookTicketButton =====
+[2025-12-08 14:23:41] [INFO ] TC_FilterTest - After Method executed
+[2025-12-08 14:23:41] [INFO ] TC_FilterTest - After class executed
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 14:23:42] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 14:23:43] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 14:59:07] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 14:59:08] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 14:59:08] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 14:59:08] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 14:59:08] [INFO ] TC_FilterTest - Before class executed
+[2025-12-08 14:59:10] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 14:59:10] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 14:59:10] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 14:59:10] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 14:59:10] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 14:59:10] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 14:59:10] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 14:59:10] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 14:59:10] [INFO ] LoginPage - clickLogin
+[2025-12-08 14:59:10] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 14:59:10] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 14:59:10] [INFO ] TC_FilterTest - Before Method executed
+[2025-12-08 14:59:11] [INFO ] TestListener - ===== START TEST: TC08_navigateToSeatPageAfterClickBookTicketButton =====
+[2025-12-08 14:59:11] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 14:59:15] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 14:59:15] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 14:59:16] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 14:59:16] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 14:59:16] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 14:59:16] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 14:59:16] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 14:59:16] [INFO ] TC_FilterTest - Step 5: Verify navigate to seat page
+[2025-12-08 14:59:16] [INFO ] TestListener - ===== PASSED TEST: TC08_navigateToSeatPageAfterClickBookTicketButton =====
+[2025-12-08 14:59:16] [INFO ] TC_FilterTest - After Method executed
+[2025-12-08 14:59:16] [INFO ] TC_FilterTest - After class executed
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 14:59:16] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 14:59:17] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 15:02:02] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 15:02:02] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 15:02:02] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 15:02:02] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 15:02:02] [INFO ] TC_CinemaTest - Before class executed
+[2025-12-08 15:02:05] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:02:05] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:02:05] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 15:02:05] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 15:02:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 15:02:05] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 15:02:05] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 15:02:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 15:02:06] [INFO ] LoginPage - clickLogin
+[2025-12-08 15:02:06] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:02:06] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:02:06] [INFO ] TC_CinemaTest - Before Method executed
+[2025-12-08 15:02:06] [INFO ] TestListener - ===== START TEST: TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema =====
+[2025-12-08 15:02:06] [INFO ] HomePage - click: By.xpath: //button[.//img[contains(@alt, 'cgv')]]
+[2025-12-08 15:02:06] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//img[contains(@alt, 'cgv')]]
+[2025-12-08 15:02:10] [INFO ] HomePage - click: By.xpath: //button[.//h4[contains(text(),'CGV - Golden Plaza')]]
+[2025-12-08 15:02:10] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//h4[contains(text(),'CGV - Golden Plaza')]]
+[2025-12-08 15:02:11] [INFO ] HomePage - click: By.xpath: //h2[contains(., 'AVATAR 2')]/following-sibling::div//a[.//p[contains(text(),'15-10-2021')]and .//h3[contains(text(),'08:42')]]
+[2025-12-08 15:02:11] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //h2[contains(., 'AVATAR 2')]/following-sibling::div//a[.//p[contains(text(),'15-10-2021')]and .//h3[contains(text(),'08:42')]]
+[2025-12-08 15:02:11] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 15:02:11] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 15:02:13] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 15:02:13] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 15:02:13] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 15:02:13] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 15:02:13] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 15:02:13] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 15:02:14] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:02:14] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:02:14] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:02:14] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:02:14] [ERROR] TestListener - ===== FAILED TEST: TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema =====
+java.lang.AssertionError: Không hiển thị đúng giờ chiếu expected [08:42] but found [08:10]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.home.TC_CinemaTest.TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema(TC_CinemaTest.java:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 15:02:14] [INFO ] TC_CinemaTest - After Method executed
+[2025-12-08 15:02:14] [INFO ] TC_CinemaTest - After class executed
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 15:02:14] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 15:02:15] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 15:02:38] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 15:02:39] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 15:02:39] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 15:02:39] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 15:02:39] [INFO ] TC_CinemaTest - Before class executed
+[2025-12-08 15:02:41] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:02:41] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:02:41] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 15:02:41] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 15:02:41] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 15:02:41] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 15:02:41] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 15:02:41] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 15:02:41] [INFO ] LoginPage - clickLogin
+[2025-12-08 15:02:41] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:02:41] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:02:41] [INFO ] TC_CinemaTest - Before Method executed
+[2025-12-08 15:02:41] [INFO ] TestListener - ===== START TEST: TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema =====
+[2025-12-08 15:02:41] [INFO ] HomePage - click: By.xpath: //button[.//img[contains(@alt, 'cgv')]]
+[2025-12-08 15:02:41] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//img[contains(@alt, 'cgv')]]
+[2025-12-08 15:02:46] [INFO ] HomePage - click: By.xpath: //button[.//h4[contains(text(),'CGV - Golden Plaza')]]
+[2025-12-08 15:02:46] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//h4[contains(text(),'CGV - Golden Plaza')]]
+[2025-12-08 15:02:46] [INFO ] HomePage - click: By.xpath: //h2[contains(., 'AVATAR 2')]/following-sibling::div//a[.//p[contains(text(),'15-10-2021')]and .//h3[contains(text(),'08:42')]]
+[2025-12-08 15:02:46] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //h2[contains(., 'AVATAR 2')]/following-sibling::div//a[.//p[contains(text(),'15-10-2021')]and .//h3[contains(text(),'08:42')]]
+[2025-12-08 15:02:47] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 15:02:47] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 15:02:49] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 15:02:49] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 15:02:49] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 15:02:49] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 15:02:49] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 15:02:49] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 15:02:49] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:02:49] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:02:49] [INFO ] TestListener - ===== PASSED TEST: TC05_verifyTicketAtSeatPageWhenUserBookTicketAtListCinema =====
+[2025-12-08 15:02:49] [INFO ] TC_CinemaTest - After Method executed
+[2025-12-08 15:02:49] [INFO ] TC_CinemaTest - After class executed
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 15:02:49] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 15:02:49] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 15:03:31] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 15:03:31] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 15:03:31] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 15:03:31] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 15:03:31] [INFO ] TC_FilterTest - Before class executed
+[2025-12-08 15:03:34] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:03:34] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:03:34] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 15:03:34] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 15:03:34] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 15:03:34] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 15:03:34] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 15:03:34] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 15:03:34] [INFO ] LoginPage - clickLogin
+[2025-12-08 15:03:34] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:03:34] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:03:34] [INFO ] TC_FilterTest - Before Method executed
+[2025-12-08 15:03:34] [INFO ] TestListener - ===== START TEST: TC09_verifyTicketAtSeatPageWhenUserBookTicketByFilter =====
+[2025-12-08 15:03:34] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-08 15:03:39] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-08 15:03:39] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-08 15:03:39] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-08 15:03:39] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-08 15:03:39] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-08 15:03:40] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 15:03:40] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-08 15:03:40] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 15:03:40] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 15:03:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 15:03:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 15:03:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 15:03:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 15:03:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 15:03:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 15:03:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:03:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:03:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:03:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 15:03:42] [ERROR] TestListener - ===== FAILED TEST: TC09_verifyTicketAtSeatPageWhenUserBookTicketByFilter =====
+java.lang.AssertionError: Không hiển thị đúng giờ chiếu expected [08:42] but found [08:10]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.home.TC_FilterTest.TC09_verifyTicketAtSeatPageWhenUserBookTicketByFilter(TC_FilterTest.java:187)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 15:03:42] [INFO ] TC_FilterTest - After Method executed
+[2025-12-08 15:03:42] [INFO ] TC_FilterTest - After class executed
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 15:03:42] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 15:03:43] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 15:05:37] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 15:05:37] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 15:05:37] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 15:05:37] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 15:05:38] [INFO ] TC_CinemaTest - Before class executed
+[2025-12-08 15:05:40] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:05:40] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:05:40] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 15:05:40] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 15:05:40] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 15:05:40] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 15:05:40] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 15:05:40] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 15:05:40] [INFO ] LoginPage - clickLogin
+[2025-12-08 15:05:40] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:05:40] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:05:40] [INFO ] TC_CinemaTest - Before Method executed
+[2025-12-08 15:05:40] [INFO ] TestListener - ===== START TEST: TC04_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 15:05:40] [INFO ] HomePage - click: By.xpath: //button[.//img[contains(@alt, 'cgv')]]
+[2025-12-08 15:05:40] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//img[contains(@alt, 'cgv')]]
+[2025-12-08 15:05:45] [INFO ] HomePage - click: By.xpath: //button[.//h4[contains(text(),'CGV - Pandora City')]]
+[2025-12-08 15:05:45] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//h4[contains(text(),'CGV - Pandora City')]]
+[2025-12-08 15:05:45] [INFO ] HomePage - click: By.xpath: //h2[contains(., 'John Wick')]/following-sibling::div//a[.//p[contains(text(),'15-10-2020')]and .//h3[contains(text(),'13:10')]]
+[2025-12-08 15:05:45] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //h2[contains(., 'John Wick')]/following-sibling::div//a[.//p[contains(text(),'15-10-2020')]and .//h3[contains(text(),'13:10')]]
+[2025-12-08 15:05:45] [INFO ] TC_CinemaTest - Step 4: Verify navigate to seat page
+[2025-12-08 15:05:45] [INFO ] TestListener - ===== PASSED TEST: TC04_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 15:05:45] [INFO ] TC_CinemaTest - After Method executed
+[2025-12-08 15:05:45] [INFO ] TC_CinemaTest - After class executed
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 15:05:46] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 15:05:46] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 15:58:13] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 15:58:13] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 15:58:13] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 15:58:13] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 15:58:13] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 15:58:13] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 15:58:13] [INFO ] TC_ShowTimeTest - Before class executed
+[2025-12-08 15:58:16] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:58:16] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:58:16] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 15:58:16] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 15:58:16] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 15:58:16] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 15:58:16] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 15:58:16] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 15:58:16] [INFO ] LoginPage - clickLogin
+[2025-12-08 15:58:16] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:58:16] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:58:16] [INFO ] TC_ShowTimeTest - Before Method executed
+[2025-12-08 15:58:16] [INFO ] TestListener - ===== START TEST: TC02_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 15:58:16] [INFO ] TC_ShowTimeTest - Step 1: Click 'Mua Vé' button at a movie
+[2025-12-08 15:58:16] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //div[contains(@style, 'avatar-2_gp09')]
+[2025-12-08 15:58:21] [INFO ] HomePage - click: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 15:58:21] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 15:58:21] [INFO ] TC_ShowTimeTest - Step 2: Select a cinema logo
+[2025-12-08 15:58:21] [INFO ] DetailMoviePage - click: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 15:58:21] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 15:58:22] [INFO ] TC_ShowTimeTest - Step 3: Select a show time
+[2025-12-08 15:58:22] [INFO ] DetailMoviePage - click: By.xpath: //a[p[normalize-space()='17-10-2021'] and p[normalize-space()='08:43']]
+[2025-12-08 15:58:22] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //a[p[normalize-space()='17-10-2021'] and p[normalize-space()='08:43']]
+[2025-12-08 15:58:57] [ERROR] TestListener - ===== FAILED TEST: TC02_navigateToSeatPageAfterSelectShowTime =====
+org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1cfe1cdee9a77b230eaa10ec34b065cd, findElement {value=//a[p[normalize-space()='17-10-2021'] and p[normalize-space()='08:43']], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63409}, goog:processID: 15968, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63409/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1cfe1cdee9a77b230eaa10ec34b065cd
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at base.BasePage.waitForElementToBeClickable(BasePage.java:39)
+	at base.BasePage.click(BasePage.java:50)
+	at pages.DetailMoviePage.selectShowTime(DetailMoviePage.java:52)
+	at testcases.showtime.TC_ShowTimeTest.TC02_navigateToSeatPageAfterSelectShowTime(TC_ShowTimeTest.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 15:58:57] [INFO ] TC_ShowTimeTest - After Method executed
+[2025-12-08 15:58:57] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 15:58:57] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 15:58:57] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 15:58:58] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 15:58:58] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 15:58:58] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 15:59:05] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 15:59:05] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 15:59:05] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 15:59:05] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 15:59:05] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 15:59:05] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 15:59:05] [INFO ] TC_ShowTimeTest - Before class executed
+[2025-12-08 15:59:08] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:59:08] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 15:59:08] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 15:59:08] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 15:59:08] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 15:59:08] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 15:59:08] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 15:59:08] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 15:59:08] [INFO ] LoginPage - clickLogin
+[2025-12-08 15:59:08] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:59:08] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 15:59:08] [INFO ] TC_ShowTimeTest - Before Method executed
+[2025-12-08 15:59:08] [INFO ] TestListener - ===== START TEST: TC02_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 15:59:08] [INFO ] TC_ShowTimeTest - Step 1: Click 'Mua Vé' button at a movie
+[2025-12-08 15:59:08] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //div[contains(@style, 'avatar-2_gp09')]
+[2025-12-08 15:59:13] [INFO ] HomePage - click: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 15:59:13] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 15:59:13] [INFO ] TC_ShowTimeTest - Step 2: Select a cinema logo
+[2025-12-08 15:59:13] [INFO ] DetailMoviePage - click: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 15:59:13] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 15:59:13] [INFO ] TC_ShowTimeTest - Step 3: Select a show time
+[2025-12-08 15:59:13] [INFO ] DetailMoviePage - click: By.xpath: //a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 15:59:13] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 15:59:13] [INFO ] TestListener - ===== PASSED TEST: TC02_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 15:59:13] [INFO ] TC_ShowTimeTest - After Method executed
+[2025-12-08 15:59:13] [INFO ] TC_ShowTimeTest - After class executed
+[2025-12-08 15:59:14] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 15:59:14] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 15:59:14] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 15:59:14] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 15:59:14] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 15:59:14] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 16:10:35] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 16:10:35] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 16:10:35] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 16:10:35] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 16:10:35] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 16:10:35] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 16:10:35] [INFO ] TC_ShowTimeTest - Before class executed
+[2025-12-08 16:10:38] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 16:10:38] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 16:10:38] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 16:10:38] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 16:10:38] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 16:10:38] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 16:10:38] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 16:10:38] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 16:10:38] [INFO ] LoginPage - clickLogin
+[2025-12-08 16:10:38] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 16:10:38] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 16:10:38] [INFO ] TC_ShowTimeTest - Before Method executed
+[2025-12-08 16:10:38] [INFO ] TestListener - ===== START TEST: TC02_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 16:10:38] [INFO ] TC_ShowTimeTest - Step 1: Click 'Mua Vé' button at a movie
+[2025-12-08 16:10:38] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //div[contains(@style, 'avatar-2_gp09')]
+[2025-12-08 16:10:43] [INFO ] HomePage - click: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 16:10:43] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 16:10:43] [INFO ] TC_ShowTimeTest - Step 2: Select a cinema logo
+[2025-12-08 16:10:43] [INFO ] DetailMoviePage - click: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 16:10:43] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 16:10:44] [INFO ] TC_ShowTimeTest - Step 3: Select a show time
+[2025-12-08 16:10:44] [INFO ] DetailMoviePage - click: By.xpath: //div[div[h3[contains(text(),'CGV - VivoCity')]]]//a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 16:10:44] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //div[div[h3[contains(text(),'CGV - VivoCity')]]]//a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 16:10:44] [INFO ] TestListener - ===== PASSED TEST: TC02_navigateToSeatPageAfterSelectShowTime =====
+[2025-12-08 16:10:44] [INFO ] TC_ShowTimeTest - After Method executed
+[2025-12-08 16:10:44] [INFO ] TC_ShowTimeTest - After class executed
+[2025-12-08 16:10:44] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 16:10:44] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 16:10:44] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 16:10:44] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 16:10:44] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 16:10:44] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 16:10:52] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 16:10:53] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 16:10:53] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 16:10:53] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 16:10:53] [INFO ] TC_MovieTest - Before class executed
+[2025-12-08 16:10:55] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 16:10:55] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 16:10:55] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 16:10:55] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 16:10:55] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 16:10:55] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 16:10:55] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 16:10:55] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 16:10:55] [INFO ] LoginPage - clickLogin
+[2025-12-08 16:10:55] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 16:10:55] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 16:10:55] [INFO ] TC_MovieTest - Before Method executed
+[2025-12-08 16:10:55] [INFO ] TestListener - ===== START TEST: TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm =====
+[2025-12-08 16:10:55] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //div[contains(@style, 'avatar-2_gp09')]
+[2025-12-08 16:11:00] [INFO ] HomePage - click: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 16:11:00] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 16:11:00] [INFO ] DetailMoviePage - click: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 16:11:00] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 16:11:01] [INFO ] DetailMoviePage - click: By.xpath: //div[div[h3[contains(text(),'CGV - VivoCity')]]]//a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 16:11:01] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //div[div[h3[contains(text(),'CGV - VivoCity')]]]//a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 16:11:01] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 16:11:01] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 16:11:02] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 16:11:02] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 16:11:02] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 16:11:02] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 16:11:02] [ERROR] TestListener - ===== FAILED TEST: TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm =====
+java.lang.AssertionError: Không hiển thị đúng địa chỉ cụm rạp expected [Tầng 4, Trung tâm thương mại Golden Plaza, 922 Nguyễn Trãi, P. 14, Q. 5] but found [Lầu 5, Trung tâm thương mại SC VivoCity - 1058 Nguyễn Văn Linh, Q. 7]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.home.TC_MovieTest.TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(TC_MovieTest.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 16:11:02] [INFO ] TC_MovieTest - After Method executed
+[2025-12-08 16:11:03] [INFO ] TC_MovieTest - After class executed
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 16:11:03] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 16:11:03] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed
+[2025-12-08 16:11:31] [INFO ] TC_BookTicketByFilterMovie - Before Suite executed
+[2025-12-08 16:11:31] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-08 16:11:31] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-08 16:11:31] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-08 16:11:31] [INFO ] TC_MovieTest - Before class executed
+[2025-12-08 16:11:34] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 16:11:34] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-08 16:11:35] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-08 16:11:35] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-08 16:11:35] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-08 16:11:35] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-08 16:11:35] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-08 16:11:35] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-08 16:11:35] [INFO ] LoginPage - clickLogin
+[2025-12-08 16:11:35] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 16:11:35] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-08 16:11:35] [INFO ] TC_MovieTest - Before Method executed
+[2025-12-08 16:11:35] [INFO ] TestListener - ===== START TEST: TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm =====
+[2025-12-08 16:11:35] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //div[contains(@style, 'avatar-2_gp09')]
+[2025-12-08 16:11:39] [INFO ] HomePage - click: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 16:11:39] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //div[contains(@style, 'avatar-2_gp09')]/following-sibling::div//a
+[2025-12-08 16:11:40] [INFO ] DetailMoviePage - click: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 16:11:40] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //img[contains(@alt, 'cgv')]
+[2025-12-08 16:11:40] [INFO ] DetailMoviePage - click: By.xpath: //div[div[h3[contains(text(),'CGV - VivoCity')]]]//a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 16:11:40] [INFO ] DetailMoviePage - waitForElementToBeClickable: By.xpath: //div[div[h3[contains(text(),'CGV - VivoCity')]]]//a[p[normalize-space()='07-10-2021'] and p[normalize-space()='08:25']]
+[2025-12-08 16:11:40] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 16:11:40] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-08 16:11:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 16:11:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-08 16:11:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 16:11:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Địa chỉ:')]]
+[2025-12-08 16:11:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 16:11:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//h3[contains(normalize-space(), ' -')]
+[2025-12-08 16:11:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 16:11:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 16:11:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 16:11:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Ngày giờ chiếu')]]//span
+[2025-12-08 16:11:42] [ERROR] TestListener - ===== FAILED TEST: TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm =====
+java.lang.AssertionError: Không hiển thị đúng giờ chiếu expected [08:25] but found [08:10]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.home.TC_MovieTest.TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(TC_MovieTest.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-08 16:11:42] [INFO ] TC_MovieTest - After Method executed
+[2025-12-08 16:11:42] [INFO ] TC_MovieTest - After class executed
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> START TEST SUITE: full flow test
+[2025-12-08 16:11:42] [INFO ] TestListener - >>> FINISH TEST SUITE: full flow test
+[2025-12-08 16:11:43] [INFO ] TC_BookTicketByFilterMovie - Test Suite completed

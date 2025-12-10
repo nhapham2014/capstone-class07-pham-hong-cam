@@ -17,10 +17,13 @@ public class BasePage {
     protected final Logger LOG = LogManager.getLogger(getClass());
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected WebDriverWait waitspecial;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+        waitspecial = new WebDriverWait(driver, Duration.ofSeconds(600));
+
     }
 
     public WebElement waitForVisibilityOfElementLocated(By locator) {
@@ -38,6 +41,10 @@ public class BasePage {
         LOG.info("waitForElementToBeClickable: " + locator);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+    public WebElement waitForElementCheckboxToBeClickable(By locator) {
+        LOG.info("waitForElementCheckboxToBeClickable: " + locator);
+        return waitspecial.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 
     public void sendKeys(By locator, String value) {
         LOG.info("sendKeys: " + locator + " with " + value);
@@ -48,6 +55,11 @@ public class BasePage {
     public void click(By locator) {
         LOG.info("click: " + locator);
         WebElement element = waitForElementToBeClickable(locator);
+        element.click();
+    }
+    public void clickCheckbox(By locator){
+        LOG.info("clickcheckbox: " + locator);
+        WebElement element = waitForElementCheckboxToBeClickable(locator);
         element.click();
     }
 

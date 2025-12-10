@@ -12,7 +12,7 @@
     </test>
     <test name="login test" parallel="classes" thread-count="2">
         <classes>
-            <class name="testcases.login.TC02_LoginTest" />
+            <class name="testcases.login.TC0_LoginTest" />
         </classes>
     </test>
     <test name="home test" parallel="classes" thread-count="1">
