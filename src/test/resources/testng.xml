@@ -6,7 +6,7 @@
     </listeners>
     <test name="register test" parallel="classes" thread-count="2">
         <classes>
-            <class name="testcases.register.TC01_RegisterTest" />
+            <class name="testcases.register.TC_RegisterTest" />
 
         </classes>
     </test>
