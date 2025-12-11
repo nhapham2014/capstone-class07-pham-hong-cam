@@ -36,6 +36,9 @@ public class BaseTest {
         DriverManager driverManager = DriverManagerFactory.getDriverManager("chrome");
         driver = driverManager.createDriver();
         driver.manage().window().maximize();
+        loginPage = new LoginPage(driver);
+        homePage = new HomePage(driver);
+        driver.get("https://demo1.cybersoft.edu.vn");
 
     }
 

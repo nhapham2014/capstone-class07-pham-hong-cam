@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage extends CommonPage {
+    LoginPage loginPage;
 
     private By byTxtAccount = By.name("taiKhoan");;
     private By byTxtPassword = By.id("matKhau");;
@@ -11,7 +12,17 @@ public class RegisterPage extends CommonPage {
     private By byTxtName = By.id("hoTen");;
     private By byTxtEmail = By.id("email");;
     private By byBtnRegister = By.xpath("//button[.='Đăng ký']");;
-    private By byLblRegisterMsg = By.id("swal2-title");;
+    private By byMsgSuccess = By.id("swal2-title");;
+    private By byTxtErrorAccount = By.xpath("//*[@id='taiKhoan-helper-text']");
+    private By byTxtErrorPassword = By.xpath("//*[@id='matKhau-helper-text']");
+    private By byTxtErrorConfirmPassword = By.xpath("//*[@id='confirmPassWord-helper-text']");
+    private By byTxtErrorName = By.xpath("//*[@id='hoTen-helper-text']");
+    private By byTxtErrorEmail = By.xpath("//*[@id='email-helper-text']");
+    private By byTxtError = By.xpath("//div[@role='alert']/div[@class='MuiAlert-message']");
+    private By byLinkLogin = By.xpath("//h3[contains(text(),'Đăng nhập')]");
+    private By byBtnClose = By.xpath("//button[contains(text(),'Đóng')]");
+
+
 
     public RegisterPage(WebDriver driver) {
         super(driver);
@@ -37,11 +48,67 @@ public class RegisterPage extends CommonPage {
         sendKeys(byTxtEmail, email);
     }
 
-    public void clickRegister() {
+    public void clickRegisterWithError() {
         click(byBtnRegister);
+    }
+    public LoginPage clickRegister(){
+        click(byBtnRegister);
+        waitForPageLoaded();
+        loginPage = new LoginPage(driver);
+        return loginPage;
     }
 
     public String getMessage() {
-        return getText(byLblRegisterMsg);
+        return getText(byMsgSuccess);
     }
+    public void clickClose(){
+        click(byBtnClose);
+    }
+    public String getErrorAccount(){
+        waitForVisibilityOfElementLocated(byTxtErrorAccount);
+        return getText(byTxtErrorAccount);
+    }
+    public String getErrorPassword() {
+        waitForVisibilityOfElementLocated(byTxtErrorPassword);
+        return getText(byTxtErrorPassword);
+    }
+    public String getErrorConfirmPassword() {
+        waitForVisibilityOfElementLocated(byTxtErrorConfirmPassword);
+        return getText(byTxtErrorConfirmPassword);
+    }
+    public String getErrorName() {
+        waitForVisibilityOfElementLocated(byTxtErrorName);
+        return getText(byTxtErrorName);
+    }
+    public String getErrorEmail() {
+        waitForVisibilityOfElementLocated(byTxtErrorEmail);
+        return getText(byTxtErrorEmail);
+    }
+    public String getErrorText(){
+        waitForVisibilityOfElementLocated(byTxtError);
+        return getText(byTxtError);
+    }
+    public LoginPage clickLoginLink(){
+        click(byLinkLogin);
+        waitForPageLoaded();
+        loginPage = new LoginPage(driver);
+        return loginPage;
+    }
+    public LoginPage registerAccount(String account, String password, String confirmpassword, String name, String email){
+        enterAccount(account);
+        enterPassword(password);
+        enterConfirmPassword(confirmpassword);
+        enterName(name);
+        enterEmail(email);
+        return clickRegister();
+    }
+    public void registerInvalid(String account, String password, String confirmpassword, String name, String email){
+        enterAccount(account);
+        enterPassword(password);
+        enterConfirmPassword(confirmpassword);
+        enterName(name);
+        enterEmail(email);
+        clickRegisterWithError();
+    }
+
 }

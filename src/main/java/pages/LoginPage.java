@@ -17,6 +17,7 @@ public class LoginPage extends CommonPage {
     private By byTxtErrorPassword = By.xpath("//*[@id='matKhau-helper-text']");
     private By byMsgError = By.xpath("//div[@role='alert']/div[@class='MuiAlert-message']");
     private By byChbxRemember = By.xpath("//input[@name='remember']");
+    private By byLnkSignUp = By.xpath("//h3[contains(text(),'Đăng ký')]");
 
 
     public LoginPage(WebDriver driver) {
@@ -74,6 +75,12 @@ public class LoginPage extends CommonPage {
         WebElement checkbox = driver.findElement(byChbxRemember);
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", checkbox);
 
+    }
+    public RegisterPage clickSignUpLink(){
+        click(byLnkSignUp);
+        waitForPageLoaded();
+        RegisterPage registerPage = new RegisterPage(driver);
+        return registerPage;
     }
     public String getValueAccount(){
         return driver.findElement(byTxtAccountLogin).getAttribute("value");

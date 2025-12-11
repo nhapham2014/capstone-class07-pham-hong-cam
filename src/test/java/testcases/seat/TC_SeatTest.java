@@ -7,6 +7,7 @@ import pages.HomePage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -27,11 +28,12 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: Select the seat
         ExtentReportManager.info("Step 2: Select the seat");
         LOG.info("Step 2: Select the seat");
-        seatPage.selectSeat("85");
+        seatPage.selectRandomSeat();
+        String numberSeat = seatPage.selectRandomSeat();
         //Step 3: verify color of the selected seat
         ExtentReportManager.info("Step 3: verify color of the selected seat");
         LOG.info("Step 3: verify color of the selected seat");
-        String color = seatPage.getSeatColor("85");
+        String color = seatPage.getSeatColor(numberSeat);
         Assert.assertEquals(color,"green",
                 "Ghế không đổi màu xanh sau khi chọn");
     }
@@ -44,11 +46,12 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("86");
+        seatPage.selectRandomSeat();
+        String numberSeat = seatPage.selectRandomSeat();
         //Step 3: unselect the seat
         ExtentReportManager.info("Step 3: unselect the seat");
         LOG.info("Step 3: unselect the seat");
-        seatPage.selectSeat("86");
+        seatPage.selectSeat(numberSeat);
         //Step 4: verify color of the unselect seat
         ExtentReportManager.info("Step 4: verify color of the unselect seat");
         LOG.info("Step 4: verify color of the unselect seat");
@@ -65,9 +68,8 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("33");
-        seatPage.selectSeat("34");
-        seatPage.selectSeat("35");
+        seatPage.selectRandomSeats(3);
+
         //Step 3: verify the seat on ticket
         ExtentReportManager.info("Step 3: verify the seat on ticket");
         LOG.info("Step 3: verify the seat on ticket");
@@ -197,17 +199,21 @@ public class TC_SeatTest extends BaseTestWithLogin {
         Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được reset sau khi đặt vé thành công");
 
     }
+
     @Test
     public void TC(){
         selectMovieAndShowTime();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        seatPage.selectSeat("17");
-        seatPage.clickBookTicketButton();
-        context.set("bookingTime", LocalDateTime.now().format(formatter));
-        String time = context.get("bookingTime", String.class);
-        System.out.println(time);
+      String expect = seatPage.selectRandomSeat();
 
+        String actual = seatPage.getSeatID();
+      Assert.assertEquals(actual,expect);
 
+    }
+    @Test
+    public void TC01(){
+        selectMovieAndShowTime();
+        seatPage.selectSeat("160");
+        Assert.assertEquals(seatPage.getSeatID(),"160","Mã ghế không đúng");
     }
 
 

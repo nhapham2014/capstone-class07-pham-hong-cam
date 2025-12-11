@@ -177,5 +177,21 @@ public class TC0_LoginTest extends BaseTest {
         Assert.assertEquals(actualAccountValue, "cam0592");
         Assert.assertEquals(actualPasswordValue, "Diqit0505@");
     }
+    @Test
+    public void TC07_verifyNavigateToRegisterPageWhenClickSignUpLink() {
+        //Step 1: Navigate to Login page
+        ExtentReportManager.info("Step 1: Navigate to Login page");
+        LOG.info("Step 1: Navigate to Login page");
+        navigateToLoginPage();
+        //Step 2: Click on the Sign Up link
+        ExtentReportManager.info("Step 2: Click on the Sign Up link");
+        LOG.info("Step 2: Click on the Sign Up link");
+        loginPage.clickSignUpLink();
+        //Step 3: verify navigate to Register page successfully
+        ExtentReportManager.info("Step 3: verify navigate to Register page successfully");
+        LOG.info("Step 3: verify navigate to Register page successfully");
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals(actualUrl, "https://demo1.cybersoft.edu.vn/sign-up", "Không điều hướng đến trang Đăng Ký");
+    }
 
 }
