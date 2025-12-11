@@ -1,0 +1,1205 @@
+[2025-12-10 11:35:45] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 11:35:45] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 11:35:45] [INFO ] TC_HistoryTest - Before class executed
+[2025-12-10 11:35:50] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 11:35:50] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 11:35:50] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 11:35:50] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 11:35:50] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 11:35:50] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 11:35:50] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 11:35:50] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 11:35:50] [INFO ] LoginPage - clickLogin
+[2025-12-10 11:35:50] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 11:35:50] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 11:35:50] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 11:35:50] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 11:35:51] [INFO ] TC_HistoryTest - Before Method executed
+[2025-12-10 11:35:51] [INFO ] TestListener - ===== START TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 11:35:51] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-10 11:35:53] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-10 11:35:54] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-10 11:35:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-10 11:35:54] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-10 11:35:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-10 11:35:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:35:54] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:35:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:35:55] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='24']
+[2025-12-10 11:36:00] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='24']
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='24']
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='25']
+[2025-12-10 11:36:00] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='25']
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='25']
+[2025-12-10 11:36:00] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - getText: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:36:00] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:36:00] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:36:00] [INFO ] TopBarNavigation - click: By.xpath: //a[@href='/account']
+[2025-12-10 11:36:00] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //a[@href='/account']
+[2025-12-10 11:36:01] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:36:06] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:36:06] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:36:06] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:36:06] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:36:06] [ERROR] TestListener - ===== FAILED TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+java.lang.AssertionError: Ngày đặt vé mới nhất không đúng expected [10-12-2025 11:36] but found [10-12-2025 11:35]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.history.TC_HistoryTest.TC02_verifyLatestBookingDateAtHistoryPage(TC_HistoryTest.java:79)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 11:36:06] [INFO ] TC_HistoryTest - After Method executed
+[2025-12-10 11:36:06] [INFO ] TC_HistoryTest - After class executed
+[2025-12-10 11:36:07] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 11:36:08] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 11:37:39] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 11:37:39] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 11:37:39] [INFO ] TC_HistoryTest - Before class executed
+[2025-12-10 11:37:42] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 11:37:42] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 11:37:43] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 11:37:43] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 11:37:43] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 11:37:43] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 11:37:43] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 11:37:43] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 11:37:43] [INFO ] LoginPage - clickLogin
+[2025-12-10 11:37:43] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 11:37:43] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 11:37:43] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 11:37:43] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 11:37:44] [INFO ] TC_HistoryTest - Before Method executed
+[2025-12-10 11:37:44] [INFO ] TestListener - ===== START TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 11:37:44] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-10 11:37:46] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-10 11:37:46] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-10 11:37:46] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-10 11:37:47] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-10 11:37:47] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-10 11:37:47] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:37:47] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:37:47] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:37:47] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='27']
+[2025-12-10 11:37:52] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='27']
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='27']
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='28']
+[2025-12-10 11:37:52] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='28']
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='28']
+[2025-12-10 11:37:52] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 11:37:52] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:37:52] [INFO ] SeatPage - getText: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:37:52] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:37:53] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:37:53] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:37:53] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:37:53] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:37:53] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:37:53] [INFO ] TopBarNavigation - click: By.xpath: //a[@href='/account']
+[2025-12-10 11:37:53] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //a[@href='/account']
+[2025-12-10 11:37:53] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:37:58] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:37:58] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:37:58] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:37:58] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:37:58] [ERROR] TestListener - ===== FAILED TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+java.lang.AssertionError: Mã ghế không đúng: lists don't have the same size expected [2] but found [1]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1431)
+	at org.testng.Assert.assertEquals(Assert.java:1395)
+	at org.testng.Assert.assertEquals(Assert.java:1642)
+	at testcases.history.TC_HistoryTest.TC02_verifyLatestBookingDateAtHistoryPage(TC_HistoryTest.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 11:37:58] [INFO ] TC_HistoryTest - After Method executed
+[2025-12-10 11:37:58] [INFO ] TC_HistoryTest - After class executed
+[2025-12-10 11:37:58] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 11:37:59] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 11:53:59] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 11:54:00] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 11:54:00] [INFO ] TC_HistoryTest - Before class executed
+[2025-12-10 11:54:03] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 11:54:03] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 11:54:03] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 11:54:03] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 11:54:03] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 11:54:03] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 11:54:03] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 11:54:03] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 11:54:03] [INFO ] LoginPage - clickLogin
+[2025-12-10 11:54:03] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 11:54:03] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 11:54:04] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 11:54:04] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 11:54:05] [INFO ] TC_HistoryTest - Before Method executed
+[2025-12-10 11:54:05] [INFO ] TestListener - ===== START TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 11:54:05] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-10 11:54:07] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-10 11:54:07] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-10 11:54:08] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-10 11:54:08] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-10 11:54:09] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-10 11:54:09] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:54:09] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:54:09] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 11:54:09] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='29']
+[2025-12-10 11:54:15] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='29']
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='29']
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='30']
+[2025-12-10 11:54:15] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='30']
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='30']
+[2025-12-10 11:54:15] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 11:54:15] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:54:15] [INFO ] SeatPage - getText: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 11:54:15] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 11:54:16] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:54:16] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:54:16] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 11:54:16] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:54:16] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:54:16] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 11:54:16] [INFO ] TopBarNavigation - click: By.xpath: //a[@href='/account']
+[2025-12-10 11:54:16] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //a[@href='/account']
+[2025-12-10 11:54:16] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:54:21] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:54:21] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:54:21] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:54:21] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 11:54:21] [ERROR] TestListener - ===== FAILED TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+java.lang.AssertionError: Mã ghế không đúng
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failAssertNoEqual(Assert.java:1917)
+	at org.testng.Assert.assertEquals(Assert.java:1782)
+	at testcases.history.TC_HistoryTest.TC02_verifyLatestBookingDateAtHistoryPage(TC_HistoryTest.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 11:54:21] [INFO ] TC_HistoryTest - After Method executed
+[2025-12-10 11:54:21] [INFO ] TC_HistoryTest - After class executed
+[2025-12-10 11:54:21] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 11:54:22] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 13:33:28] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 13:33:28] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 13:33:28] [INFO ] TC_HistoryTest - Before class executed
+[2025-12-10 13:33:32] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 13:33:32] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 13:33:32] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 13:33:32] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 13:33:32] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 13:33:33] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 13:33:33] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 13:33:33] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 13:33:33] [INFO ] LoginPage - clickLogin
+[2025-12-10 13:33:33] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 13:33:33] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 13:33:33] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 13:33:33] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 13:33:34] [INFO ] TC_HistoryTest - Before Method executed
+[2025-12-10 13:33:34] [INFO ] TestListener - ===== START TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 13:33:34] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-10 13:33:35] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-10 13:33:35] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-10 13:33:36] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-10 13:33:36] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-10 13:33:36] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-10 13:33:36] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:33:36] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:33:36] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:33:37] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='31']
+[2025-12-10 13:33:39] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='31']
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='31']
+[2025-12-10 13:33:39] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:33:39] [INFO ] SeatPage - getText: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:33:39] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - getText: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:33:39] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:33:39] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:33:39] [INFO ] TopBarNavigation - click: By.xpath: //a[@href='/account']
+[2025-12-10 13:33:39] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //a[@href='/account']
+[2025-12-10 13:33:39] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:33:42] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:33:42] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:33:42] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:33:42] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:33:42] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:33:42] [INFO ] TestListener - ===== PASSED TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 13:33:42] [INFO ] TC_HistoryTest - After Method executed
+[2025-12-10 13:33:42] [INFO ] TC_HistoryTest - After class executed
+[2025-12-10 13:33:43] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 13:33:43] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 13:34:33] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 13:34:33] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 13:34:33] [INFO ] TC_HistoryTest - Before class executed
+[2025-12-10 13:34:36] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 13:34:36] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 13:34:36] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 13:34:36] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 13:34:36] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 13:34:36] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 13:34:36] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 13:34:36] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 13:34:36] [INFO ] LoginPage - clickLogin
+[2025-12-10 13:34:36] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 13:34:36] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 13:34:36] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 13:34:36] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 13:34:37] [INFO ] TC_HistoryTest - Before Method executed
+[2025-12-10 13:34:37] [INFO ] TestListener - ===== START TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 13:34:37] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-10 13:34:39] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-10 13:34:39] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-10 13:34:39] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-10 13:34:40] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-10 13:34:40] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-10 13:34:40] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:34:40] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:34:40] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:34:40] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='32']
+[2025-12-10 13:34:42] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='32']
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='32']
+[2025-12-10 13:34:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:34:42] [INFO ] SeatPage - getText: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:34:42] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - getText: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:34:42] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:34:42] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:34:42] [INFO ] TopBarNavigation - click: By.xpath: //a[@href='/account']
+[2025-12-10 13:34:42] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //a[@href='/account']
+[2025-12-10 13:34:43] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:34:45] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:34:45] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:34:45] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:34:45] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:34:45] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:34:45] [INFO ] TestListener - ===== PASSED TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 13:34:45] [INFO ] TC_HistoryTest - After Method executed
+[2025-12-10 13:34:45] [INFO ] TC_HistoryTest - After class executed
+[2025-12-10 13:34:45] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 13:34:46] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 13:35:48] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 13:35:49] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 13:35:49] [INFO ] TC_HistoryTest - Before class executed
+[2025-12-10 13:35:51] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 13:35:51] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 13:35:51] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 13:35:51] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 13:35:51] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 13:35:51] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 13:35:51] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 13:35:51] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 13:35:52] [INFO ] LoginPage - clickLogin
+[2025-12-10 13:35:52] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 13:35:52] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 13:35:52] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 13:35:52] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 13:35:52] [INFO ] TC_HistoryTest - Before Method executed
+[2025-12-10 13:35:52] [INFO ] TestListener - ===== START TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+[2025-12-10 13:35:52] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='film']/option
+[2025-12-10 13:35:54] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='film']
+[2025-12-10 13:35:54] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='cinema']/option
+[2025-12-10 13:35:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='cinema']
+[2025-12-10 13:35:55] [INFO ] HomePage - waitOptionsDropDownLoaded: By.xpath: //select[@name='date']/option
+[2025-12-10 13:35:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //select[@name='date']
+[2025-12-10 13:35:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:35:55] [INFO ] HomePage - click: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:35:55] [INFO ] HomePage - waitForElementToBeClickable: By.xpath: //button[.//span[text()='MUA VÉ NGAY']]
+[2025-12-10 13:35:56] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='26']
+[2025-12-10 13:35:58] [INFO ] SeatPage - click: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='26']
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[@type='button' and not(@disabled)]/span[text()='26']
+[2025-12-10 13:35:58] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Tên Phim:')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:35:58] [INFO ] SeatPage - getText: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath:  //p[contains(normalize-space(), 'VND')]
+[2025-12-10 13:35:58] [INFO ] SeatPage - getText: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - getText: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //h3[normalize-space()='Rạp:']/following-sibling::h3
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[contains(text(),'Cụm Rạp:')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - click: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[span[contains(text(),'ĐẶT VÉ')]]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:35:58] [INFO ] SeatPage - click: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:35:58] [INFO ] SeatPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đồng ý')]
+[2025-12-10 13:35:58] [INFO ] TopBarNavigation - click: By.xpath: //a[@href='/account']
+[2025-12-10 13:35:58] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //a[@href='/account']
+[2025-12-10 13:35:58] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:36:00] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:36:00] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:36:00] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:36:00] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:36:00] [INFO ] HistoryPage - waitForVisibilityOfElementLocated: By.xpath: //div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]
+[2025-12-10 13:36:00] [ERROR] TestListener - ===== FAILED TEST: TC02_verifyLatestBookingDateAtHistoryPage =====
+java.lang.AssertionError: Ngày đặt vé mới nhất không đúng expected [10-12-2025 13:35] but found [10-12-2025 13:34]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.history.TC_HistoryTest.TC02_verifyLatestBookingDateAtHistoryPage(TC_HistoryTest.java:81)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 13:36:00] [INFO ] TC_HistoryTest - After Method executed
+[2025-12-10 13:36:00] [INFO ] TC_HistoryTest - After class executed
+[2025-12-10 13:36:01] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 13:36:01] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:36:03] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:36:03] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:36:04] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:36:04] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:36:04] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:36:06] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:36:06] [INFO ] TestListener - ===== START TEST: TC01_testValidLogin =====
+[2025-12-10 15:36:07] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:36:07] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:36:07] [INFO ] LoginPage - enterAccount: cam
+[2025-12-10 15:36:07] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam
+[2025-12-10 15:36:07] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:36:08] [INFO ] LoginPage - enterPassword: 123456
+[2025-12-10 15:36:08] [INFO ] LoginPage - sendKeys: By.id: matKhau with 123456
+[2025-12-10 15:36:08] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:36:08] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:36:08] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:36:08] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:36:08] [INFO ] LoginPage - click: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 15:36:08] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[contains(text(),'Đóng')]
+[2025-12-10 15:36:09] [INFO ] LoginPage - getMessage
+[2025-12-10 15:36:09] [INFO ] LoginPage - getText: By.id: swal2-title
+[2025-12-10 15:36:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: swal2-title
+[2025-12-10 15:36:09] [INFO ] HomePage - getText: By.xpath: //a[@href='/account']/h3
+[2025-12-10 15:36:09] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //a[@href='/account']/h3
+[2025-12-10 15:36:09] [INFO ] TestListener - ===== PASSED TEST: TC01_testValidLogin =====
+[2025-12-10 15:36:09] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:36:09] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:36:09] [INFO ] TestListener - ===== START TEST: TC02_testInvalidWithEmptyUsername =====
+[2025-12-10 15:36:09] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:36:09] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:38:01] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:38:02] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:38:02] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:38:02] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:38:02] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:38:03] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:38:03] [INFO ] TestListener - ===== START TEST: TC01_testValidLogin =====
+[2025-12-10 15:38:05] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:38:05] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:38:05] [INFO ] LoginPage - enterAccount: cam
+[2025-12-10 15:38:05] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam
+[2025-12-10 15:38:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:38:05] [INFO ] LoginPage - enterPassword: 123456
+[2025-12-10 15:38:05] [INFO ] LoginPage - sendKeys: By.id: matKhau with 123456
+[2025-12-10 15:38:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:38:05] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:38:05] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:38:05] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:38:05] [INFO ] LoginPage - getMessage
+[2025-12-10 15:38:05] [INFO ] LoginPage - getText: By.id: swal2-title
+[2025-12-10 15:38:05] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: swal2-title
+[2025-12-10 15:38:06] [INFO ] HomePage - getText: By.xpath: //a[@href='/account']/h3
+[2025-12-10 15:38:06] [INFO ] HomePage - waitForVisibilityOfElementLocated: By.xpath: //a[@href='/account']/h3
+[2025-12-10 15:38:06] [INFO ] TestListener - ===== PASSED TEST: TC01_testValidLogin =====
+[2025-12-10 15:38:06] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:38:06] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:38:06] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:38:07] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:44:14] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:44:15] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:44:15] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:44:15] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:44:15] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:44:17] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:44:17] [INFO ] TestListener - ===== START TEST: TC02_testInvalidWithEmptyUsername =====
+[2025-12-10 15:44:17] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:44:17] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:44:18] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 15:44:18] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 15:44:18] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:44:19] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:44:19] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:44:19] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:44:19] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='taiKhoan-helper-text']
+[2025-12-10 15:44:19] [INFO ] LoginPage - getText: By.xpath: //*[@id='taiKhoan-helper-text']
+[2025-12-10 15:44:19] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='taiKhoan-helper-text']
+[2025-12-10 15:44:19] [INFO ] TestListener - ===== PASSED TEST: TC02_testInvalidWithEmptyUsername =====
+[2025-12-10 15:44:19] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:44:19] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:44:19] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:44:19] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:45:40] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:45:40] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:45:40] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:45:40] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:45:40] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:45:42] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:45:42] [INFO ] TestListener - ===== START TEST: TC03_testInvalidWithEmptyPassword =====
+[2025-12-10 15:45:44] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:45:44] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:45:44] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 15:45:44] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 15:45:44] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:45:44] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:45:44] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:45:44] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:45:44] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:45:44] [INFO ] LoginPage - getText: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:45:44] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:45:44] [INFO ] TestListener - ===== PASSED TEST: TC03_testInvalidWithEmptyPassword =====
+[2025-12-10 15:45:44] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:45:44] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:45:44] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:45:45] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:48:05] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:48:05] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:48:05] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:48:05] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:48:05] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:48:08] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:48:08] [INFO ] TestListener - ===== START TEST: TC03_testInvalidWithIncorrectFormatPassword =====
+[2025-12-10 15:48:09] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:48:09] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:48:09] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 15:48:09] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 15:48:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:48:09] [INFO ] LoginPage - enterAccount: 123
+[2025-12-10 15:48:09] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with 123
+[2025-12-10 15:48:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:48:09] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:48:09] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:48:09] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:48:10] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:48:10] [INFO ] LoginPage - getText: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:48:10] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:48:10] [ERROR] TestListener - ===== FAILED TEST: TC03_testInvalidWithIncorrectFormatPassword =====
+java.lang.AssertionError: Không hiển thị lỗi khi không nhập password expected [Mật khẩu phải có ít nhất 6 kí tự !] but found [Đây là trường bắt buộc !]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at testcases.login.TC0_LoginTest.TC03_testInvalidWithIncorrectFormatPassword(TC0_LoginTest.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 15:48:10] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:48:11] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:48:11] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:48:12] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:48:44] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:48:44] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:48:44] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:48:44] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:48:44] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:48:46] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:48:46] [INFO ] TestListener - ===== START TEST: TC03_testInvalidWithIncorrectFormatPassword =====
+[2025-12-10 15:48:47] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:48:47] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:48:47] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 15:48:47] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 15:48:47] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:48:48] [INFO ] LoginPage - enterPassword: 123
+[2025-12-10 15:48:48] [INFO ] LoginPage - sendKeys: By.id: matKhau with 123
+[2025-12-10 15:48:48] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:48:48] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:48:48] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:48:48] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:48:48] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:48:48] [INFO ] LoginPage - getText: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:48:48] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:48:48] [INFO ] TestListener - ===== PASSED TEST: TC03_testInvalidWithIncorrectFormatPassword =====
+[2025-12-10 15:48:48] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:48:48] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:48:48] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:48:48] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:49:57] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:49:58] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:49:58] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:49:58] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:49:58] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:50:00] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:50:00] [INFO ] TestListener - ===== START TEST: TC05_testInvalidWithIncorrectUsername =====
+[2025-12-10 15:50:01] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:50:01] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:50:01] [INFO ] LoginPage - enterAccount: cam852
+[2025-12-10 15:50:01] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam852
+[2025-12-10 15:50:01] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:50:01] [INFO ] LoginPage - enterPassword: 123456
+[2025-12-10 15:50:01] [INFO ] LoginPage - sendKeys: By.id: matKhau with 123456
+[2025-12-10 15:50:01] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:50:01] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:50:01] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:50:01] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:50:01] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:51:42] [ERROR] TestListener - ===== FAILED TEST: TC05_testInvalidWithIncorrectUsername =====
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='matKhau-helper-text'] (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51833}, goog:processID: 16496, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51833/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 69005bdadd94c8fcf6f4b3edc69f4724
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at base.BasePage.waitForVisibilityOfElementLocated(BasePage.java:29)
+	at pages.LoginPage.getErrorRequirePassword(LoginPage.java:57)
+	at testcases.login.TC0_LoginTest.TC05_testInvalidWithIncorrectUsername(TC0_LoginTest.java:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 15:51:42] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:51:42] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:51:43] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:51:43] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 15:53:06] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:53:06] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:53:06] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:53:07] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:53:07] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:53:08] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:53:08] [INFO ] TestListener - ===== START TEST: TC05_testInvalidWithIncorrectUsername =====
+[2025-12-10 15:53:08] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:53:08] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:53:09] [INFO ] LoginPage - enterAccount: cam852
+[2025-12-10 15:53:09] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam852
+[2025-12-10 15:53:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:53:09] [INFO ] LoginPage - enterPassword: 123456
+[2025-12-10 15:53:09] [INFO ] LoginPage - sendKeys: By.id: matKhau with 123456
+[2025-12-10 15:53:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:53:09] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:53:09] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:53:09] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:53:09] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //*[@id='matKhau-helper-text']
+[2025-12-10 15:53:42] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 15:53:42] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 15:53:42] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 15:53:43] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 15:53:43] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 15:53:44] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 15:53:44] [INFO ] TestListener - ===== START TEST: TC05_testInvalidWithIncorrectUsername =====
+[2025-12-10 15:53:45] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:53:45] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 15:53:45] [INFO ] LoginPage - enterAccount: cam852
+[2025-12-10 15:53:45] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam852
+[2025-12-10 15:53:45] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 15:53:45] [INFO ] LoginPage - enterPassword: 123456
+[2025-12-10 15:53:45] [INFO ] LoginPage - sendKeys: By.id: matKhau with 123456
+[2025-12-10 15:53:45] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 15:53:45] [INFO ] LoginPage - clickLogin
+[2025-12-10 15:53:45] [INFO ] LoginPage - click: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:53:45] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //button[.='Đăng nhập']
+[2025-12-10 15:53:45] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //div[@role='alert']/div[@class='MuiAlert-message']
+[2025-12-10 15:53:46] [INFO ] LoginPage - getText: By.xpath: //div[@role='alert']/div[@class='MuiAlert-message']
+[2025-12-10 15:53:46] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.xpath: //div[@role='alert']/div[@class='MuiAlert-message']
+[2025-12-10 15:53:46] [INFO ] TestListener - ===== PASSED TEST: TC05_testInvalidWithIncorrectUsername =====
+[2025-12-10 15:53:46] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 15:53:46] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 15:53:46] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 15:53:46] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 16:11:52] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:11:52] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:11:52] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:11:52] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:11:52] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:11:55] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:11:55] [INFO ] TestListener - ===== START TEST: TC06_verifyDefaultValueAfterClickRememeberForMe =====
+[2025-12-10 16:11:57] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:11:57] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:11:57] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 16:11:57] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 16:11:57] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 16:11:57] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 16:11:57] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 16:11:57] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 16:11:57] [INFO ] LoginPage - click: By.name: remember
+[2025-12-10 16:11:57] [INFO ] LoginPage - waitForElementToBeClickable: By.name: remember
+[2025-12-10 16:13:37] [ERROR] TestListener - ===== FAILED TEST: TC06_verifyDefaultValueAfterClickRememeberForMe =====
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.name: remember (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52728}, goog:processID: 15476, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52728/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9bb802baedf460b48f1c1788cccd6369
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at base.BasePage.waitForElementToBeClickable(BasePage.java:39)
+	at base.BasePage.click(BasePage.java:50)
+	at pages.LoginPage.clickRememberChkbx(LoginPage.java:65)
+	at testcases.login.TC0_LoginTest.TC06_verifyDefaultValueAfterClickRememeberForMe(TC0_LoginTest.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 16:13:37] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 16:13:38] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 16:13:38] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 16:13:39] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 16:14:53] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:14:53] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:14:54] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:14:54] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:14:54] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:14:56] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:14:56] [INFO ] TestListener - ===== START TEST: TC06_verifyDefaultValueAfterClickRememeberForMe =====
+[2025-12-10 16:14:57] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:14:57] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:14:57] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 16:14:57] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 16:14:57] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 16:14:57] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 16:14:57] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 16:14:57] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 16:14:57] [INFO ] LoginPage - click: By.xpath: //input[@name='remember']
+[2025-12-10 16:14:57] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //input[@name='remember']
+[2025-12-10 16:15:01] [ERROR] TestListener - ===== FAILED TEST: TC06_verifyDefaultValueAfterClickRememeberForMe =====
+org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [093387082828545cfd94c613bc250350, findElement {using=xpath, value=//input[@name='remember']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52921}, goog:processID: 11596, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52921/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 093387082828545cfd94c613bc250350
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at base.BasePage.waitForElementToBeClickable(BasePage.java:39)
+	at base.BasePage.click(BasePage.java:50)
+	at pages.LoginPage.clickRememberChkbx(LoginPage.java:66)
+	at testcases.login.TC0_LoginTest.TC06_verifyDefaultValueAfterClickRememeberForMe(TC0_LoginTest.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 16:15:01] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 16:15:01] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 16:15:02] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 16:15:47] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:15:47] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:15:47] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:15:47] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:15:47] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:15:48] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:15:49] [INFO ] TestListener - ===== START TEST: TC06_verifyDefaultValueAfterClickRememeberForMe =====
+[2025-12-10 16:15:50] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:15:50] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:15:50] [INFO ] LoginPage - enterAccount: cam0592
+[2025-12-10 16:15:50] [INFO ] LoginPage - sendKeys: By.id: taiKhoan with cam0592
+[2025-12-10 16:15:50] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: taiKhoan
+[2025-12-10 16:15:50] [INFO ] LoginPage - enterPassword: Diqit0505@
+[2025-12-10 16:15:50] [INFO ] LoginPage - sendKeys: By.id: matKhau with Diqit0505@
+[2025-12-10 16:15:50] [INFO ] LoginPage - waitForVisibilityOfElementLocated: By.id: matKhau
+[2025-12-10 16:15:50] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //input[@name='remember']
+[2025-12-10 16:17:30] [ERROR] TestListener - ===== FAILED TEST: TC06_verifyDefaultValueAfterClickRememeberForMe =====
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@name='remember'] (tried for 100 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at base.BasePage.waitForElementToBeClickable(BasePage.java:39)
+	at pages.LoginPage.clickRememberChkbx(LoginPage.java:65)
+	at testcases.login.TC0_LoginTest.TC06_verifyDefaultValueAfterClickRememeberForMe(TC0_LoginTest.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [50ea59692b28eea0ce1ba50216464969, findElement {value=//input[@name='remember'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52979}, goog:processID: 14128, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52979/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50ea59692b28eea0ce1ba50216464969
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 19 more
+[2025-12-10 16:17:30] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 16:17:30] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 16:17:31] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 16:17:31] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 16:17:46] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:17:46] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:17:46] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:17:46] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:17:46] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:17:49] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:17:49] [INFO ] TestListener - ===== START TEST: click =====
+[2025-12-10 16:17:50] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:17:50] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:17:50] [INFO ] LoginPage - click: By.xpath: //input[@name='remember']
+[2025-12-10 16:17:50] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //input[@name='remember']
+[2025-12-10 16:19:30] [ERROR] TestListener - ===== FAILED TEST: click =====
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@name='remember'] (tried for 100 second(s) with 500 milliseconds interval)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53082}, goog:processID: 21040, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53082/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 482b7c09f8f80d91c26cf74b04425eff
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at base.BasePage.waitForElementToBeClickable(BasePage.java:39)
+	at base.BasePage.click(BasePage.java:50)
+	at pages.LoginPage.clickRememberChkbx(LoginPage.java:65)
+	at testcases.login.TC0_LoginTest.click(TC0_LoginTest.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 16:19:30] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 16:19:31] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 16:19:31] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 16:19:32] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 16:24:32] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:24:32] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:24:32] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:24:32] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:24:32] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:24:34] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:24:34] [INFO ] TestListener - ===== START TEST: click =====
+[2025-12-10 16:24:35] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:24:35] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:24:35] [INFO ] LoginPage - clickcheckbox: By.xpath: //input[@name='remember']
+[2025-12-10 16:24:35] [INFO ] LoginPage - waitForElementCheckboxToBeClickable: By.xpath: //input[@name='remember']
+[2025-12-10 16:27:15] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:27:15] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:27:15] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:27:15] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:27:15] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:27:17] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:27:17] [INFO ] TestListener - ===== START TEST: click =====
+[2025-12-10 16:27:18] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:27:18] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:27:18] [INFO ] LoginPage - click: By.xpath: //input[@name='remember']
+[2025-12-10 16:27:18] [INFO ] LoginPage - waitForElementToBeClickable: By.xpath: //input[@name='remember']
+[2025-12-10 16:28:22] [ERROR] TestListener - ===== FAILED TEST: click =====
+org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=142.0.7444.177)
+Build info: version: '4.35.0', revision: '1c58e5028b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d1534cb26e70cc1942c688b979ce3548, findElement {value=//input[@name='remember'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\dell\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53623}, goog:processID: 21040, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53623/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d1534cb26e70cc1942c688b979ce3548
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:627)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:624)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	at base.BasePage.waitForElementToBeClickable(BasePage.java:42)
+	at base.BasePage.click(BasePage.java:57)
+	at pages.LoginPage.clickRememberChkbx(LoginPage.java:69)
+	at testcases.login.TC0_LoginTest.click(TC0_LoginTest.java:89)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-12-10 16:28:22] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 16:28:22] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 16:28:23] [INFO ] TC_HistoryTest - Test Suite completed
+[2025-12-10 16:28:42] [INFO ] TC_HistoryTest - Before Suite executed
+[2025-12-10 16:28:42] [INFO ] TestListener - >>> START TEST SUITE: register test
+[2025-12-10 16:28:42] [INFO ] TestListener - >>> FINISH TEST SUITE: register test
+[2025-12-10 16:28:42] [INFO ] TestListener - >>> START TEST SUITE: login test
+[2025-12-10 16:28:42] [INFO ] TC0_LoginTest - Before class executed
+[2025-12-10 16:28:43] [INFO ] TC0_LoginTest - Before Method executed
+[2025-12-10 16:28:43] [INFO ] TestListener - ===== START TEST: click =====
+[2025-12-10 16:28:44] [INFO ] TopBarNavigation - click: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:28:44] [INFO ] TopBarNavigation - waitForElementToBeClickable: By.xpath: //h3[text()='Đăng Nhập']
+[2025-12-10 16:28:45] [INFO ] TestListener - ===== PASSED TEST: click =====
+[2025-12-10 16:28:45] [INFO ] TC0_LoginTest - After Method executed
+[2025-12-10 16:28:45] [INFO ] TC0_LoginTest - After class executed
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> FINISH TEST SUITE: login test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> START TEST SUITE: home test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> FINISH TEST SUITE: home test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> START TEST SUITE: showtime test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> FINISH TEST SUITE: showtime test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> START TEST SUITE: seat test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> FINISH TEST SUITE: seat test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> START TEST SUITE: history test
+[2025-12-10 16:28:45] [INFO ] TestListener - >>> FINISH TEST SUITE: history test
+[2025-12-10 16:28:45] [INFO ] TC_HistoryTest - Test Suite completed

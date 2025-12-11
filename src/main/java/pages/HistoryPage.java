@@ -1,5 +1,6 @@
 package pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,12 +25,11 @@ public class HistoryPage extends CommonPage {
     private By byListTicketHistory = By.xpath("//div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]");
     private By byLbDateOrder = By.xpath(".//h3[starts-with(normalize-space(),'Ngày đặt:')]");
     private By byLbMovieName = By.xpath(".//h1[starts-with(normalize-space(),'Tên phim:')]");
-    private By byLbDuration = By.xpath(".//h3[starts-with(normalize-space(),'Thời lượng:')]");
     private By byLbTotal = By.xpath(".//h3[starts-with(normalize-space(),'Giá vé:')]");
     private By byLbCinemaBranch = By.xpath(".//h1[contains(@class, 'colorSecondary')]");
     private By byLbScreenID = By.xpath(".//h3[starts-with(normalize-space(),'Rạp')]");
     private By byLbSeatID = By.xpath(".//h3[starts-with(normalize-space(),'Ghế số:')]");
-    public int getNumberOfTicketsInHistory(){
+    public int getNumberOfBookingInHistory(){
         waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         return listTickets.size();

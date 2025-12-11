@@ -33,9 +33,16 @@ public class LoginPage extends CommonPage {
         sendKeys(byTxtPasswordLogin, password);
     }
 
-    public void clickLogin() {
+    public void clickLoginButtonWithErrorCase() {
+        LOG.info("clickLoginWithErrorCase");
+        click(byBtnLogin);
+    }
+    public HomePage clickLogin(){
         LOG.info("clickLogin");
         click(byBtnLogin);
+        waitForPageLoaded();
+        homePage = new HomePage(driver);
+        return homePage;
     }
     public void clickClose(){
         click(byBtnClose);
@@ -46,10 +53,10 @@ public class LoginPage extends CommonPage {
         return getText(byLblLoginMsg);
     }
 
-    public void login(String account, String password) {
+    public HomePage login(String account, String password) {
         enterAccount(account);
         enterPassword(password);
-        clickLogin();
+        return clickLogin();
     }
     public String getErrorRequireUsername(){
         waitForVisibilityOfElementLocated(byTxtErrorUsername);

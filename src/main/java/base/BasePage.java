@@ -32,18 +32,9 @@ public class BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public WebElement waitForPresentOfElementLocated(By locator) {
-        LOG.info("waitForPresentOfElementLocated" + locator);
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    }
-
     public WebElement waitForElementToBeClickable(By locator) {
         LOG.info("waitForElementToBeClickable: " + locator);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
-    public WebElement waitForElementCheckboxToBeClickable(By locator) {
-        LOG.info("waitForElementCheckboxToBeClickable: " + locator);
-        return waitspecial.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public void sendKeys(By locator, String value) {
@@ -55,11 +46,6 @@ public class BasePage {
     public void click(By locator) {
         LOG.info("click: " + locator);
         WebElement element = waitForElementToBeClickable(locator);
-        element.click();
-    }
-    public void clickCheckbox(By locator){
-        LOG.info("clickcheckbox: " + locator);
-        WebElement element = waitForElementCheckboxToBeClickable(locator);
         element.click();
     }
 

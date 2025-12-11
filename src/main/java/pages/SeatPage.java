@@ -53,7 +53,7 @@ public class SeatPage extends CommonPage {
     public String getSeatColor(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[.//span[text()='" + numberSeat + "']]");
         waitForVisibilityOfElementLocated(bySeatAvailable);
-        return driver.findElement(bySeatAvailable).getAttribute("style");
+        return driver.findElement(bySeatAvailable).getAttribute("style").replace("background-color: ","").replace(";", "");
     }
 
     public String getSeatID() {

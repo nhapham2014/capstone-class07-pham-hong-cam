@@ -5,16 +5,12 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.*;
 import reports.ExtentReportManager;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TC_HistoryTest extends BaseTestWithLogin {
     HomePage homePage;
-    LoginPage loginPage;
-    DetailMoviePage detailMoviePage;
     SeatPage seatPage;
     HistoryPage historyPage;
 
@@ -30,60 +26,90 @@ public class TC_HistoryTest extends BaseTestWithLogin {
     @Test
     public void TC01_verifyNumberBookingAtHistoryPage() {
         homePage = new HomePage(driver);
+        // Step 1: Navigate to Booking History Page
+        ExtentReportManager.info("Step 1: Navigate to Booking History Page ");
+        LOG.info("Step 1: Navigate to Booking History Page");
         historyPage = homePage.navigateHistoryPage();
-        int numberBooking = historyPage.getNumberOfTicketsInHistory();
+        // Step 2: verify number of booking
+        ExtentReportManager.info("Step 2: verify number of booking");
+        LOG.info("Step 2: verify number of booking");
+        int numberBooking = historyPage.getNumberOfBookingInHistory();
         Assert.assertEquals(numberBooking, 32, "Hiển thị sai số lượng booking");
-    }
-
-    @Test
-    public void TC() {
-        homePage = new HomePage(driver);
-        historyPage = homePage.navigateHistoryPage();
-        System.out.println(historyPage.getLatestTicketDate());
     }
 
     @Test
     public void TC02_verifyLatestBookingDateAtHistoryPage() {
         homePage = new HomePage(driver);
+        // Step 1: Select Movie and Show Time at Home page
+        ExtentReportManager.info("Step 1: Select Movie and Show Time at Home page");
+        LOG.info("Step 1: Select Movie and Show Time at Home page");
         selectMovieAndShowTime();
-        seatPage.selectSeat("26");
-        //seatPage.selectSeat("30");
+        // Step 2: Select seat at Seat page
+        ExtentReportManager.info("Step 2: Select seat at Seat page");
+        LOG.info("Step 2: Select seat at Seat page");
+        seatPage.selectSeat("107");
+        //Get values at all fields at the Ticket
+
         String expectNameMovie = seatPage.getMovieName();
-        System.out.println(expectNameMovie);
+
         int expectTotalPrice = seatPage.getDisplayedPriceSeat();
-        System.out.println(expectTotalPrice);
+
         String expectCinemaBranch = seatPage.getNameCinemaBranch();
-        System.out.println(expectCinemaBranch);
+
         String expectScreenID = seatPage.getScreenID();
-        System.out.println(expectScreenID);
+
         List<String> expectSeatID = seatPage.getListSelectedSeatOnTicket();
-        System.out.println(expectSeatID);
+
+        // Step 3: Click on the Book ticket button
+        ExtentReportManager.info("Step 3: Click on the Book ticket button");
+        LOG.info("Step 3: Click on the Book ticket button");
         seatPage.clickBookTicketButton();
+        // Step 4: Click on the Agree button
+        ExtentReportManager.info("Step 4: Click on the Agree button");
+        LOG.info("Step 4: Click on the Agree button");
         seatPage.clickAgreeButtonInAlert();
+        //Get the booking time when user click the Agree button
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         context.set("bookingTime", LocalDateTime.now().format(formatter));
         String expectOrderTime = context.get("bookingTime", String.class);
-        System.out.println(expectOrderTime);
+        // Step 5: Navigate to the History page
+        ExtentReportManager.info("Step 5: Navigate to the History page");
+        LOG.info("Step 5: Navigate to the History page");
         historyPage = homePage.navigateHistoryPage();
+        //Step 6: Verify values of the lastest booking
+        ExtentReportManager.info("Step 6: Verify values of the lastest booking");
+        LOG.info("Step 6: Verify values of the lastest booking");
+        //VP1: Verify the order time value
+        ExtentReportManager.info("VP1: Verify the order time value");
+        LOG.info("VP1: Verify the order time value");
         String actualOrderTime = historyPage.getLatestTicketDate();
-        System.out.println(actualOrderTime);
-        String actualNameMovie = historyPage.getLatestTicketMovieName();
-        System.out.println(actualNameMovie);
-        int actualTotalPrice = historyPage.getLatestTicketTotalPrice();
-        System.out.println(actualTotalPrice);
-        String actualCinemaBranch = historyPage.getLatestTicketCinemaBranch();
-        System.out.println(actualCinemaBranch);
-        String actualScreenID = historyPage.getLatestTicketScreenID();
-        System.out.println(actualScreenID);
-        List<String> actualSeatID = historyPage.getLatestListSeat();
-        System.out.println(actualSeatID);
-
         Assert.assertEquals(actualOrderTime, expectOrderTime, "Ngày đặt vé mới nhất không đúng");
+        //VP2: Verify the movie name
+        ExtentReportManager.info("VP2: Verify the movie name");
+        LOG.info("VP2: Verify the movie name");
+        String actualNameMovie = historyPage.getLatestTicketMovieName();
         Assert.assertEquals(actualNameMovie, expectNameMovie, "Tên phim không đúng");
+        //VP3: Verify the total price
+        ExtentReportManager.info("VP3: Verify the total price");
+        LOG.info("VP3: Verify the total price");
+        int actualTotalPrice = historyPage.getLatestTicketTotalPrice();
         Assert.assertEquals(actualTotalPrice, expectTotalPrice, "Tổng giá vé không đúng");
+        //VP3: Verify the cinema branch
+        ExtentReportManager.info("VP3: Verify the cinema branch");
+        LOG.info("VP3: Verify the cinema branch");
+        String actualCinemaBranch = historyPage.getLatestTicketCinemaBranch();
         Assert.assertEquals(actualCinemaBranch, expectCinemaBranch, "Cụm rạp không đúng");
+        //VP4: Verify the screen ID
+        ExtentReportManager.info("VP4: Verify the screen ID");
+        LOG.info("VP4: Verify the screen ID");
+        String actualScreenID = historyPage.getLatestTicketScreenID();
         Assert.assertEquals(actualScreenID, expectScreenID, "Mã rạp không đúng");
+        //VP5: Verify list selected seat
+        ExtentReportManager.info("VP5: Verify list selected seat");
+        LOG.info("VP5: Verify list selected seat");
+        List<String> actualSeatID = historyPage.getLatestListSeat();
         Assert.assertEquals(actualSeatID.toArray(), expectSeatID.toArray(), "Mã ghế không đúng");
+
     }
 
 }

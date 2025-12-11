@@ -3,20 +3,12 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import javax.swing.*;
-import java.text.Normalizer;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class HomePage extends CommonPage {
     DetailMoviePage detailMoviePage;
@@ -32,10 +24,6 @@ public class HomePage extends CommonPage {
     private By byDateOptions = By.xpath("//select[@name='date']/option");
     private By byFrameVideo = By.xpath("//iframe[contains(@src,'youtube') or contains(@src,'video')]");
     private By byListCinemaNames = By.xpath("//div[@role='tabpanel']//div[@role='tablist']//h4");
-    private By byLbSelectedCinemaBranch = By.xpath("//div[@role='tabpanel']//button[contains(@aria-selected,'true')]//h4");
-    private By byLbNameMovie = By.xpath("//div[contains(@class,'MuiBox')]//h2");
-    private By byLbDateShowTime = By.xpath("//div[contains(@class,'MuiBox')]//p[contains(text(),'-')]");
-    private By byLbTimeShowTime = By.xpath("//div[contains(@class,'MuiBox')]//h3[contains(text(),':')]");
     private By byListShowTimeByCinema = By.xpath("//div[contains(@class,'MuiBox')]//a[div[p[contains(text(),'-')]]]");
     private By byDateText = By.xpath(".//p[contains(text(),'-')]");
     private By byTimeText = By.xpath(".//h3");
@@ -112,6 +100,12 @@ public class HomePage extends CommonPage {
         waitForPageLoaded();
         seatPage = new SeatPage(driver);
         return seatPage;
+    }
+    public SeatPage buyTicketAtFilterSection(String movieName, String cinemaBranch, String showTime){
+        selectMovie(movieName);
+        selectCinema(cinemaBranch);
+        selectDate(showTime);
+        return clickBuyTicket();
     }
     /// Movie list section
     public String getMovieTitle(String imageMovie) {
@@ -219,28 +213,4 @@ public class HomePage extends CommonPage {
         }
         return true;
     }
-//    public void buyTicketAtListCinema(String brandCinema,String cinemaBranch, String movieName, String date, String time){
-//        clickCinemaLogo(brandCinema);
-//        selectCinemaBranch(cinemaBranch);
-//        selectShowTime(movieName,date,time);
-//
-//    }
-//    public void buyTicketByFilter(String movieName, String cinemaBranch, String showTime){
-//        selectMovie(movieName);
-//        selectCinema(cinemaBranch);
-//        selectDate(showTime);
-//        clickBuyTicket();
-//    }
-//    public void buyTicketAtListMovie(String movie, String cinemaLogo, String cinemaBranch, String date, String time){
-//        detailMoviePage = new DetailMoviePage(driver);
-//        clickBuyTicketAtMovie(movie);
-//        detailMoviePage.clickCinemaLogo(cinemaLogo);
-//        detailMoviePage.selectShowTime(cinemaBranch,date,time);
-//    }
-
-
-
-
-
-
 }

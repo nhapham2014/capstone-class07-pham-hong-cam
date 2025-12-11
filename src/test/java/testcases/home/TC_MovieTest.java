@@ -6,12 +6,9 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.DetailMoviePage;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
 
-import java.time.LocalDateTime;
-import java.util.List;
 
 public class TC_MovieTest extends BaseTestWithLogin {
     HomePage homePage;
@@ -21,7 +18,6 @@ public class TC_MovieTest extends BaseTestWithLogin {
     @Test
     public void TC01_verifyMovieNameAtDetailPage() {
         homePage = new HomePage(driver);
-
         //Step 1: Select a movie thumbnail
         ExtentReportManager.info("Step 1: Select a movie thumbnail");
         LOG.info("Step 1: Select a movie thumbnail");
@@ -30,9 +26,6 @@ public class TC_MovieTest extends BaseTestWithLogin {
         // Step 2: Verify movie name at detail page
         ExtentReportManager.info("Step 2: Verify movie name at detail page");
         LOG.info("Step 2: Verify movie name at detail page");
-
-       // System.out.println(titleList);
-       // System.out.println(titleDetail);
         Assert.assertEquals(detailMoviePage.getMovieDetailTitle(), titleList,
                 "Tên phim KHÔNG trùng nhau!");
     }
@@ -52,8 +45,9 @@ public class TC_MovieTest extends BaseTestWithLogin {
                 "Trailer KHÔNG hiển thị sau khi click Video!"
         );
     }
+
     @Test
-    public void TC03_navigateToMovieDetailPageAfterClickBuyTicketButton(){
+    public void TC03_navigateToMovieDetailPageAfterClickBuyTicketButton() {
         homePage = new HomePage(driver);
         //Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
@@ -66,19 +60,39 @@ public class TC_MovieTest extends BaseTestWithLogin {
                 "Không chuyển sang màn hình chi tiết phim sau khi bấm nút Mua Vé");
 
     }
+
     @Test
-    public void TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(){
+    public void TC04_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm() {
         homePage = new HomePage(driver);
-       // homePage.buyTicketAtListMovie("avatar-2_gp09","cgv","CGV - VivoCity","07-10-2021","08:25");
+        //Step 1: Click on the Buy ticket at the Poster film
+        ExtentReportManager.info("Step 1: Click on the Buy ticket at the Poster film");
+        LOG.info("Step 1: Click on the Buy ticket at the Poster film");
         detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
-        detailMoviePage.clickCinemaLogo("cgv");
-        detailMoviePage.selectShowTime("CGV - VivoCity","07-10-2021","08:25");
-       seatPage = new SeatPage(driver);
-        Assert.assertEquals(seatPage.getMovieName(),"AVATAR 2", "Hiển thị không đúng tên phim");
-        Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - VivoCity", "Không hiển thị đúng tên cụm rạp");
+        //Step 2: Select the show time at Detail movie page
+        ExtentReportManager.info("Step 2: Select the show time at Detail movie page");
+        LOG.info("Step 2: Select the show time at Detail movie page");
+        seatPage = detailMoviePage.selectShowTime("cgv","CGV - VivoCity", "07-10-2021", "08:25");
+        //Step 3: verify values on ticket at Seat page
+        //VP1: Verify the movie name
+        ExtentReportManager.info("VP1: Verify the movie name");
+        LOG.info("VP1: Verify the movie name");
+        Assert.assertEquals(seatPage.getMovieName(), "AVATAR 2", "Hiển thị không đúng tên phim");
+        //VP2: Verify the cinema branch
+        ExtentReportManager.info("VP2: Verify the cinema branch");
+        LOG.info("VP2: Verify the cinema branch");
+        Assert.assertEquals(seatPage.getNameCinemaBranch(), "CGV - VivoCity", "Không hiển thị đúng tên cụm rạp");
+        //VP3: Verify the address cinema
+        ExtentReportManager.info("VP3: Verify the address cinema");
+        LOG.info("VP3: Verify the address cinema");
         Assert.assertEquals(seatPage.getAddressCinema(), "Lầu 5, Trung tâm thương mại SC VivoCity - 1058 Nguyễn Văn Linh, Q. 7", "Không hiển thị đúng địa chỉ cụm rạp");
-        Assert.assertEquals(seatPage.getDateOfShowTime(),"07-10-2021", "Không hiển thị đúng ngày chiếu");
-        Assert.assertEquals(seatPage.getTimeOfShowTime(),"08:25", "Không hiển thị đúng giờ chiếu");
+        //VP4: Verify the date of show time
+        ExtentReportManager.info("VP4: Verify the date of show time");
+        LOG.info("VP4: Verify the date of show time");
+        Assert.assertEquals(seatPage.getDateOfShowTime(), "07-10-2021", "Không hiển thị đúng ngày chiếu");
+        //VP5: Verify the time of show time
+        ExtentReportManager.info("VP5: Verify the time of show time");
+        LOG.info("VP5: Verify the time of show time");
+        Assert.assertEquals(seatPage.getTimeOfShowTime(), "08:25", "Không hiển thị đúng giờ chiếu");
     }
 
 

@@ -168,32 +168,45 @@ public class TC_FilterTest extends BaseTestWithLogin {
     @Test
     public void TC08_navigateToSeatPageAfterClickBookTicketButton() {
         homePage = new HomePage(driver);
-       // homePage.buyTicketByFilter("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
-        homePage.selectMovie("AVATAR 2");
-        homePage.selectCinema("CGV - Golden Plaza");
-        homePage.selectDate("15/10/2021 ~ 08:42");
-        // Step 4: Click 'Mua Vé Ngay' button
-        ExtentReportManager.info("Step 4: Click 'Mua Vé Ngay' button");
-        LOG.info("Step 4: Click 'Mua Vé Ngay' button");
-        seatPage = homePage.clickBuyTicket();
-        // Step 5: Verify navigate to seat page
-        ExtentReportManager.info("Step 5: Verify navigate to seat page");
-        LOG.info("Step 5: Verify navigate to seat page");
+        //Step 1: Select movie, cinema branch, show time at the Filter section
+        ExtentReportManager.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
+        LOG.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
+        seatPage = homePage.buyTicketAtFilterSection("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
+        //Step 2: Verify navigate to seat page
+        ExtentReportManager.info("Step 2: Verify navigate to seat page");
+        LOG.info("Step 2: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"),
                 "Không chuyển sang màn hình chọn ghế sau khi bấm Mua Vé Ngay");
     }
     @Test
     public void TC09_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByFilter(){
         homePage = new HomePage(driver);
-        //homePage.buyTicketByFilter("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
-        homePage.selectMovie("AVATAR 2");
-        homePage.selectCinema("CGV - Golden Plaza");
-        homePage.selectDate("15/10/2021 ~ 08:42");
-        seatPage = homePage.clickBuyTicket();
+        //Step 1: Select movie, cinema branch, show time at the Filter section
+        ExtentReportManager.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
+        LOG.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
+        seatPage = homePage.buyTicketAtFilterSection("AVATAR 2","CGV - Golden Plaza","15/10/2021 ~ 08:42");
+        //Step 2: verify values on ticket at Seat page
+        ExtentReportManager.info("Step 2: verify values on ticket at Seat page");
+        LOG.info("Step 2: verify values on ticket at Seat page");
+        //VP1: verify the movie name
+        ExtentReportManager.info("VP1: verify the movie name");
+        LOG.info("VP1: verify the movie name");
         Assert.assertEquals(seatPage.getMovieName(),"AVATAR 2", "Hiển thị không đúng tên phim");
+        //VP1: verify the movie name
+        ExtentReportManager.info("VP1: verify the movie name");
+        LOG.info("VP1: verify the movie name");
         Assert.assertEquals(seatPage.getNameCinemaBranch(),"CGV - Golden Plaza", "Không hiển thị đúng tên cụm rạp");
+        //VP2: verify the address cinema
+        ExtentReportManager.info("VP2: verify the address cinema");
+        LOG.info("VP2: verify the address cinema");
         Assert.assertEquals(seatPage.getAddressCinema(), "Tầng 4, Trung tâm thương mại Golden Plaza, 922 Nguyễn Trãi, P. 14, Q. 5", "Không hiển thị đúng địa chỉ cụm rạp");
+        //VP3: verify the date of show time
+        ExtentReportManager.info("VP3: verify the date of show time");
+        LOG.info("VP3: verify the date of show time");
         Assert.assertEquals(seatPage.getDateOfShowTime(),"15-10-2021", "Không hiển thị đúng ngày chiếu");
+        //VP4: verify the time of show time
+        ExtentReportManager.info("VP4: verify the time of show time");
+        LOG.info("VP4: verify the time of show time");
         Assert.assertEquals(seatPage.getTimeOfShowTime(),"08:42", "Không hiển thị đúng giờ chiếu");
     }
 }
