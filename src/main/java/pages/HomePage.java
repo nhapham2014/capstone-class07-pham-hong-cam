@@ -3,12 +3,16 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import javax.swing.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class HomePage extends CommonPage {
     DetailMoviePage detailMoviePage;
@@ -38,19 +42,53 @@ public class HomePage extends CommonPage {
         return getText(byLblUserProfile);
     }
     /// Filter section
-    public void selectMovie(String movieName){
-        // Wait for the option
-        waitOptionsDropDownLoaded(byFilmOptions);
-        selectOptionByText(byDrdnFilm,movieName);
-        waitOptionsDropDownLoaded(byCinemaOptions);
+    ///
+    public String selectMovie() {
+        waitOptionsDropDownLoaded(byDrdnFilm);
+        return selectOptionByText(byDrdnFilm);
     }
-    public void selectCinema(String cinemaOption){
-        selectOptionByText(byDrndnCinema,cinemaOption);
-        waitOptionsDropDownLoaded(byDateOptions);
+    public String selectCinema(){
+        waitOptionsDropDownLoaded(byDrndnCinema);
+        return selectOptionByText(byDrndnCinema);
+
     }
-    public void selectDate(String dateOption){
-        // Wait for the option
-        selectOptionByText(byDrdnShowtime,dateOption);
+    public String selectDate(){
+        waitOptionsDropDownLoaded(byDrdnShowtime);
+        return selectOptionByText(byDrdnShowtime);
+    }
+    public String selectMovieHasMultipleCinema() {
+        String movie;
+
+        while (true) {
+
+            movie = selectMovie();  // random phim
+
+            // chờ cinema reload
+            WebElement cinemaDropdown = waitForVisibilityOfElementLocated(byDrndnCinema);
+            Select select = new Select(cinemaDropdown);
+            List<WebElement> options = select.getOptions();
+
+            // bỏ option mặc định "Rạp"
+            if (options.size() > 2) {
+                return movie; // phim này có cinema
+            }
+
+        }
+    }
+
+    public String changeMovie(String preMovie){
+        String movieB = selectMovieHasMultipleCinema();
+        while(movieB.equals(preMovie)){
+            movieB=selectMovie();
+        }
+        return movieB;
+    }
+    public String changeCinema(String preCinema){
+        String cinemaB = selectCinema();
+        while(cinemaB.equals(preCinema)){
+            cinemaB=selectCinema();
+        }
+        return cinemaB;
     }
     public int getDefaultValueCinemaOptionCount() {
          waitValueDefaultOnly(byCinemaOptions);
@@ -85,6 +123,7 @@ public class HomePage extends CommonPage {
     }
 
     public boolean cinemaIsReset() {
+
         return getSelectedCinema().equals("Rạp");
     }
 
@@ -102,9 +141,9 @@ public class HomePage extends CommonPage {
         return seatPage;
     }
     public SeatPage buyTicketAtFilterSection(String movieName, String cinemaBranch, String showTime){
-        selectMovie(movieName);
-        selectCinema(cinemaBranch);
-        selectDate(showTime);
+        selectMovie();
+        selectCinema();
+        selectDate();
         return clickBuyTicket();
     }
     /// Movie list section

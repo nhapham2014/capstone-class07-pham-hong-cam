@@ -16,9 +16,9 @@ public class TC_HistoryTest extends BaseTestWithLogin {
 
     private void selectMovieAndShowTime() {
         HomePage homePage = new HomePage(driver);
-        homePage.selectMovie("gái già lắm chiêu");
-        homePage.selectCinema("CGV - Vincom Gò Vấp");
-        homePage.selectDate("21/12/2021 ~ 16:00");
+        //homePage.selectMovie("gái già lắm chiêu");
+        homePage.selectCinema();
+        homePage.selectDate();
         seatPage = homePage.clickBuyTicket();
 
     }

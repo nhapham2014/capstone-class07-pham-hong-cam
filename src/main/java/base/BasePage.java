@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.text.Normalizer;
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 public class BasePage {
 
@@ -21,7 +22,7 @@ public class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(300));
         waitspecial = new WebDriverWait(driver, Duration.ofSeconds(600));
 
     }
@@ -63,9 +64,10 @@ public class BasePage {
 
     public void waitOptionsDropDownLoaded(By locator) {
         LOG.info("waitOptionsDropDownLoaded: " + locator);
-         wait.until(driver ->
-                driver.findElements(locator).size() > 1
-        );
+        wait.until(driver -> {
+            Select s = new Select(driver.findElement(locator));
+            return s.getOptions().size() > 1; // có option mới => loaded
+        });
 
     }
     public void waitValueDefaultOnly(By locator) {
@@ -74,7 +76,6 @@ public class BasePage {
         );
     }
     public void waitForPageLoaded() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         wait.until(webDriver -> {
             JavascriptExecutor js = (JavascriptExecutor) webDriver;
@@ -89,11 +90,18 @@ public class BasePage {
         return options.size();
     }
 
-    public void selectOptionByText(By locator, String optionText) {
-        WebElement element = waitForElementToBeClickable(locator);
-        // Chọn option bằng Select
-        Select select = new Select(element);
-            select.selectByVisibleText(optionText);
+
+    public String selectOptionByText(By locator) {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+        Select dropdown = new Select(element);
+        List<WebElement> options = dropdown.getOptions();
+
+        int randomIndex = new Random().nextInt(options.size() - 1) + 1;
+        dropdown.selectByIndex(randomIndex);
+        String selectedText = dropdown.getFirstSelectedOption().getText();
+
+        return selectedText;
     }
     public void hover(By locator){
         waitForVisibilityOfElementLocated(locator);

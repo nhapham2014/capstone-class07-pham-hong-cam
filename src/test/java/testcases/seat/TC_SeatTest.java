@@ -84,8 +84,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("34");
-        seatPage.selectSeat("35");
+        seatPage.selectRandomSeats(2);
         //Step 3: verify the total price
         ExtentReportManager.info("Step 3: verify the total price");
         LOG.info("Step 3: verify the total price");
@@ -100,9 +99,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("90");
-        seatPage.selectSeat("91");
-        seatPage.selectSeat("93");
+        seatPage.selectRandomSeats(3);
         //Step 3: Back to the previous page
         ExtentReportManager.info("Step 3: Back to the previous page");
         LOG.info("Step 3: Back to the previous page");
@@ -126,7 +123,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("90");
+        seatPage.selectRandomSeat();
         //Step 3: Reload/F5 page
         ExtentReportManager.info("Step 3: Reload/F5 page");
         LOG.info("Step 3: Reload/F5 page");
@@ -163,7 +160,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("91");
+        seatPage.selectRandomSeat();
         //Step 3: Click on the book ticket button
         ExtentReportManager.info("Step 3: Click on the book ticket button");
         LOG.info("Step 3: Click on the book ticket button");
@@ -183,37 +180,20 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 2: select the seat
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
-        seatPage.selectSeat("77");
+        seatPage.selectRandomSeat();
         seatPage.clickBookTicketButton();
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn//"),"Không điều hướng đến trang chủ sau khi đặt vé với ghế đã chọn");
     }
     @Test
     public void TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(){
         selectMovieAndShowTime();
-        seatPage.selectSeat("60");
+        seatPage.selectRandomSeat();
+        String seatNumber= seatPage.selectRandomSeat();
         seatPage.clickBookTicketButton();
         seatPage.clickAgreeButtonInAlert();
-        Assert.assertTrue(seatPage.isDisableSeat("60"),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
+        Assert.assertTrue(seatPage.isDisableSeat(seatNumber),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
-        System.out.println(numberOfSelectedSeat);
         Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được reset sau khi đặt vé thành công");
-
-    }
-
-    @Test
-    public void TC(){
-        selectMovieAndShowTime();
-      String expect = seatPage.selectRandomSeat();
-
-        String actual = seatPage.getSeatID();
-      Assert.assertEquals(actual,expect);
-
-    }
-    @Test
-    public void TC01(){
-        selectMovieAndShowTime();
-        seatPage.selectSeat("160");
-        Assert.assertEquals(seatPage.getSeatID(),"160","Mã ghế không đúng");
     }
 
 

@@ -30,19 +30,20 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie("AVATAR 2");
+        homePage.selectMovie();
+        String movieText = homePage.selectMovie();
         //Step 2: Select cinema
         ExtentReportManager.info("Step 2: Select cinema");
         LOG.info("Step 2: Select cinema");
-        homePage.selectCinema("CGV - Golden Plaza");
+        homePage.selectCinema();
         //Step 3: Select date time
         ExtentReportManager.info("Step 3: Select date time");
         LOG.info("Step 3: Select date time");
-        homePage.selectDate("15/10/2021 ~ 08:42");
+        homePage.selectDate();
         // Step 4: Change to another film
         ExtentReportManager.info("Step 4: Change to another film");
         LOG.info("Step 4: Change to another film");
-        homePage.selectMovie("Thor 6");
+        homePage.changeMovie(movieText);
         // Step 5: Verify cinema and showtime are reset
         ExtentReportManager.info("Step 5: Verify cinema and showtime are reset");
         LOG.info("Step 5: Verify cinema and showtime are reset");
@@ -58,20 +59,21 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie("AVATAR 2");
+        homePage.selectMovieHasMultipleCinema();
         //Step 2: Select cinema
         ExtentReportManager.info("Step 2: Select cinema");
         LOG.info("Step 2: Select cinema");
-        homePage.selectCinema("CGV - Golden Plaza");
+        homePage.selectCinema();
+        String cinemaText = homePage.selectCinema();
         //Step 3: Select date time
         ExtentReportManager.info("Step 3: Select date time");
         LOG.info("Step 3: Select date time");
-        homePage.selectDate("15/10/2021 ~ 08:42");
+        homePage.selectDate();
 
         // Step 4: Change to another cinema
         ExtentReportManager.info("Step 4: Change to another cinema");
         LOG.info("Step 4: Change to another cinema");
-        homePage.selectCinema("MegaGS - Cao Thắng");
+        homePage.changeCinema(cinemaText);
 
         // Step 5: Verify showtime is reset
         ExtentReportManager.info("Step 5: Verify showtime is reset");
@@ -85,7 +87,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie("AVATAR 2");
+       // homePage.selectMovie("AVATAR 2");
         //Step 2: Verify cinema dropdown is loaded
         ExtentReportManager.info("Step 2: Verify cinema dropdown is loaded");
         LOG.info("Step 2: Verify cinema dropdown is loaded");
@@ -99,11 +101,11 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie("AVATAR 2");
+       // homePage.selectMovie("AVATAR 2");
         //Step 2: Select cinema
         ExtentReportManager.info("Step 2: Select cinema");
         LOG.info("Step 2: Select cinema");
-        homePage.selectCinema("CGV - Golden Plaza");
+        homePage.selectCinema();
         //Step 3: Verify showtime dropdown is loaded
         ExtentReportManager.info("Step 3: Verify showtime dropdown is loaded");
         LOG.info("Step 3: Verify showtime dropdown is loaded");
@@ -131,7 +133,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie("AVATAR 2");
+        //homePage.selectMovie("AVATAR 2");
         // Step 2: Click 'Mua Vé Ngay' button without select showtime
         ExtentReportManager.info("Step 2: Click 'Mua Vé Ngay' button without select cinema");
         LOG.info("Step 2: Click 'Mua Vé Ngay' button without select cinema");
@@ -149,11 +151,11 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie("AVATAR 2");
+       // homePage.selectMovie("AVATAR 2");
         //Step 2: Select cinema
         ExtentReportManager.info("Step 2: Select cinema");
         LOG.info("Step 2: Select cinema");
-        homePage.selectCinema("CGV - Golden Plaza");
+        homePage.selectCinema();
         // Step 3: Click 'Mua Vé Ngay' button without select showtime
         ExtentReportManager.info("Step 3: Click 'Mua Vé Ngay' button without select showtime");
         LOG.info("Step 3: Click 'Mua Vé Ngay' button without select showtime");
@@ -208,5 +210,21 @@ public class TC_FilterTest extends BaseTestWithLogin {
         ExtentReportManager.info("VP4: verify the time of show time");
         LOG.info("VP4: verify the time of show time");
         Assert.assertEquals(seatPage.getTimeOfShowTime(),"08:42", "Không hiển thị đúng giờ chiếu");
+    }
+    @Test
+    public void tcaa(){
+        homePage = new HomePage(driver);
+        //homePage.selectMovie();
+
+        homePage.selectMovie();
+        String text = homePage.selectMovie();
+        System.out.println(text);
+        homePage.selectCinema();
+        String text2 = homePage.selectCinema();
+        System.out.println(text2);
+        homePage.selectDate();
+        String text3 = homePage.selectDate();
+        System.out.println(text3);
+        homePage.clickBuyTicket();
     }
 }
