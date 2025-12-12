@@ -27,7 +27,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
     public void TC02_changeFilm_cinemaAndShowtimeMustReset() {
         homePage = new HomePage(driver);
 
-        // Step 1: Select film
+        // Step 1: Select film test
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
         homePage.selectMovie();
