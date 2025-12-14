@@ -1,11 +1,15 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -22,8 +26,7 @@ public class HomePage extends CommonPage {
     private By byDrdnFilm = By.xpath("//select[@name='film']");
     private By byDrndnCinema = By.xpath("//select[@name='cinema']");
     private By byDrdnShowtime = By.xpath("//select[@name='date']");
-    private By byBtnBuyTicket = By.xpath("//button[.//span[text()='MUA VÉ NGAY']]");
-    private By byFilmOptions = By.xpath("//select[@name='film']/option");
+    private By byBtnBuyTicket = By.xpath("//button[span[contains(text(),'MUA VÉ NGAY')]]");
     private By byCinemaOptions = By.xpath("//select[@name='cinema']/option");
     private By byDateOptions = By.xpath("//select[@name='date']/option");
     private By byFrameVideo = By.xpath("//iframe[contains(@src,'youtube') or contains(@src,'video')]");
@@ -34,6 +37,8 @@ public class HomePage extends CommonPage {
     private By byMsgPopupFilter = By.xpath("//*[@id='swal2-content']");
 
 
+
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -42,73 +47,28 @@ public class HomePage extends CommonPage {
         return getText(byLblUserProfile);
     }
     /// Filter section
-    ///
-    public String selectMovie() {
+
+    public void selectMovie(String filmText) {
         waitOptionsDropDownLoaded(byDrdnFilm);
-        return selectOptionByText(byDrdnFilm);
-    }
-    public String selectCinema(){
+        selectOptionByText(byDrdnFilm,filmText);
         waitOptionsDropDownLoaded(byDrndnCinema);
-        return selectOptionByText(byDrndnCinema);
-
     }
-    public String selectDate(){
+    public void selectCinema(String cinemaText){
+
+        selectOptionByText(byDrndnCinema,cinemaText);
         waitOptionsDropDownLoaded(byDrdnShowtime);
-        return selectOptionByText(byDrdnShowtime);
+
     }
-    public String selectMovieHasMultipleCinema() {
-        String movie;
-
-        while (true) {
-
-            movie = selectMovie();  // random phim
-
-            // chờ cinema reload
-            WebElement cinemaDropdown = waitForVisibilityOfElementLocated(byDrndnCinema);
-            Select select = new Select(cinemaDropdown);
-            List<WebElement> options = select.getOptions();
-
-            // bỏ option mặc định "Rạp"
-            if (options.size() > 2) {
-                return movie; // phim này có cinema
-            }
-
-        }
+    public void selectDate(String dateText){
+        selectOptionByText(byDrdnShowtime,dateText);
     }
 
-    public String changeMovie(String preMovie){
-        String movieB = selectMovieHasMultipleCinema();
-        while(movieB.equals(preMovie)){
-            movieB=selectMovie();
-        }
-        return movieB;
-    }
-    public String changeCinema(String preCinema){
-        String cinemaB = selectCinema();
-        while(cinemaB.equals(preCinema)){
-            cinemaB=selectCinema();
-        }
-        return cinemaB;
-    }
-    public int getDefaultValueCinemaOptionCount() {
-         waitValueDefaultOnly(byCinemaOptions);
-        return getOptionsCount(byCinemaOptions);
-    }
 
-    public int getCinemaOptionsAfterSelectMovie() {
-
-        waitOptionsDropDownLoaded(byCinemaOptions);
-        return getOptionsCount(byCinemaOptions);
-    }
     public int getDefaultValueShowtimeOptionsCount() {
         waitValueDefaultOnly(byDateOptions);
         return getOptionsCount(byDateOptions);
     }
-    public int getShowTimeOptionsAfterSelectMovie() {
 
-        waitOptionsDropDownLoaded(byDateOptions);
-        return getOptionsCount(byDateOptions);
-    }
     public String getSelectedCinema() {
         return getSelectedOptionText(byDrndnCinema);
 
@@ -131,21 +91,27 @@ public class HomePage extends CommonPage {
         return getSelectedShowtime().equals("Ngày giờ chiếu");
     }
     public void clickBuyTicketExpectError() {
-        click(byBtnBuyTicket);
+        waitForElementToBeClickable(byBtnBuyTicket);
+        clickbutton(byBtnBuyTicket);
     }
     public SeatPage clickBuyTicket() {
         waitForElementToBeClickable(byBtnBuyTicket);
-        click(byBtnBuyTicket);
+        clickbutton(byBtnBuyTicket);
         waitForPageLoaded();
         seatPage = new SeatPage(driver);
         return seatPage;
     }
-    public SeatPage buyTicketAtFilterSection(String movieName, String cinemaBranch, String showTime){
-        selectMovie();
-        selectCinema();
-        selectDate();
+    public SeatPage buyTicketByFilter(String film, String cinema, String date){
+        selectMovie(film);
+        selectCinema(cinema);
+        selectDate(date);
         return clickBuyTicket();
     }
+    public int getDefaultValueCinemaOptionCount() {
+        waitValueDefaultOnly(byCinemaOptions);
+        return getOptionsCount(byCinemaOptions);
+    }
+
     /// Movie list section
     public String getMovieTitle(String imageMovie) {
         By byLbMovieTitle = By.xpath("//div[contains(@style,'" + imageMovie +"')]/following-sibling::div//div[span='C18']");
@@ -160,8 +126,10 @@ public class HomePage extends CommonPage {
     }
     public void clickTrailerMovie(String imageMovie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]");
-        By byBtnTrailerMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]//button");
+        waitForVisibilityOfElementLocated(byImageMovie);
         hover(byImageMovie);
+        By byBtnTrailerMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]//button");
+
         click(byBtnTrailerMovie);
     }
     public boolean isTrailerDisplayed() {
@@ -174,6 +142,7 @@ public class HomePage extends CommonPage {
     }
     public DetailMoviePage clickBuyTicketAtMovie(String movie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]");
+        waitForVisibilityOfElementLocated(byImageMovie);
         By byBtnBookTicket = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
         hover(byImageMovie);
         click(byBtnBookTicket);

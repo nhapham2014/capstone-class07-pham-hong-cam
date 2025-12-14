@@ -10,7 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -18,7 +17,9 @@ public class ExtentReportManager {
 
     private static ExtentReports extent;
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>(); // mỗi thread 1 ExtentTest
-    private static final String REPORT_PATH = "test-output/ExtentReport.html";
+    private static final String REPORT_PATH =  "test-output/ExtentReport_" +
+            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) +
+            ".html";;
     private static final String SCREENSHOT_PATH = "test-output/screenshots/";
 
     public static void initializeExtentReports() {
@@ -52,19 +53,29 @@ public class ExtentReportManager {
     }
 
     public static void captureScreenshot(WebDriver driver, String testName) {
-        TakesScreenshot screenshot = (TakesScreenshot) driver;
-        File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
-
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-        String fileName = testName + "_" + timestamp + ".png";
-        File destFile = new File(SCREENSHOT_PATH + fileName);
-
         try {
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File sourceFile = screenshot.getScreenshotAs(OutputType.FILE);
+
+            String timestamp = LocalDateTime.now()
+                    .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
+            String fileName = testName + "_" + timestamp + ".png";
+
+            File destFile = new File(SCREENSHOT_PATH + fileName);
+            destFile.getParentFile().mkdirs(); // ⭐ FIX QUAN TRỌNG
+
             FileUtils.copyFile(sourceFile, destFile);
+
+            // ⚠️ ĐƯỜNG DẪN PHẢI RELATIVE so với file HTML
             String relativePath = "screenshots/" + fileName;
-            getTest().fail("Screenshot captured", MediaEntityBuilder.createScreenCaptureFromPath(relativePath).build());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+
+            getTest().fail(
+                    "Screenshot captured",
+                    MediaEntityBuilder.createScreenCaptureFromPath(relativePath).build()
+            );
+
+        } catch (Exception e) {
+            getTest().warning("Could not capture screenshot: " + e.getMessage());
         }
     }
 

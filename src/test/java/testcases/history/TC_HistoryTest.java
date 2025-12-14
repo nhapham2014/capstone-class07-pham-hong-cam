@@ -3,6 +3,7 @@ import base.BaseTestWithLogin;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.*;
 import reports.ExtentReportManager;
 import java.time.LocalDateTime;
@@ -16,9 +17,9 @@ public class TC_HistoryTest extends BaseTestWithLogin {
 
     private void selectMovieAndShowTime() {
         HomePage homePage = new HomePage(driver);
-        //homePage.selectMovie("gái già lắm chiêu");
-        homePage.selectCinema();
-        homePage.selectDate();
+        homePage.selectMovie("gái già lắm chiêu");
+        homePage.selectCinema("CGV - Vincom Gò Vấp");
+        homePage.selectDate("21/12/2021 ~ 16:00");
         seatPage = homePage.clickBuyTicket();
 
     }
@@ -39,6 +40,7 @@ public class TC_HistoryTest extends BaseTestWithLogin {
 
     @Test
     public void TC02_verifyLatestBookingDateAtHistoryPage() {
+        SoftAssert softAssert = new SoftAssert();
         homePage = new HomePage(driver);
         // Step 1: Select Movie and Show Time at Home page
         ExtentReportManager.info("Step 1: Select Movie and Show Time at Home page");
@@ -47,7 +49,7 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         // Step 2: Select seat at Seat page
         ExtentReportManager.info("Step 2: Select seat at Seat page");
         LOG.info("Step 2: Select seat at Seat page");
-        seatPage.selectSeat("107");
+        seatPage.selectRandomSeat();
         //Get values at all fields at the Ticket
 
         String expectNameMovie = seatPage.getMovieName();
@@ -67,6 +69,7 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         // Step 4: Click on the Agree button
         ExtentReportManager.info("Step 4: Click on the Agree button");
         LOG.info("Step 4: Click on the Agree button");
+        Reporter.log("Step 4: Click on the Agree button");
         seatPage.clickAgreeButtonInAlert();
         //Get the booking time when user click the Agree button
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -83,32 +86,33 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         ExtentReportManager.info("VP1: Verify the order time value");
         LOG.info("VP1: Verify the order time value");
         String actualOrderTime = historyPage.getLatestTicketDate();
-        Assert.assertEquals(actualOrderTime, expectOrderTime, "Ngày đặt vé mới nhất không đúng");
+        softAssert.assertEquals(actualOrderTime, expectOrderTime, "Ngày đặt vé mới nhất không đúng");
         //VP2: Verify the movie name
         ExtentReportManager.info("VP2: Verify the movie name");
         LOG.info("VP2: Verify the movie name");
         String actualNameMovie = historyPage.getLatestTicketMovieName();
-        Assert.assertEquals(actualNameMovie, expectNameMovie, "Tên phim không đúng");
+        softAssert.assertEquals(actualNameMovie, expectNameMovie, "Tên phim không đúng");
         //VP3: Verify the total price
         ExtentReportManager.info("VP3: Verify the total price");
         LOG.info("VP3: Verify the total price");
         int actualTotalPrice = historyPage.getLatestTicketTotalPrice();
-        Assert.assertEquals(actualTotalPrice, expectTotalPrice, "Tổng giá vé không đúng");
+        softAssert.assertEquals(actualTotalPrice, expectTotalPrice, "Tổng giá vé không đúng");
         //VP3: Verify the cinema branch
         ExtentReportManager.info("VP3: Verify the cinema branch");
         LOG.info("VP3: Verify the cinema branch");
         String actualCinemaBranch = historyPage.getLatestTicketCinemaBranch();
-        Assert.assertEquals(actualCinemaBranch, expectCinemaBranch, "Cụm rạp không đúng");
+        softAssert.assertEquals(actualCinemaBranch, expectCinemaBranch, "Cụm rạp không đúng");
         //VP4: Verify the screen ID
         ExtentReportManager.info("VP4: Verify the screen ID");
         LOG.info("VP4: Verify the screen ID");
         String actualScreenID = historyPage.getLatestTicketScreenID();
-        Assert.assertEquals(actualScreenID, expectScreenID, "Mã rạp không đúng");
+        softAssert.assertEquals(actualScreenID, expectScreenID, "Mã rạp không đúng");
         //VP5: Verify list selected seat
         ExtentReportManager.info("VP5: Verify list selected seat");
         LOG.info("VP5: Verify list selected seat");
         List<String> actualSeatID = historyPage.getLatestListSeat();
-        Assert.assertEquals(actualSeatID.toArray(), expectSeatID.toArray(), "Mã ghế không đúng");
+        softAssert.assertEquals(actualSeatID.toArray(), expectSeatID.toArray(), "Mã ghế không đúng");
+        softAssert.assertAll();
 
     }
 

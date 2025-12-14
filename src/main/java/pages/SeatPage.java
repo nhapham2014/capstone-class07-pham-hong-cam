@@ -160,12 +160,15 @@ public class SeatPage extends CommonPage {
         return getText(byLbScreenID).replace("Rạp:","").trim();
     }
     public String getDateOfShowTime(){
-        return getText(byLbDate).replace(" -","").replace("/","-").replace(getText(byLbTime),"").trim();
+        waitForVisibilityOfElementLocated(byLbDate);
+        return getText(byLbDate).replace(" -","").replace(getText(byLbTime),"").replace("/","-").trim();
 
     }
     public String getTimeOfShowTime(){
+        waitForVisibilityOfElementLocated(byLbTime);
         return getText(byLbTime).trim();
     }
+
     public String getMovieName(){
         return getText(byLbNameMovie).replace("Tên Phim:","").trim();
     }

@@ -22,6 +22,9 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected ScenarioContext context;
+    public WebDriver getDriver() {
+        return driver;
+    }
 
     @BeforeSuite
     public void beforeSuite() {

@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.Normalizer;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 
@@ -37,11 +39,33 @@ public class BasePage {
         LOG.info("waitForElementToBeClickable: " + locator);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+    public WebElement waitForPresenceOfElementLocated(By locator) {
+        LOG.info("waitForPresenceOfElementLocated: " + locator);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 
     public void sendKeys(By locator, String value) {
         LOG.info("sendKeys: " + locator + " with " + value);
         WebElement element = waitForVisibilityOfElementLocated(locator);
         element.sendKeys(value);
+    }
+    public void clickbutton(By locator) {
+        WebElement element = waitForPresenceOfElementLocated(locator);
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            element.click();
+        } catch (ElementClickInterceptedException e) {
+            ((JavascriptExecutor) driver)
+                    .executeScript("arguments[0].click();", element);
+        }
+    }
+    public LocalDateTime changeToDateTime(String dateStr) {
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+
+        LocalDateTime dateTime = LocalDateTime.parse(dateStr, formatter);
+        return dateTime;
     }
 
     public void click(By locator) {
@@ -91,20 +115,11 @@ public class BasePage {
     }
 
 
-    public String selectOptionByText(By locator) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-
-        Select dropdown = new Select(element);
-        List<WebElement> options = dropdown.getOptions();
-
-        int randomIndex = new Random().nextInt(options.size() - 1) + 1;
-        dropdown.selectByIndex(randomIndex);
-        String selectedText = dropdown.getFirstSelectedOption().getText();
-
-        return selectedText;
+    public void selectOptionByText(By dropdownLocator, String text) {
+        Select select = new Select(driver.findElement(dropdownLocator));
+        select.selectByVisibleText(text);
     }
-    public void hover(By locator){
-        waitForVisibilityOfElementLocated(locator);
+    public void hover(By locator) {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(locator)).perform();
     }
@@ -114,13 +129,6 @@ public class BasePage {
     }
     public void reloadPage() {
         driver.navigate().refresh();
-    }
-    public List<WebElement> waitForPresenceOfAllElmentsLocatedBy(By locator) {
-        LOG.info("waitForPresenceOfAllElmentsLocatedBy: " + locator);
-        return
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
-                locator
-        ));
     }
 
 }

@@ -1,11 +1,20 @@
 package listeners;
 
 
+import base.BaseTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class TestListener implements ITestListener {
 
@@ -15,6 +24,7 @@ public class TestListener implements ITestListener {
     public void onTestStart(ITestResult result) {
         String methodName = result.getMethod().getMethodName();
         logger.info("===== START TEST: " + methodName + " =====");
+
     }
 
     @Override
@@ -28,7 +38,22 @@ public class TestListener implements ITestListener {
         String methodName = result.getMethod().getMethodName();
         logger.error("===== FAILED TEST: " + methodName + " =====", result.getThrowable());
         //take screen lúc failed
+        Object testClass = result.getInstance();
+        WebDriver driver = ((BaseTest) testClass).getDriver();
 
+        takeScreenshot(driver, result.getName());
+
+    }
+    private void takeScreenshot(WebDriver driver, String testName) {
+        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File destFile = new File("screenshots/" + testName + ".png");
+
+        try {
+            Files.createDirectories(destFile.getParentFile().toPath());
+            Files.copy(srcFile.toPath(), destFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

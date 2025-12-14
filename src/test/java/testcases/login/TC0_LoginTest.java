@@ -4,6 +4,7 @@ import base.BaseTest;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import pages.LoginPage;
 import reports.ExtentReportManager;
@@ -23,6 +24,7 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC01_testValidLogin() {
+        SoftAssert softAssert = new SoftAssert();
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
@@ -38,12 +40,13 @@ public class TC0_LoginTest extends BaseTest {
         ExtentReportManager.info("VP1: \"Đăng nhập thành công\" message display");
         LOG.info("VP1: \"Đăng nhập thành công\" message display");
         String actualLoginMsg = loginPage.getMessage();
-        Assert.assertEquals(actualLoginMsg, "Đăng nhập thành công", "Login message");
+        softAssert.assertEquals(actualLoginMsg, "Đăng nhập thành công", "Login message");
         //VP2: User profile name displays
         ExtentReportManager.info("VP2: User profile name displays");
         LOG.info("VP2: User profile name displays");
         String actualDisplayName = homePage.getUserProfileName();
-        Assert.assertEquals(actualDisplayName, "Pham Hong Cam", "User Profile name");
+        softAssert.assertEquals(actualDisplayName, "Pham Hong Cam", "User Profile name");
+        softAssert.assertAll();
 
     }
 
@@ -86,7 +89,7 @@ public class TC0_LoginTest extends BaseTest {
         ExtentReportManager.info("Step 3: verify the error message");
         LOG.info("Step 3: verify the error message");
         String actualErrorPassword = loginPage.getErrorRequirePassword();
-        Assert.assertEquals(actualErrorPassword, "Đây là trường bắt buộc !", "Không hiển thị lỗi khi không nhập password");
+        Assert.assertEquals(actualErrorPassword, "Đây là trường bắt buộc a !", "Không hiển thị lỗi khi không nhập password");
     }
 
     @Test
@@ -141,6 +144,7 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC06_verifyDefaultValueAfterClickRememeberForMe() {
+        SoftAssert softAssert = new SoftAssert();
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
@@ -174,8 +178,9 @@ public class TC0_LoginTest extends BaseTest {
         LOG.info("Step 8: verify the default value in Account and Password fields");
         String actualAccountValue = loginPage.getValueAccount();
         String actualPasswordValue = loginPage.getValuePassword();
-        Assert.assertEquals(actualAccountValue, "cam0592");
-        Assert.assertEquals(actualPasswordValue, "Diqit0505@");
+        softAssert.assertEquals(actualAccountValue, "cam0592");
+        softAssert.assertEquals(actualPasswordValue, "Diqit0505@");
+        softAssert.assertAll();
     }
     @Test
     public void TC07_verifyNavigateToRegisterPageWhenClickSignUpLink() {

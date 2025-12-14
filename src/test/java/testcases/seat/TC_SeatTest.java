@@ -16,7 +16,9 @@ public class TC_SeatTest extends BaseTestWithLogin {
     SeatPage seatPage;
     private void selectMovieAndShowTime(){
         HomePage homePage = new HomePage(driver);
-        seatPage = homePage.buyTicketAtFilterSection("gái già lắm chiêu","CGV - Vincom Gò Vấp", "21/12/2021 ~ 16:00");
+        seatPage = homePage.buyTicketByFilter("gái già lắm chiêu",
+                "CGV - Vincom Gò Vấp",
+                "21/12/2021 ~ 16:00");
 
     }
     @Test
