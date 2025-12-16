@@ -36,24 +36,31 @@ public class BaseTest {
     @BeforeClass
     public void beforeClass() {
         LOG.info("Before class executed");
+    }
+
+    @BeforeMethod(alwaysRun = true)
+    public void setUp(Method method) {
         DriverManager driverManager = DriverManagerFactory.getDriverManager("chrome");
         driver = driverManager.createDriver();
         driver.manage().window().maximize();
+        driver.get("https://demo1.cybersoft.edu.vn");
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        driver.get("https://demo1.cybersoft.edu.vn");
-
-    }
-
-    @BeforeMethod
-    public void beforeMethod(Method method) {
         LOG.info("Before Method executed");
         ExtentReportManager.createTest(method.getName());
-    }
-    @BeforeMethod
-    public void setupContext() {
-
         context = new ScenarioContext();
+        if (needLogin()) {
+            doLogin();
+        }
+    }
+    protected boolean needLogin() {
+        return false;
+    }
+
+    protected void doLogin() {
+        homePage.navigateLoginPage();
+        loginPage.login("cam0592", "Diqit0505@");
+        loginPage.clickClose();
     }
 
     @AfterMethod
@@ -62,12 +69,14 @@ public class BaseTest {
         if(result.getStatus() == ITestResult.FAILURE) {
             ExtentReportManager.captureScreenshot(driver, result.getMethod().getMethodName());
         }
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @AfterClass
     public void afterClass() {
         LOG.info("After class executed");
-        driver.quit();
     }
 
     @AfterSuite

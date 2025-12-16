@@ -4,35 +4,35 @@
     <listeners>
         <listener class-name="listeners.TestListener" />
     </listeners>
-    <test name="register test" parallel="classes" thread-count="2">
+    <test name="register test">
         <classes>
             <class name="testcases.register.TC_RegisterTest" />
 
         </classes>
     </test>
-    <test name="login test" parallel="classes" thread-count="2">
+    <test name="login test">
         <classes>
             <class name="testcases.login.TC0_LoginTest" />
         </classes>
     </test>
-    <test name="home test" parallel="classes" thread-count="1">
+    <test name="home test">
         <classes>
             <class name="testcases.home.TC_CinemaTest" />
             <class name="testcases.home.TC_FilterTest"/>
             <class name="testcases.home.TC_MovieTest"/>
         </classes>
     </test>
-    <test name="showtime test" parallel="classes" thread-count="1">
+    <test name="showtime test">
         <classes>
             <class name="testcases.detailmovie.TC_DetailMovieTest" />
         </classes>
     </test>
-    <test name="seat test" parallel="classes" thread-count="1">
+    <test name="seat test">
         <classes>
             <class name="testcases.seat.TC_SeatTest" />
         </classes>
     </test>
-    <test name="history test" parallel="classes" thread-count="1">
+    <test name="history test">
         <classes>
             <class name="testcases.history.TC_HistoryTest" />
         </classes>

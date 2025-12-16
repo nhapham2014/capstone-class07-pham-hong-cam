@@ -1,7 +1,13 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class RegisterPage extends CommonPage {
     LoginPage loginPage;
@@ -66,7 +72,18 @@ public class RegisterPage extends CommonPage {
     }
     public String getErrorAccount(){
         waitForVisibilityOfElementLocated(byTxtErrorAccount);
-        return getText(byTxtErrorAccount);
+//        return getText(byTxtErrorAccount);
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            WebElement error = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(byTxtErrorAccount)
+            );
+            return error.getText().trim();
+        } catch (TimeoutException e) {
+            throw new AssertionError(
+                    "❌ Không hiển thị message lỗi cho case tài khoản đã tồn tại trong 5s"
+            );
+        }
     }
     public String getErrorPassword() {
         waitForVisibilityOfElementLocated(byTxtErrorPassword);

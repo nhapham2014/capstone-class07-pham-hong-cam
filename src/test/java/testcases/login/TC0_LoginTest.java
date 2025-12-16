@@ -89,7 +89,7 @@ public class TC0_LoginTest extends BaseTest {
         ExtentReportManager.info("Step 3: verify the error message");
         LOG.info("Step 3: verify the error message");
         String actualErrorPassword = loginPage.getErrorRequirePassword();
-        Assert.assertEquals(actualErrorPassword, "Đây là trường bắt buộc a !", "Không hiển thị lỗi khi không nhập password");
+        Assert.assertEquals(actualErrorPassword, "Đây là trường bắt buộc !", "Không hiển thị lỗi khi không nhập password");
     }
 
     @Test

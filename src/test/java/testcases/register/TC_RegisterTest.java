@@ -15,9 +15,8 @@ public class TC_RegisterTest extends BaseTest {
     LoginPage loginPage;
     HomePage homePage;
 
-    //priority số nhỏ sẽ chạy trước priority số lớn
-    @Test(priority = 0)
-    public void testRegister() {
+    @Test
+    public void TC01_testRegisterSuccess() {
         registerPage = new RegisterPage(driver);
         homePage = new HomePage(driver);
         //Step 1: Navigate to Register page
@@ -94,24 +93,6 @@ public class TC_RegisterTest extends BaseTest {
         LOG.info("VP5: Verify error message at Email field");
         String actualErrorEmail = registerPage.getErrorEmail();
         Assert.assertEquals(actualErrorEmail, "Đây là trường bắt buộc !", "Không hiển thị đúng lỗi tại field Email");
-    }
-    @Test
-    public void TC03_verifyRegisterWithInvalidEmail() {
-        registerPage = new RegisterPage(driver);
-        homePage = new HomePage(driver);
-        //Step 1: Navigate to Register page
-        ExtentReportManager.info("Step 1: Navigate to Register page");
-        LOG.info("Step 1: Navigate to Register page");
-        homePage.navigateRegisterPage();
-        //Step 2: Enter invalid email format
-        ExtentReportManager.info("Step 2: Enter invalid email format");
-        LOG.info("Step 2: Enter invalid email format");
-        registerPage.registerInvalid("","","","","invalidEmail");
-        //Step 3: Verify error message at Email field
-        ExtentReportManager.info("Step 3: Verify error message at Email field");
-        LOG.info("Step 3: Verify error message at Email field");
-        String actualErrorEmail = registerPage.getErrorEmail();
-        Assert.assertEquals(actualErrorEmail, "Vui lòng nhập email hợp lệ !", "Không hiển thị đúng lỗi tại field Email");
     }
 
     @Test

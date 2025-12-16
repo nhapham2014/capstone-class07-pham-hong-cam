@@ -68,7 +68,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
     }
 
     @Test
-    public void TC05_displayWarmPopupWhenClickBuyTicketWithoutSelectAll() {
+    public void TC03_displayWarmPopupWhenClickBuyTicketWithoutSelectAll() {
         homePage = new HomePage(driver);
         // Step 1: Click 'Mua Vé Ngay' button without select any filter
         ExtentReportManager.info("Step 1: Click 'Mua Vé Ngay' button without select any filter");
@@ -87,7 +87,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie(cinemaName);
+        homePage.selectMovie(movieName);
         // Step 2: Click 'Mua Vé Ngay' button without select showtime
         ExtentReportManager.info("Step 2: Click 'Mua Vé Ngay' button without select cinema");
         LOG.info("Step 2: Click 'Mua Vé Ngay' button without select cinema");
@@ -105,7 +105,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         // Step 1: Select film
         ExtentReportManager.info("Step 1: Select film");
         LOG.info("Step 1: Select film");
-        homePage.selectMovie(cinemaName);
+        homePage.selectMovie(movieName);
         //Step 2: Select cinema
         ExtentReportManager.info("Step 2: Select cinema");
         LOG.info("Step 2: Select cinema");
