@@ -1,6 +1,5 @@
 package pages;
 
-import enums.Movie;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -49,9 +48,9 @@ public class HomePage extends CommonPage {
     }
     /// Filter section
 
-    public void selectMovie(Movie movie) {
+    public void selectMovie(String filmText) {
         waitOptionsDropDownLoaded(byDrdnFilm);
-        selectOptionByText(byDrdnFilm,movie.getTitle());
+        selectOptionByText(byDrdnFilm,filmText);
         waitOptionsDropDownLoaded(byDrndnCinema);
     }
     public void selectCinema(String cinemaText){
@@ -102,8 +101,8 @@ public class HomePage extends CommonPage {
         seatPage = new SeatPage(driver);
         return seatPage;
     }
-    public SeatPage buyTicketByFilter(Movie movie, String cinema, String date){
-        selectMovie(movie);
+    public SeatPage buyTicketByFilter(String film, String cinema, String date){
+        selectMovie(film);
         selectCinema(cinema);
         selectDate(date);
         return clickBuyTicket();
