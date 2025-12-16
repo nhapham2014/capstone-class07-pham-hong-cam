@@ -15,9 +15,6 @@ public class ScenarioContext {
         data.put(key, value);
     }
 
-    public Object get(String key) {
-        return data.get(key);
-    }
 
     public <T> T get(String key, Class<T> type) {
         return type.cast(data.get(key));
@@ -27,7 +24,4 @@ public class ScenarioContext {
         return data.containsKey(key);
     }
 
-    public void clear() {
-        data.clear();
-    }
 }

@@ -7,10 +7,6 @@ import pages.HomePage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 
 public class TC_SeatTest extends BaseTestWithLogin {
     SeatPage seatPage;
@@ -32,6 +28,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         LOG.info("Step 2: Select the seat");
         seatPage.selectRandomSeat();
         String numberSeat = seatPage.selectRandomSeat();
+        System.out.println(numberSeat);
         //Step 3: verify color of the selected seat
         ExtentReportManager.info("Step 3: verify color of the selected seat");
         LOG.info("Step 3: verify color of the selected seat");
@@ -71,7 +68,6 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
         seatPage.selectRandomSeats(3);
-
         //Step 3: verify the seat on ticket
         ExtentReportManager.info("Step 3: verify the seat on ticket");
         LOG.info("Step 3: verify the seat on ticket");

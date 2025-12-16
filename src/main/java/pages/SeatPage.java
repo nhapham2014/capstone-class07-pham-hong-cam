@@ -1,20 +1,14 @@
 package pages;
 
+import helpers.SeatHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.ScenarioContext;
-
 import javax.swing.*;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static helpers.SeatHelper.isSeatDisabled;
 
 public class SeatPage extends CommonPage {
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
@@ -44,30 +38,17 @@ public class SeatPage extends CommonPage {
     }
     public String selectRandomSeat() {
         Random rand = new Random();
-
         while (true) {
             int seatNumber = rand.nextInt(160) + 1; // từ 1 → 160
             String seat = String.format("%02d", seatNumber); // format 2 số: 01, 02, ...
-
-            // XPATH tìm đúng ghế theo số
             By seatLocator = By.xpath("//button[span[text()='" + seat + "']]");
-
             List<WebElement> elements = driver.findElements(seatLocator);
-
-            // Nếu ghế KHÔNG render = disabled
+            // Nếu ghế ko render = disabled
             if (elements.isEmpty()) {
                 continue; // thử random ghế khác
             }
-
             WebElement e = elements.get(0);
-
-            // Kiểm tra disable (3 loại)
-            boolean disabled =
-                    !e.isEnabled() ||
-                            e.getAttribute("disabled") != null ||
-                            e.getAttribute("class").contains("disabled");
-
-            if (!disabled) {
+            if (!isSeatDisabled(e)) {
                 e.click();
                 return seat; // trả về số ghế đã chọn
             }
@@ -192,8 +173,6 @@ public class SeatPage extends CommonPage {
     public void clickBookTicketButton(){
         waitForElementToBeClickable(byBtnBookTicket);
         click(byBtnBookTicket);
-
-
     }
     public String getErrorMessage() {
         waitForVisibilityOfElementLocated(byMsgError);
