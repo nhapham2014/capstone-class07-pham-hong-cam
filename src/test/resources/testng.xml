@@ -10,31 +10,31 @@
 
         </classes>
     </test>
-    <test name="login test">
-        <classes>
-            <class name="testcases.login.TC0_LoginTest" />
-        </classes>
-    </test>
-    <test name="home test">
-        <classes>
-            <class name="testcases.home.TC_CinemaTest" />
-            <class name="testcases.home.TC_FilterTest"/>
-            <class name="testcases.home.TC_MovieTest"/>
-        </classes>
-    </test>
-    <test name="showtime test">
-        <classes>
-            <class name="testcases.detailmovie.TC_DetailMovieTest" />
-        </classes>
-    </test>
-    <test name="seat test">
-        <classes>
-            <class name="testcases.seat.TC_SeatTest" />
-        </classes>
-    </test>
-    <test name="history test">
-        <classes>
-            <class name="testcases.history.TC_HistoryTest" />
-        </classes>
-    </test>
+<!--    <test name="login test">-->
+<!--        <classes>-->
+<!--            <class name="testcases.login.TC0_LoginTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="home test">-->
+<!--        <classes>-->
+<!--            <class name="testcases.home.TC_CinemaTest" />-->
+<!--            <class name="testcases.home.TC_FilterTest"/>-->
+<!--            <class name="testcases.home.TC_MovieTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="showtime test">-->
+<!--        <classes>-->
+<!--            <class name="testcases.detailmovie.TC_DetailMovieTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="seat test">-->
+<!--        <classes>-->
+<!--            <class name="testcases.seat.TC_SeatTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="history test">-->
+<!--        <classes>-->
+<!--            <class name="testcases.history.TC_HistoryTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

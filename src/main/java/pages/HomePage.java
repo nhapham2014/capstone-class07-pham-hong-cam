@@ -26,7 +26,7 @@ public class HomePage extends CommonPage {
     private By byDrdnFilm = By.xpath("//select[@name='film']");
     private By byDrndnCinema = By.xpath("//select[@name='cinema']");
     private By byDrdnShowtime = By.xpath("//select[@name='date']");
-    private By byBtnBuyTicket = By.xpath("//button[span[contains(text(),'MUA VÉ NGAY')]]");
+    private By byBtnBuyTicket = By.xpath("//button[contains(@class,'MuiButton-containedPrimary')]");
     private By byCinemaOptions = By.xpath("//select[@name='cinema']/option");
     private By byDateOptions = By.xpath("//select[@name='date']/option");
     private By byFrameVideo = By.xpath("//iframe[contains(@src,'youtube') or contains(@src,'video')]");
