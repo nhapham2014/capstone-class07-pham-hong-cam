@@ -32,7 +32,8 @@ public class TopBarNavigation extends BasePage {
     }
 
     public RegisterPage navigateRegisterPage() {
-        waitUtil.waitForPageLoaded();
+        waitUtil.waitForPresenceOfElementLocated(byLnkRegister);
+        waitUtil.waitForVisibilityOfElementLocated(byLnkRegister);
         waitUtil.waitForElementToBeClickable(byLnkRegister);
         click(byLnkRegister);
         registerPage = new RegisterPage(driver);
