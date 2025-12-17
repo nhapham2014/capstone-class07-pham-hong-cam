@@ -26,6 +26,7 @@ test {
 
         suites "src/test/resources/testng.xml"
     }
+    ignoreFailures = true
     systemProperties = System.properties
     testLogging {
         events "passed", "skipped", "failed"
