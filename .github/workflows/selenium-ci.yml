@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Selenium Tests
       run: |
-        ./gradlew clean test --fail-fast \
+        ./gradlew clean test \
         -Denv=uat \
         -Dbrowser=chrome \
   
