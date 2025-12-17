@@ -17,7 +17,7 @@ public class RegisterPage extends CommonPage {
     private By byTxtConfirmPassword = By.id("confirmPassWord");;
     private By byTxtName = By.id("hoTen");;
     private By byTxtEmail = By.id("email");;
-    private By byBtnRegister = By.xpath("//button[.='Đăng ký']");;
+    private By byBtnRegister = By.xpath("//button[@type='submit']");;
     private By byMsgSuccess = By.id("swal2-title");;
     private By byTxtErrorAccount = By.xpath("//*[@id='taiKhoan-helper-text']");
     private By byTxtErrorPassword = By.xpath("//*[@id='matKhau-helper-text']");
