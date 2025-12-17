@@ -19,8 +19,17 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
 
-    - name: Grant execute permission
-      run: gradlew --version
+    - name: Check Gradle
+      run: gradlew.bat --version
 
-    - name: Run tests
-      run: gradlew clean test -Dbrowser=chrome -Dheadless=true
+    - name: Run Selenium Tests
+      run: gradlew.bat clean test -Dbrowser=chrome -Dheadless=true
+
+    - name: Upload Test Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-report
+        path: |
+          build/reports
+          test-output
