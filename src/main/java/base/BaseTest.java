@@ -45,7 +45,14 @@ public class BaseTest {
         String browser = System.getProperty("browser", ConfigReader.get("browser"));
         DriverManager driverManager = DriverManagerFactory.getDriverManager(browser);
         driver = driverManager.createDriver();
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
+        boolean headless = Boolean.parseBoolean(
+                System.getProperty("headless", "false")
+        );
+
+        if (!headless) {
+            driver.manage().window().maximize();
+        }
         driver.get(ConfigReader.get("baseUrl"));
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
