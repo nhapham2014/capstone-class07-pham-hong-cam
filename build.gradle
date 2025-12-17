@@ -26,7 +26,7 @@ test {
 
         suites "src/test/resources/testng.xml"
     }
-
+    systemProperties = System.properties
     testLogging {
         events "passed", "skipped", "failed"
         showStandardStreams = true

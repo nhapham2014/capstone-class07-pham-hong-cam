@@ -91,13 +91,13 @@ public class HomePage extends CommonPage {
         return getSelectedShowtime().equals("Ngày giờ chiếu");
     }
     public void clickBuyTicketExpectError() {
-        waitForElementToBeClickable(byBtnBuyTicket);
+        waitUtil.waitForElementToBeClickable(byBtnBuyTicket);
         clickbutton(byBtnBuyTicket);
     }
     public SeatPage clickBuyTicket() {
-        waitForElementToBeClickable(byBtnBuyTicket);
+        waitUtil.waitForElementToBeClickable(byBtnBuyTicket);
         clickbutton(byBtnBuyTicket);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         seatPage = new SeatPage(driver);
         return seatPage;
     }
@@ -120,13 +120,13 @@ public class HomePage extends CommonPage {
     public DetailMoviePage selectThumbnailMovie(String imageMovie){
         By byThumbnailMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]");
         click(byThumbnailMovie);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         detailMoviePage = new DetailMoviePage(driver);
         return detailMoviePage;
     }
     public void clickTrailerMovie(String imageMovie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]");
-        waitForVisibilityOfElementLocated(byImageMovie);
+        waitUtil.waitForVisibilityOfElementLocated(byImageMovie);
         hover(byImageMovie);
         By byBtnTrailerMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]//button");
 
@@ -134,7 +134,7 @@ public class HomePage extends CommonPage {
     }
     public boolean isTrailerDisplayed() {
         try {
-            waitForVisibilityOfElementLocated(byFrameVideo);
+            waitUtil.waitForVisibilityOfElementLocated(byFrameVideo);
             return driver.findElement(byFrameVideo).isDisplayed();
         } catch (Exception e) {
             return false;
@@ -142,11 +142,11 @@ public class HomePage extends CommonPage {
     }
     public DetailMoviePage clickBuyTicketAtMovie(String movie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]");
-        waitForVisibilityOfElementLocated(byImageMovie);
+        waitUtil.waitForVisibilityOfElementLocated(byImageMovie);
         By byBtnBookTicket = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
         hover(byImageMovie);
         click(byBtnBookTicket);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         detailMoviePage = new DetailMoviePage(driver);
         return detailMoviePage;
     }
@@ -161,7 +161,7 @@ public class HomePage extends CommonPage {
     }
 
     public boolean isShowTimeInFuture() {
-        waitForVisibilityOfElementLocated(byListShowTimeByCinema);
+        waitUtil.waitForVisibilityOfElementLocated(byListShowTimeByCinema);
         List<WebElement> links = driver.findElements(byListShowTimeByCinema);
         List<LocalDateTime> dateTimes = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -185,13 +185,13 @@ public class HomePage extends CommonPage {
     public SeatPage selectShowTime(String movieName, String date, String time){
         By byShowTimeOption = By.xpath("//h2[contains(., '" + movieName +"')]/following-sibling::div//a[.//p[contains(text(),'" + date +"')]and .//h3[contains(text(),'" + time +"')]]");
         click(byShowTimeOption);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         seatPage = new SeatPage(driver);
         return seatPage;
     }
     public boolean isShowtimeListUnique(String movieName) {
         By byShowTimesByMovie = By.xpath("//h2[contains(., '" + movieName +"')]/following-sibling::div//a[.//p[contains(text(),'-')]and .//h3[contains(text(),':')]]");
-        waitForVisibilityOfElementLocated(byShowTimesByMovie);
+        waitUtil.waitForVisibilityOfElementLocated(byShowTimesByMovie);
         List<WebElement> listTime = driver.findElements(byShowTimesByMovie);
         List<LocalDateTime> dateTimes = new ArrayList<>();
         // Date format trong UI

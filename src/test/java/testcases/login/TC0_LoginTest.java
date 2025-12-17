@@ -14,25 +14,25 @@ public class TC0_LoginTest extends BaseTest {
     //class variable
     LoginPage loginPage;
     HomePage homePage;
+    final String name ="cam";
+    final String errorName ="cam223";
+    final String password ="123456";
+    final String incorrectPassword ="123";
+    final String urlSignUp ="https://demo1.cybersoft.edu.vn/sign-up";
 
-    private void navigateToLoginPage() {
-        homePage = new HomePage(driver);
-        driver.get("https://demo1.cybersoft.edu.vn");
-        loginPage = homePage.navigateLoginPage();
-
-    }
 
     @Test
     public void TC01_testValidLogin() {
+        homePage = new HomePage(driver);
         SoftAssert softAssert = new SoftAssert();
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Login with the exist account
         ExtentReportManager.info("Step 2: Login with the exist account");
         LOG.info("Step 2: Login with the exist account");
-        loginPage.login("cam", "123456");
+        loginPage.login(name, password);
         //Step 3: Verify login successully
         ExtentReportManager.info("Step 3: Verify login successully");
         LOG.info("Step 3: Verify login successully");
@@ -52,14 +52,15 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC02_testInvalidWithEmptyUsername() {
+        homePage = new HomePage(driver);
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Input value in Password field
         ExtentReportManager.info("Step 2: Input value in Password field");
         LOG.info("Step 2: Input value in Password field");
-        loginPage.enterPassword("Diqit0505@");
+        loginPage.enterPassword(password);
         //Step 3: click on the Login button
         ExtentReportManager.info("Step 3: click on the Login button");
         LOG.info("Step 3: click on the Login button");
@@ -73,14 +74,15 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC03_testInvalidWithEmptyPassword() {
+        homePage = new HomePage(driver);
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Input value in Account field
         ExtentReportManager.info("Step 2: Input value in Account field");
         LOG.info("Step 2: Input value in Account field");
-        loginPage.enterAccount("cam0592");
+        loginPage.enterAccount(name);
         //Step 3: click on the Login button
         ExtentReportManager.info("Step 3: click on the Login button");
         LOG.info("Step 3: click on the Login button");
@@ -94,18 +96,19 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC04_testInvalidWithIncorrectFormatPassword() {
+        homePage = new HomePage(driver);
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Input value in Account field
         ExtentReportManager.info("Step 2: Input value in Account field");
         LOG.info("Step 2: Input value in Account field");
-        loginPage.enterAccount("cam0592");
+        loginPage.enterAccount(name);
         //Step 3: Input the password with incorrect format
         ExtentReportManager.info("Step 3: Input the password with incorrect format");
         LOG.info("Step 3: Input the password with incorrect format");
-        loginPage.enterPassword("123");
+        loginPage.enterPassword(incorrectPassword);
         //Step 4: click on the Login button
         ExtentReportManager.info("Step 4: click on the Login button");
         LOG.info("Step 4: click on the Login button");
@@ -119,18 +122,19 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC05_testInvalidWithIncorrectUsername() {
+        homePage = new HomePage(driver);
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Input the incorrect value in Account field
         ExtentReportManager.info("Step 2: Input the incorrect value in Account field");
         LOG.info("Step 2: Input the incorrect value in Account field");
-        loginPage.enterAccount("cam852");
+        loginPage.enterAccount(errorName);
         //Step 3: Input the incorrect value in Password field
         ExtentReportManager.info("Step 3: Input the incorrect value in Password field");
         LOG.info("Step 3: Input the incorrect value in Password field");
-        loginPage.enterPassword("123456");
+        loginPage.enterPassword(password);
         //Step 4: click on the Login button
         ExtentReportManager.info("Step 4: click on the Login button");
         LOG.info("Step 4: click on the Login button");
@@ -144,19 +148,20 @@ public class TC0_LoginTest extends BaseTest {
 
     @Test
     public void TC06_verifyDefaultValueAfterClickRememeberForMe() {
+        homePage = new HomePage(driver);
         SoftAssert softAssert = new SoftAssert();
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Input the correct value in Account field
         ExtentReportManager.info("Step 2: Input the correct value in Account field");
         LOG.info("Step 2: Input the correct value in Account field");
-        loginPage.enterAccount("cam0592");
+        loginPage.enterAccount(name);
         //Step 3: Input the correct value in Password field
         ExtentReportManager.info("Step 3: Input the correct value in Password field");
         LOG.info("Step 3: Input the correct value in Password field");
-        loginPage.enterPassword("Diqit0505@");
+        loginPage.enterPassword(password);
         //Step 4: Click on the Remember checkbox
         ExtentReportManager.info("Step 4: Click on the Remember checkbox");
         LOG.info("Step 4: Click on the Remember checkbox");
@@ -178,16 +183,17 @@ public class TC0_LoginTest extends BaseTest {
         LOG.info("Step 8: verify the default value in Account and Password fields");
         String actualAccountValue = loginPage.getValueAccount();
         String actualPasswordValue = loginPage.getValuePassword();
-        softAssert.assertEquals(actualAccountValue, "cam0592");
-        softAssert.assertEquals(actualPasswordValue, "Diqit0505@");
+        softAssert.assertEquals(actualAccountValue, name);
+        softAssert.assertEquals(actualPasswordValue, password);
         softAssert.assertAll();
     }
     @Test
     public void TC07_verifyNavigateToRegisterPageWhenClickSignUpLink() {
+        homePage = new HomePage(driver);
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        navigateToLoginPage();
+        loginPage=homePage.navigateLoginPage();
         //Step 2: Click on the Sign Up link
         ExtentReportManager.info("Step 2: Click on the Sign Up link");
         LOG.info("Step 2: Click on the Sign Up link");
@@ -196,7 +202,7 @@ public class TC0_LoginTest extends BaseTest {
         ExtentReportManager.info("Step 3: verify navigate to Register page successfully");
         LOG.info("Step 3: verify navigate to Register page successfully");
         String actualUrl = driver.getCurrentUrl();
-        Assert.assertEquals(actualUrl, "https://demo1.cybersoft.edu.vn/sign-up", "Không điều hướng đến trang Đăng Ký");
+        Assert.assertEquals(actualUrl, urlSignUp, "Không điều hướng đến trang Đăng Ký");
     }
 
 }

@@ -4,9 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.WaitUtil;
 
 public class LoginPage extends CommonPage {
     HomePage homePage;
+
 
     private By byTxtAccountLogin = By.id("taiKhoan");;
     private By byTxtPasswordLogin = By.id("matKhau");;
@@ -41,7 +43,7 @@ public class LoginPage extends CommonPage {
     public HomePage clickLogin(){
         LOG.info("clickLogin");
         click(byBtnLogin);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         homePage = new HomePage(driver);
         return homePage;
     }
@@ -60,15 +62,15 @@ public class LoginPage extends CommonPage {
         return clickLogin();
     }
     public String getErrorRequireUsername(){
-        waitForVisibilityOfElementLocated(byTxtErrorUsername);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorUsername);
         return getText(byTxtErrorUsername);
     }
     public String getErrorRequirePassword(){
-        waitForVisibilityOfElementLocated(byTxtErrorPassword);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorPassword);
         return getText(byTxtErrorPassword);
     }
     public String getErrorMessage(){
-        waitForVisibilityOfElementLocated(byMsgError);
+        waitUtil.waitForVisibilityOfElementLocated(byMsgError);
         return getText(byMsgError);
     }
     public void clickRememberChkbx(){
@@ -78,7 +80,7 @@ public class LoginPage extends CommonPage {
     }
     public RegisterPage clickSignUpLink(){
         click(byLnkSignUp);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         RegisterPage registerPage = new RegisterPage(driver);
         return registerPage;
     }

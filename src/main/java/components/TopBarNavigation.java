@@ -25,7 +25,7 @@ public class TopBarNavigation extends BasePage {
 
     public LoginPage navigateLoginPage() {
         click(byLnkLogin);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         loginPage = new LoginPage(driver);
         return loginPage;
 
@@ -33,13 +33,13 @@ public class TopBarNavigation extends BasePage {
 
     public RegisterPage navigateRegisterPage() {
         click(byLnkRegister);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         registerPage = new RegisterPage(driver);
         return registerPage;
     }
     public HistoryPage navigateHistoryPage() {
         click(byLnkAccount);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         historyPage = new HistoryPage(driver);
         return historyPage;
     }
@@ -47,7 +47,7 @@ public class TopBarNavigation extends BasePage {
         click(byLnkLogout);
         click(byBtnAgree);
         click(byBtnOk);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
          homePage= new HomePage(driver);
         return homePage;
     }

@@ -22,13 +22,13 @@ public class DetailMoviePage extends CommonPage {
     }
 
     public String getMovieDetailTitle() {
-        waitForVisibilityOfElementLocated(byLbMovieName);
+        waitUtil.waitForVisibilityOfElementLocated(byLbMovieName);
 
         return getText(byLbMovieName);
     }
 
     public boolean isAllShowtimesInFuture() {
-        waitForVisibilityOfElementLocated(byListShowTime);
+        waitUtil.waitForVisibilityOfElementLocated(byListShowTime);
         List<WebElement> links = driver.findElements(byListShowTime);
         List<LocalDateTime> dateTimes = new ArrayList<>();
         LocalDateTime now = LocalDateTime.now();
@@ -58,7 +58,7 @@ public class DetailMoviePage extends CommonPage {
         clickCinemaLogo(cinemaLogo);
         By byShowTimeOption = By.xpath("//div[div[h3[contains(text(),'" + cinemaBranch + "')]]]//a[p[normalize-space()='" + date + "'] and p[normalize-space()='" + time + "']]");
         click(byShowTimeOption);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         seatPage = new SeatPage(driver);
         return seatPage;
 

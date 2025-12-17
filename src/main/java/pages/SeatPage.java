@@ -39,7 +39,7 @@ public class SeatPage extends CommonPage {
     }
     public void selectSeat(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='" + numberSeat + "']");
-        waitForElementToBeClickable(bySeatAvailable);
+        waitUtil.waitForElementToBeClickable(bySeatAvailable);
         click(bySeatAvailable);
     }
     public String selectRandomSeat() {
@@ -90,7 +90,7 @@ public class SeatPage extends CommonPage {
 
     public String getSeatColor(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[.//span[text()='" + numberSeat + "']]");
-        waitForVisibilityOfElementLocated(bySeatAvailable);
+        waitUtil.waitForVisibilityOfElementLocated(bySeatAvailable);
         return driver.findElement(bySeatAvailable).getAttribute("style").replace("background-color: ","").replace(";", "");
     }
 
@@ -110,7 +110,7 @@ public class SeatPage extends CommonPage {
     }
 
     public int getDisplayedPriceSeat() {
-        waitForVisibilityOfElementLocated(byLbPrice);
+        waitUtil.waitForVisibilityOfElementLocated(byLbPrice);
         String price = getText(byLbPrice).replace("\n", "").trim();
         price = price.replace("VND", "").trim().replace(".", "");
         return Integer.parseInt(price);
@@ -160,12 +160,12 @@ public class SeatPage extends CommonPage {
         return getText(byLbScreenID).replace("Rạp:","").trim();
     }
     public String getDateOfShowTime(){
-        waitForVisibilityOfElementLocated(byLbDate);
+        waitUtil.waitForVisibilityOfElementLocated(byLbDate);
         return getText(byLbDate).replace(" -","").replace(getText(byLbTime),"").replace("/","-").trim();
 
     }
     public String getTimeOfShowTime(){
-        waitForVisibilityOfElementLocated(byLbTime);
+        waitUtil.waitForVisibilityOfElementLocated(byLbTime);
         return getText(byLbTime).trim();
     }
 
@@ -173,7 +173,7 @@ public class SeatPage extends CommonPage {
         return getText(byLbNameMovie).replace("Tên Phim:","").trim();
     }
     public List<String> getListSelectedSeatOnTicket(){
-        waitForVisibilityOfElementLocated(byLbCinemaBrach);
+        waitUtil.waitForVisibilityOfElementLocated(byLbCinemaBrach);
         List<WebElement> listSeatTicket = driver.findElements(byListSeatOnTicket);
         List<String> listSeat = new ArrayList<>();
         for (WebElement seat : listSeatTicket){
@@ -190,26 +190,26 @@ public class SeatPage extends CommonPage {
                 && listSelectedSeat.containsAll(listSeatTicket);
     }
     public void clickBookTicketButton(){
-        waitForElementToBeClickable(byBtnBookTicket);
+        waitUtil.waitForElementToBeClickable(byBtnBookTicket);
         click(byBtnBookTicket);
 
 
     }
     public String getErrorMessage() {
-        waitForVisibilityOfElementLocated(byMsgError);
+        waitUtil.waitForVisibilityOfElementLocated(byMsgError);
         return getText(byMsgError).trim();
     }
     public String getSuccessMessage() {
-        waitForVisibilityOfElementLocated(byMsgSuccess);
+        waitUtil.waitForVisibilityOfElementLocated(byMsgSuccess);
         return getText(byMsgSuccess).trim();
     }
     public void clickAgreeButtonInAlert(){
-        waitForElementToBeClickable(byBtnAgree);
+        waitUtil.waitForElementToBeClickable(byBtnAgree);
         click(byBtnAgree);
 
     }
     public boolean isDisableSeat(String numberSeat){
-        waitForVisibilityOfElementLocated(byLbSeat);
+        waitUtil.waitForVisibilityOfElementLocated(byLbSeat);
         List<WebElement> seats = driver.findElements(
                 By.xpath("//button[span[text()='" + numberSeat + "']]")
         );

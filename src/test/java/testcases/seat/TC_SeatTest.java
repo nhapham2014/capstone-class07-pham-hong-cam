@@ -7,10 +7,6 @@ import pages.HomePage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 
 public class TC_SeatTest extends BaseTestWithLogin {
     SeatPage seatPage;

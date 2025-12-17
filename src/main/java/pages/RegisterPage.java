@@ -59,7 +59,7 @@ public class RegisterPage extends CommonPage {
     }
     public LoginPage clickRegister(){
         click(byBtnRegister);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         loginPage = new LoginPage(driver);
         return loginPage;
     }
@@ -71,7 +71,7 @@ public class RegisterPage extends CommonPage {
         click(byBtnClose);
     }
     public String getErrorAccount(){
-        waitForVisibilityOfElementLocated(byTxtErrorAccount);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorAccount);
 //        return getText(byTxtErrorAccount);
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -86,28 +86,28 @@ public class RegisterPage extends CommonPage {
         }
     }
     public String getErrorPassword() {
-        waitForVisibilityOfElementLocated(byTxtErrorPassword);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorPassword);
         return getText(byTxtErrorPassword);
     }
     public String getErrorConfirmPassword() {
-        waitForVisibilityOfElementLocated(byTxtErrorConfirmPassword);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorConfirmPassword);
         return getText(byTxtErrorConfirmPassword);
     }
     public String getErrorName() {
-        waitForVisibilityOfElementLocated(byTxtErrorName);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorName);
         return getText(byTxtErrorName);
     }
     public String getErrorEmail() {
-        waitForVisibilityOfElementLocated(byTxtErrorEmail);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtErrorEmail);
         return getText(byTxtErrorEmail);
     }
     public String getErrorText(){
-        waitForVisibilityOfElementLocated(byTxtError);
+        waitUtil.waitForVisibilityOfElementLocated(byTxtError);
         return getText(byTxtError);
     }
     public LoginPage clickLoginLink(){
         click(byLinkLogin);
-        waitForPageLoaded();
+        waitUtil.waitForPageLoaded();
         loginPage = new LoginPage(driver);
         return loginPage;
     }

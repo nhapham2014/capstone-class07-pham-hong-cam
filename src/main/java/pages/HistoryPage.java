@@ -30,12 +30,12 @@ public class HistoryPage extends CommonPage {
     private By byLbScreenID = By.xpath(".//h3[starts-with(normalize-space(),'Rạp')]");
     private By byLbSeatID = By.xpath(".//h3[starts-with(normalize-space(),'Ghế số:')]");
     public int getNumberOfBookingInHistory(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         return listTickets.size();
     }
     public String getLatestTicketDate(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         if(listTickets.isEmpty()){
             return "";
@@ -47,7 +47,7 @@ public class HistoryPage extends CommonPage {
         return dateOrderText;
     }
     public String getLatestTicketMovieName(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         if(listTickets.isEmpty()){
             return "";
@@ -59,7 +59,7 @@ public class HistoryPage extends CommonPage {
         return movieNameText;
     }
     public int getLatestTicketTotalPrice(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         if(listTickets.isEmpty()){
             return 0;
@@ -72,7 +72,7 @@ public class HistoryPage extends CommonPage {
         return Integer.parseInt(totalPrice);
     }
     public String getLatestTicketCinemaBranch(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         if(listTickets.isEmpty()){
             return "";
@@ -84,7 +84,7 @@ public class HistoryPage extends CommonPage {
         return cinemaBranchText;
     }
     public String getLatestTicketScreenID(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         if(listTickets.isEmpty()){
             return "";
@@ -96,7 +96,7 @@ public class HistoryPage extends CommonPage {
         return screenIDText;
     }
     public List<String> getLatestListSeat(){
-        waitForVisibilityOfElementLocated(byListTicketHistory);
+        waitUtil.waitForVisibilityOfElementLocated(byListTicketHistory);
         List<WebElement> listTickets = driver.findElements(byListTicketHistory);
         if(listTickets.isEmpty()){
             return new ArrayList<>();

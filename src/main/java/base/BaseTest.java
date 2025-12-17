@@ -1,5 +1,6 @@
 package base;
 
+import config.ConfigReader;
 import drivers.DriverManager;
 import drivers.DriverManagerFactory;
 import org.apache.logging.log4j.LogManager;
@@ -13,6 +14,7 @@ import reports.ExtentReportManager;
 import utils.ScenarioContext;
 
 import java.lang.reflect.Method;
+import java.time.Duration;
 
 
 public class BaseTest {
@@ -40,10 +42,11 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp(Method method) {
-        DriverManager driverManager = DriverManagerFactory.getDriverManager("chrome");
+        String browser = System.getProperty("browser", ConfigReader.get("browser"));
+        DriverManager driverManager = DriverManagerFactory.getDriverManager(browser);
         driver = driverManager.createDriver();
         driver.manage().window().maximize();
-        driver.get("https://demo1.cybersoft.edu.vn");
+        driver.get(ConfigReader.get("baseUrl"));
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         LOG.info("Before Method executed");
@@ -59,7 +62,10 @@ public class BaseTest {
 
     protected void doLogin() {
         homePage.navigateLoginPage();
-        loginPage.login("cam0592", "Diqit0505@");
+        loginPage.login(
+                ConfigReader.get("username"),
+                ConfigReader.get("password")
+        );
         loginPage.clickClose();
     }
 
