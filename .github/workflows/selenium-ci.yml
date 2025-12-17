@@ -20,7 +20,7 @@ jobs:
       uses: browser-actions/setup-chrome@v1
 
     - name: Run Selenium Tests
-      run: gradlew.bat clean test -Dbrowser=chrome -Dheadless=true
+      run: ./gradlew clean test -Dbrowser=chrome -Dheadless=true
 
     - name: Upload Test Report
       if: always()
