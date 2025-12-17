@@ -19,9 +19,6 @@ jobs:
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1
 
-    - name: Check Gradle
-      run: gradlew.bat --version
-
     - name: Run Selenium Tests
       run: gradlew.bat clean test -Dbrowser=chrome -Dheadless=true
 
