@@ -24,16 +24,17 @@ public class TopBarNavigation extends BasePage {
     }
 
     public LoginPage navigateLoginPage() {
-        click(byLnkLogin);
         waitUtil.waitForPageLoaded();
+        click(byLnkLogin);
         loginPage = new LoginPage(driver);
         return loginPage;
 
     }
 
     public RegisterPage navigateRegisterPage() {
-        click(byLnkRegister);
         waitUtil.waitForPageLoaded();
+        waitUtil.waitForElementToBeClickable(byLnkRegister);
+        click(byLnkRegister);
         registerPage = new RegisterPage(driver);
         return registerPage;
     }

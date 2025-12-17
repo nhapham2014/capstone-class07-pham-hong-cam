@@ -120,12 +120,11 @@ public class TC_RegisterTest extends BaseTest {
     }
     @Test
     public void TC05_verifyRegisterWithExistingAccount() {
-        registerPage = new RegisterPage(driver);
         homePage = new HomePage(driver);
         //Step 1: Navigate to Register page
         ExtentReportManager.info("Step 1: Navigate to Register page");
         LOG.info("Step 1: Navigate to Register page");
-        homePage.navigateRegisterPage();
+       registerPage= homePage.navigateRegisterPage();
         //Step 2: Enter existing account
         ExtentReportManager.info("Step 2: Enter existing account");
         LOG.info("Step 2: Enter existing account");
