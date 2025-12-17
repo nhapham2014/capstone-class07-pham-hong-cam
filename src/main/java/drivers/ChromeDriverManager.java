@@ -8,11 +8,9 @@ public class ChromeDriverManager extends DriverManager {
 
     @Override
     public WebDriver createDriver() {
-
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.setExperimentalOption("useAutomationExtension", false);
-
         return new ChromeDriver(options);
     }
 }

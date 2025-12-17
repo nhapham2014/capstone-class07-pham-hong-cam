@@ -12,11 +12,11 @@ public class TopBarNavigation extends BasePage {
     HistoryPage historyPage;
     HomePage homePage;
 
-    private By byLnkLogin = By.xpath("//h3[text()='Đăng Nhập']");;
+    private By byLnkLogin = By.xpath("//a[@href='/sign-in']");;
     private By byLnkRegister = By.xpath("//a[@href='/sign-up']");;
     private By byLnkAccount = By.xpath("//a[@href='/account']");;
     private By byLnkLogout = By.xpath("//a[h3[contains(text(),'Đăng xuất')]]");
-    private By byBtnAgree = By.xpath("//button[contains(text(),'Đồng ý')]");
+    private By byBtnAgree = By.xpath("//button[contains(@class,'confirm')]");
     private By byBtnOk = By.xpath("//button[contains(text(),'OK')]");
 
     public TopBarNavigation(WebDriver driver) {

@@ -22,7 +22,7 @@ public class HistoryPage extends CommonPage {
     public HistoryPage(WebDriver driver) {
         super(driver);
     }
-    private By byListTicketHistory = By.xpath("//div[h3[starts-with(normalize-space(),'Ngày đặt:')]]/ancestor::div[contains(@class,'MuiGrid-item')]");
+    private By byListTicketHistory = By.xpath("//div[contains(@class, 'MuiGrid')]/ancestor::div[contains(@class,'MuiGrid-item')]");
     private By byLbDateOrder = By.xpath(".//h3[starts-with(normalize-space(),'Ngày đặt:')]");
     private By byLbMovieName = By.xpath(".//h1[starts-with(normalize-space(),'Tên phim:')]");
     private By byLbTotal = By.xpath(".//h3[starts-with(normalize-space(),'Giá vé:')]");

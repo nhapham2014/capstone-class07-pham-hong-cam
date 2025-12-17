@@ -12,14 +12,14 @@ public class LoginPage extends CommonPage {
 
     private By byTxtAccountLogin = By.id("taiKhoan");;
     private By byTxtPasswordLogin = By.id("matKhau");;
-    private By byBtnLogin = By.xpath("//button[.='Đăng nhập']");;
+    private By byBtnLogin = By.xpath("//button[@type='submit']");;
     private By byLblLoginMsg = By.id("swal2-title");;
     private By byBtnClose = By.xpath("//button[contains(text(),'Đóng')]");
     private By byTxtErrorUsername = By.xpath("//*[@id='taiKhoan-helper-text']");
     private By byTxtErrorPassword = By.xpath("//*[@id='matKhau-helper-text']");
     private By byMsgError = By.xpath("//div[@role='alert']/div[@class='MuiAlert-message']");
     private By byChbxRemember = By.xpath("//input[@name='remember']");
-    private By byLnkSignUp = By.xpath("//h3[contains(text(),'Đăng ký')]");
+    private By byLnkSignUp = By.xpath("//div[contains(@class,'MuiGrid-root MuiGrid-item')]/a[@href='/sign-up']");
 
 
     public LoginPage(WebDriver driver) {
