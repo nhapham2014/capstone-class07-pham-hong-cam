@@ -13,8 +13,9 @@ import pages.LoginPage;
 import reports.ExtentReportManager;
 import utils.ScenarioContext;
 
+import org.openqa.selenium.Dimension;
+
 import java.lang.reflect.Method;
-import java.time.Duration;
 
 
 public class BaseTest {
@@ -45,13 +46,8 @@ public class BaseTest {
         String browser = System.getProperty("browser", ConfigReader.get("browser"));
         DriverManager driverManager = DriverManagerFactory.getDriverManager(browser);
         driver = driverManager.createDriver();
-        boolean headless = Boolean.parseBoolean(
-                System.getProperty("headless", "false")
-        );
-
-        if (!headless) {
-            driver.manage().window().maximize();
-        }
+        // Set fixed window size to ensure consistent behavior on CI (no display)
+        driver.manage().window().setSize(new Dimension(1920, 1080));
         driver.get(ConfigReader.get("baseUrl"));
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
