@@ -152,7 +152,8 @@ public class HomePage extends CommonPage {
     }
     /// List cinema section
     public void selectCinemaLogo(String brandCinema) {
-        By byCinemaLogo = By.xpath("//button[.//img[contains(@alt, '" + brandCinema.toLowerCase() + "')]]");
+        By byCinemaLogo = By.xpath("//button[.//img[contains(@src, '" + brandCinema.toLowerCase() + "')]]");
+
         click(byCinemaLogo);
     }
     public void selectCinemaBranch(String cinemaBranch){

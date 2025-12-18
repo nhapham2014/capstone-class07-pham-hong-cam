@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.ScenarioContext;
 import utils.WaitUtil;
 import java.time.Duration;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class BasePage {
     protected WaitUtil waitUtil;
+    protected ScenarioContext scenarioContext;
     protected final Logger LOG = LogManager.getLogger(getClass());
     protected WebDriver driver;
     protected WebDriverWait wait;
@@ -23,6 +25,7 @@ public class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(300));
         this.waitUtil = new WaitUtil(driver);
+        this.scenarioContext = new ScenarioContext();
 
     }
 

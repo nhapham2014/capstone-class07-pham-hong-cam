@@ -71,10 +71,8 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         LOG.info("Step 4: Click on the Agree button");
         Reporter.log("Step 4: Click on the Agree button");
         seatPage.clickAgreeButtonInAlert();
-        //Get the booking time when user click the Agree button
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
-        context.set("bookingTime", LocalDateTime.now().format(formatter));
-        String expectOrderTime = context.get("bookingTime", String.class);
+        String textaa = seatPage.getTimeBooking();
+        System.out.println(textaa);
         // Step 5: Navigate to the History page
         ExtentReportManager.info("Step 5: Navigate to the History page");
         LOG.info("Step 5: Navigate to the History page");
@@ -86,7 +84,7 @@ public class TC_HistoryTest extends BaseTestWithLogin {
         ExtentReportManager.info("VP1: Verify the order time value");
         LOG.info("VP1: Verify the order time value");
         String actualOrderTime = historyPage.getLatestTicketDate();
-        softAssert.assertEquals(actualOrderTime, expectOrderTime, "Ngày đặt vé mới nhất không đúng");
+        softAssert.assertEquals(actualOrderTime, textaa, "Ngày đặt vé mới nhất không đúng");
         //VP2: Verify the movie name
         ExtentReportManager.info("VP2: Verify the movie name");
         LOG.info("VP2: Verify the movie name");

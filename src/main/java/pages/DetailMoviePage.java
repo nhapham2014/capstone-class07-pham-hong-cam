@@ -50,7 +50,7 @@ public class DetailMoviePage extends CommonPage {
         return true;
     }
     public void clickCinemaLogo(String cinemaLogo) {
-        By byCinemaLogo = By.xpath("//img[contains(@alt, '" + cinemaLogo + "')]");
+        By byCinemaLogo = By.xpath("//button[.//img[contains(@src, '" + cinemaLogo.toLowerCase() + "')]]");
         click(byCinemaLogo);
     }
 

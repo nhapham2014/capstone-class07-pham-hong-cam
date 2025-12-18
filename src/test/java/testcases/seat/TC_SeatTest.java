@@ -53,7 +53,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 4: verify color of the unselect seat
         ExtentReportManager.info("Step 4: verify color of the unselect seat");
         LOG.info("Step 4: verify color of the unselect seat");
-        String color = seatPage.getSeatColor("86");
+        String color = seatPage.getSeatColor(numberSeat);
         Assert.assertTrue(color.isEmpty(),
                 "Ghế vẫn màu xanh dù đã bỏ chọn");
     }

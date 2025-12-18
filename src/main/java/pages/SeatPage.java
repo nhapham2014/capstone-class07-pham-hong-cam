@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ScenarioContext;
+import utils.WaitUtil;
 
 import javax.swing.*;
 import java.time.Duration;
@@ -17,6 +18,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class SeatPage extends CommonPage {
+    //ScenarioContext context;
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
     private By byListSeatOnTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
@@ -203,10 +205,15 @@ public class SeatPage extends CommonPage {
         waitUtil.waitForVisibilityOfElementLocated(byMsgSuccess);
         return getText(byMsgSuccess).trim();
     }
-    public void clickAgreeButtonInAlert(){
+    public void clickAgreeButtonInAlert() {
         waitUtil.waitForElementToBeClickable(byBtnAgree);
         click(byBtnAgree);
-
+    }
+    public String getTimeBooking(){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        scenarioContext.set("bookingTime", LocalDateTime.now().format(formatter));
+        String expectOrderTime = scenarioContext.get("bookingTime", String.class);
+        return expectOrderTime;
     }
     public boolean isDisableSeat(String numberSeat){
         waitUtil.waitForVisibilityOfElementLocated(byLbSeat);
