@@ -11,6 +11,8 @@ public class ChromeDriverManager extends DriverManager {
         ChromeOptions options = new ChromeOptions();
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         options.setExperimentalOption("useAutomationExtension", false);
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--start-maximized");
         return new ChromeDriver(options);
     }
 }
