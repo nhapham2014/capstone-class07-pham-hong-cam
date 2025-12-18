@@ -47,7 +47,9 @@ public class BaseTest {
         DriverManager driverManager = DriverManagerFactory.getDriverManager(browser);
         driver = driverManager.createDriver();
         // Set fixed window size to ensure consistent behavior on CI (no display)
-        driver.manage().window().setSize(new Dimension(1920, 1080));
+//        driver.manage().window().setSize(new Dimension(1920, 1080));
+        Dimension size = driver.manage().window().getSize();
+        System.out.println("Window size: " + size);
         driver.get(ConfigReader.get("baseUrl"));
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
