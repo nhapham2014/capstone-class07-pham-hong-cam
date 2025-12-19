@@ -12,9 +12,9 @@ public class TC_SeatTest extends BaseTestWithLogin {
 
     private void selectMovieAndShowTime() {
         HomePage homePage = new HomePage(driver);
-        seatPage = homePage.buyTicketByFilter("The Gentlemen",
+        seatPage = homePage.buyTicketByFilter("Captain Marvel 2",
                 "CGV - Golden Plaza",
-                "07/12/2025 ~ 06:00");
+                "26/05/2022 ~ 18:30");
     }
 
     @Test

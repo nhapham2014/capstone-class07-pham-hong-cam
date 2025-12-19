@@ -16,11 +16,11 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
     @Test
     public void TC01_verifyAllShowtimesAreAfterCurrentTime() {
         homePage = new HomePage(driver);
-        detailMoviePage = new DetailMoviePage(driver);
+
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie ");
         LOG.info("Step 1: Click 'Mua Vé' button at a movie ");
-        homePage.clickBuyTicketAtMovie("avatar-2_gp09");
+        detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
         //Step 2: Select a cinema logo
         ExtentReportManager.info("Step 2: Select a cinema logo");
         LOG.info("Step 2: Select a cinema logo");

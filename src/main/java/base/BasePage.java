@@ -90,9 +90,15 @@ public class BasePage {
     }
 
     public void hover(By locator) {
-        waitUtil.waitForVisibilityOfElementLocated(locator);
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(locator)).perform();
+        WebElement element = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(locator)
+        );
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView({block:'center'});", element
+        );
+        actions.moveToElement(element)
+                .perform();
     }
 
     public void browserBack() {

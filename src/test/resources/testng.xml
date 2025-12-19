@@ -19,7 +19,7 @@
         <classes>
             <class name="testcases.home.TC_CinemaTest" />
             <class name="testcases.home.TC_FilterTest"/>
-<!--            <class name="testcases.home.TC_MovieTest"/>-->
+            <class name="testcases.home.TC_MovieTest"/>
         </classes>
     </test>
     <test name="showtime test">
