@@ -70,9 +70,9 @@ public class TC_MovieTest extends BaseTestWithLogin {
     public void TC03_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm() {
         SoftAssert softAssert = new SoftAssert();
         homePage = new HomePage(driver);
-        //Step 1: Click on the Buy ticket at the Poster film
-        ExtentReportManager.info("Step 1: Click on the Buy ticket at the Poster film");
-        LOG.info("Step 1: Click on the Buy ticket at the Poster film");
+        //Step 1: Select a movie thumbnail
+        ExtentReportManager.info("Step 1: Select a movie thumbnail");
+        LOG.info("Step 1: Select a movie thumbnail");
         detailMoviePage = homePage.clickBuyTicketAtMovie(movieID);
         //Step 2: Select the show time at Detail movie page
         ExtentReportManager.info("Step 2: Select the show time at Detail movie page");
