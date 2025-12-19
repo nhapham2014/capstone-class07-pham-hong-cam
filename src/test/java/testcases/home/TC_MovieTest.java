@@ -22,6 +22,20 @@ public class TC_MovieTest extends BaseTestWithLogin {
     final String cinemaAddress = "Lầu 5, Trung tâm thương mại SC VivoCity - 1058 Nguyễn Văn Linh, Q. 7";
 
     @Test
+    public void TC01_verifyMovieNameAtDetailPage() {
+        homePage = new HomePage(driver);
+        //Step 1: Select a movie thumbnail
+        ExtentReportManager.info("Step 1: Select a movie thumbnail");
+        LOG.info("Step 1: Select a movie thumbnail");
+        String titleList = homePage.getMovieTitle(movieID);
+        detailMoviePage = homePage.clickBuyTicketAtMovie(movieID);
+        // Step 2: Verify movie name at detail page
+        ExtentReportManager.info("Step 2: Verify movie name at detail page");
+        LOG.info("Step 2: Verify movie name at detail page");
+        Assert.assertEquals(detailMoviePage.getMovieDetailTitle(), titleList,
+                "Tên phim KHÔNG trùng nhau!");
+    }
+    @Test
     public void TC01_verifyTrailerPopupDisplay() {
         homePage = new HomePage(driver);
         //Step 1: Click trailer video icon

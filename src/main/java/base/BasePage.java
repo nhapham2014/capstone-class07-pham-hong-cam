@@ -90,6 +90,7 @@ public class BasePage {
     }
 
     public void hover(By locator) {
+        waitUtil.waitForVisibilityOfElementLocated(locator);
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(locator)).perform();
     }

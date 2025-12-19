@@ -116,11 +116,7 @@ public class HomePage extends CommonPage {
         return detailMoviePage;
     }
     public void clickTrailerMovie(String imageMovie){
-        By byImageMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]");
-        waitUtil.waitForVisibilityOfElementLocated(byImageMovie);
-        hover(byImageMovie);
         By byBtnTrailerMovie = By.xpath("//div[contains(@style, '" + imageMovie +"')]//button");
-
         click(byBtnTrailerMovie);
     }
     public boolean isTrailerDisplayed() {
@@ -135,9 +131,8 @@ public class HomePage extends CommonPage {
         By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]");
         waitUtil.waitForVisibilityOfElementLocated(byImageMovie);
         hover(byImageMovie);
-        By byBtnBookTicket = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
-
-        click(byBtnBookTicket);
+        By byBtnBookTicketAtPoster = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
+        click(byBtnBookTicketAtPoster);
         waitUtil.waitForPageLoaded();
         detailMoviePage = new DetailMoviePage(driver);
         return detailMoviePage;
