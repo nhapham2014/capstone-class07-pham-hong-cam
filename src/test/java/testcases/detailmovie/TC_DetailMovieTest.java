@@ -12,6 +12,7 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
     HomePage homePage;
     DetailMoviePage detailMoviePage;
     SeatPage seatPage;
+
     @Test
     public void TC01_verifyAllShowtimesAreAfterCurrentTime() {
         homePage = new HomePage(driver);
@@ -28,11 +29,12 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 3: Verify all showtimes are after current time");
         LOG.info("Step 3: Verify all showtimes are after current time");
         Assert.assertTrue(detailMoviePage.isAllShowtimesInFuture(),
-                    "Ngày giờ suất chiếu phải lớn hơn hiện tại");
+                "Ngày giờ suất chiếu phải lớn hơn hiện tại");
 
     }
+
     @Test
-    public void TC02_navigateToSeatPageAfterSelectShowTime(){
+    public void TC02_navigateToSeatPageAfterSelectShowTime() {
         homePage = new HomePage(driver);
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
@@ -41,14 +43,14 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
         // Step 2: Select a show time
         ExtentReportManager.info("Step 2: Select a show time");
         LOG.info("Step 2: Select a show time");
-        seatPage = detailMoviePage.selectShowTime("cgv","CGV - VivoCity","07-10-2021","08:25");
+        seatPage = detailMoviePage.selectShowTime("cgv", "CGV - VivoCity", "07-10-2021", "08:25");
         // Step 3: Verify navigate to seat page
         ExtentReportManager.info("Step 3: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"));
-
     }
+
     @Test
-    public void TC03_verifyListCinemaWhenSelectCinemaLogoAtDetailMoviePage(){
+    public void TC03_verifyListCinemaWhenSelectCinemaLogoAtDetailMoviePage() {
         homePage = new HomePage(driver);
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
@@ -63,6 +65,5 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
         LOG.info("Step 3: Verify list cinema ");
         Assert.assertTrue(detailMoviePage.isCinemaBelongToSystem("CGV"),
                 "Có rạp KHÔNG thuộc hệ thống!");
-
     }
 }

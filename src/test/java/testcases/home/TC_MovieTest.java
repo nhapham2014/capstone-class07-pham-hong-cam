@@ -2,14 +2,12 @@ package testcases.home;
 
 import base.BaseTestWithLogin;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.DetailMoviePage;
 import pages.HomePage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
-
 
 public class TC_MovieTest extends BaseTestWithLogin {
     HomePage homePage;
@@ -22,7 +20,6 @@ public class TC_MovieTest extends BaseTestWithLogin {
     final String showDate = "07-10-2021";
     final String showTime = "08:25";
     final String cinemaAddress = "Lầu 5, Trung tâm thương mại SC VivoCity - 1058 Nguyễn Văn Linh, Q. 7";
-
 
     @Test
     public void TC01_verifyMovieNameAtDetailPage() {
@@ -105,6 +102,5 @@ public class TC_MovieTest extends BaseTestWithLogin {
         softAssert.assertEquals(seatPage.getTimeOfShowTime(), showTime, "Không hiển thị đúng giờ chiếu");
         softAssert.assertAll();
     }
-
 
 }

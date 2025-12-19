@@ -2,7 +2,6 @@ package testcases.login;
 
 import base.BaseTest;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
@@ -14,12 +13,11 @@ public class TC0_LoginTest extends BaseTest {
     //class variable
     LoginPage loginPage;
     HomePage homePage;
-    final String name ="cam";
-    final String errorName ="cam223";
-    final String password ="123456";
-    final String incorrectPassword ="123";
-    final String urlSignUp ="https://demo1.cybersoft.edu.vn/sign-up";
-
+    final String name = "cam";
+    final String errorName = "cam223";
+    final String password = "123456";
+    final String incorrectPassword = "123";
+    final String urlSignUp = "https://demo1.cybersoft.edu.vn/sign-up";
 
     @Test
     public void TC01_testValidLogin() {
@@ -28,7 +26,7 @@ public class TC0_LoginTest extends BaseTest {
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Login with the exist account
         ExtentReportManager.info("Step 2: Login with the exist account");
         LOG.info("Step 2: Login with the exist account");
@@ -56,7 +54,7 @@ public class TC0_LoginTest extends BaseTest {
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Input value in Password field
         ExtentReportManager.info("Step 2: Input value in Password field");
         LOG.info("Step 2: Input value in Password field");
@@ -78,7 +76,7 @@ public class TC0_LoginTest extends BaseTest {
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Input value in Account field
         ExtentReportManager.info("Step 2: Input value in Account field");
         LOG.info("Step 2: Input value in Account field");
@@ -100,7 +98,7 @@ public class TC0_LoginTest extends BaseTest {
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Input value in Account field
         ExtentReportManager.info("Step 2: Input value in Account field");
         LOG.info("Step 2: Input value in Account field");
@@ -126,7 +124,7 @@ public class TC0_LoginTest extends BaseTest {
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Input the incorrect value in Account field
         ExtentReportManager.info("Step 2: Input the incorrect value in Account field");
         LOG.info("Step 2: Input the incorrect value in Account field");
@@ -153,7 +151,7 @@ public class TC0_LoginTest extends BaseTest {
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Input the correct value in Account field
         ExtentReportManager.info("Step 2: Input the correct value in Account field");
         LOG.info("Step 2: Input the correct value in Account field");
@@ -187,13 +185,14 @@ public class TC0_LoginTest extends BaseTest {
         softAssert.assertEquals(actualPasswordValue, password);
         softAssert.assertAll();
     }
+
     @Test
     public void TC07_verifyNavigateToRegisterPageWhenClickSignUpLink() {
         homePage = new HomePage(driver);
         //Step 1: Navigate to Login page
         ExtentReportManager.info("Step 1: Navigate to Login page");
         LOG.info("Step 1: Navigate to Login page");
-        loginPage=homePage.navigateLoginPage();
+        loginPage = homePage.navigateLoginPage();
         //Step 2: Click on the Sign Up link
         ExtentReportManager.info("Step 2: Click on the Sign Up link");
         LOG.info("Step 2: Click on the Sign Up link");

@@ -1,5 +1,4 @@
 package pages;
-
 import base.BasePage;
 import components.TopBarNavigation;
 import org.openqa.selenium.WebDriver;

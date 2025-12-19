@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -49,6 +48,7 @@ public class DetailMoviePage extends CommonPage {
         }
         return true;
     }
+
     public void clickCinemaLogo(String cinemaLogo) {
         By byCinemaLogo = By.xpath("//button[.//img[contains(@src, '" + cinemaLogo.toLowerCase() + "')]]");
         click(byCinemaLogo);
@@ -63,7 +63,6 @@ public class DetailMoviePage extends CommonPage {
         return seatPage;
 
     }
-
 
 
     public boolean isCinemaBelongToSystem(String brandCinema) {

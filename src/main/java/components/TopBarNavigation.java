@@ -1,7 +1,6 @@
 package components;
 
 import base.BasePage;
-import lombok.extern.java.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.*;

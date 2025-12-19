@@ -5,11 +5,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
-import pages.LoginPage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
-
-import java.time.LocalDateTime;
 
 public class TC_FilterTest extends BaseTestWithLogin {
     HomePage homePage;
@@ -28,6 +25,9 @@ public class TC_FilterTest extends BaseTestWithLogin {
         homePage = new HomePage(driver);
         int cinemaCount = homePage.getDefaultValueCinemaOptionCount();
         int dateCount = homePage.getDefaultValueShowtimeOptionsCount();
+        //VP: Verify list option at Cinema and Show time dropdown when user has not select movie yet
+        ExtentReportManager.info("VP: Verify list option at Cinema and Show time dropdown when user has not select movie yet");
+        LOG.info("VP: Verify list option at Cinema and Show time dropdown when user has not select movie yet");
         softAssert.assertEquals(cinemaCount, 1,
                 "Dropdown Rạp phải chỉ có 1 option mặc định khi chưa chọn Phim");
         softAssert.assertEquals(dateCount, 1,
@@ -35,6 +35,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         softAssert.assertAll();
 
     }
+
     @Test
     public void TC02_changeFilm_cinemaAndShowtimeMustReset() {
         SoftAssert softAssert = new SoftAssert();
@@ -81,6 +82,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         Assert.assertEquals(actualPopupMsg, "Vui lòng chọn phim",
                 "Popup message không đúng khi bấm Mua Vé Ngay mà chưa chọn phim");
     }
+
     @Test
     public void TC06_displayWarmPopupWhenClickBuyTicketWithoutSelectCinema() {
         homePage = new HomePage(driver);
@@ -99,6 +101,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         Assert.assertEquals(actualPopupMsg, "Vui lòng chọn rạp",
                 "Popup message không đúng khi bấm Mua Vé Ngay mà chưa chọn rạp");
     }
+
     @Test
     public void TC07_displayWarmPopupWhenClickBuyTicketWithoutSelectShowtime() {
         homePage = new HomePage(driver);
@@ -121,19 +124,21 @@ public class TC_FilterTest extends BaseTestWithLogin {
         Assert.assertEquals(actualPopupMsg, "Vui lòng chọn ngày giờ chiếu",
                 "Popup message không đúng khi bấm Mua Vé Ngay mà chưa chọn ngày giờ");
     }
+
     @Test
     public void TC08_navigateToSeatPageAfterClickBookTicketButton() {
         homePage = new HomePage(driver);
         //Step 1: Select movie, cinema branch, show time at the Filter section
         ExtentReportManager.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
         LOG.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
-        seatPage=homePage.buyTicketByFilter(movieName,cinemaName,showtime);
+        seatPage = homePage.buyTicketByFilter(movieName, cinemaName, showtime);
         //Step 2: Verify navigate to seat page
         ExtentReportManager.info("Step 2: Verify navigate to seat page");
         LOG.info("Step 2: Verify navigate to seat page");
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"),
                 "Không chuyển sang màn hình chọn ghế sau khi bấm Mua Vé Ngay");
     }
+
     @Test
     public void TC09_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByFilter() {
         SoftAssert softAssert = new SoftAssert();
@@ -141,7 +146,7 @@ public class TC_FilterTest extends BaseTestWithLogin {
         //Step 1: Select movie, cinema branch, show time at the Filter section
         ExtentReportManager.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
         LOG.info("Step 1: Select movie, cinema branch, show time at the Filter section ");
-        seatPage=homePage.buyTicketByFilter(movieName,cinemaName,showtime);
+        seatPage = homePage.buyTicketByFilter(movieName, cinemaName, showtime);
         //Step 2: verify values on ticket at Seat page
         ExtentReportManager.info("Step 2: verify values on ticket at Seat page");
         LOG.info("Step 2: verify values on ticket at Seat page");

@@ -8,7 +8,6 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.RegisterPage;
 import reports.ExtentReportManager;
-
 import java.util.UUID;
 
 public class TC_RegisterTest extends BaseTest {
@@ -45,7 +44,8 @@ public class TC_RegisterTest extends BaseTest {
         //VP2: Verify new account login successfully
         ExtentReportManager.info("VP2: Verify new account login successfully");
         LOG.info("VP2: Verify new account login successfully");
-        registerPage.clickClose();;
+        registerPage.clickClose();
+        ;
         registerPage.clickLoginLink();
         loginPage.login(newAcount, password);
         ExtentReportManager.info("VP1: \"Đăng nhập thành công\" message displays");
@@ -60,6 +60,7 @@ public class TC_RegisterTest extends BaseTest {
         softAssert.assertEquals(actualDisplayName, fullName, "User Profile name");
         softAssert.assertAll();
     }
+
     @Test
     public void TC02_verifyRegisterWithEmptyValue() {
         SoftAssert softAssert = new SoftAssert();
@@ -113,30 +114,32 @@ public class TC_RegisterTest extends BaseTest {
         //Step 2: Enter mismatched Password and Confirm Password
         ExtentReportManager.info("Step 2: Enter mismatched Password and Confirm Password");
         LOG.info("Step 2: Enter mismatched Password and Confirm Password");
-        registerPage.registerInvalid("",password,errorConfirmPass,"","");
+        registerPage.registerInvalid("", password, errorConfirmPass, "", "");
         //Step 3: Verify error message at Confirm Password field
         ExtentReportManager.info("Step 3: Verify error message at Confirm Password field");
         LOG.info("Step 3: Verify error message at Confirm Password field");
         String actualErrorConfirmPassword = registerPage.getErrorConfirmPassword();
         Assert.assertEquals(actualErrorConfirmPassword, "Mật khẩu không khớp !", "Không hiển thị đúng lỗi tại field Xác nhận mật khẩu");
     }
+
     @Test
     public void TC05_verifyRegisterWithExistingAccount() {
         homePage = new HomePage(driver);
         //Step 1: Navigate to Register page
         ExtentReportManager.info("Step 1: Navigate to Register page");
         LOG.info("Step 1: Navigate to Register page");
-       registerPage= homePage.navigateRegisterPage();
+        registerPage = homePage.navigateRegisterPage();
         //Step 2: Enter existing account
         ExtentReportManager.info("Step 2: Enter existing account");
         LOG.info("Step 2: Enter existing account");
-        registerPage.registerInvalid("cam0592","Diqit0505@","Diqit0505@","Pham Thanh Nha","cam997789@gmail.com");
+        registerPage.registerInvalid("cam0592", "Diqit0505@", "Diqit0505@", "Pham Thanh Nha", "cam997789@gmail.com");
         //Step 3: Verify error message for existing account
         ExtentReportManager.info("Step 3: Verify error message for existing account");
         LOG.info("Step 3: Verify error message for existing account");
         String actualErrorMsg = registerPage.getErrorText();
         Assert.assertEquals(actualErrorMsg, "Tài khoản đã tồn tại!", "Không hiển thị đúng lỗi tài khoản đã tồn tại");
     }
+
     @Test
     public void TC06_verifyRegisterWithExistingEmail() {
         homePage = new HomePage(driver);
@@ -149,13 +152,14 @@ public class TC_RegisterTest extends BaseTest {
         //Step 2: Enter existing email
         ExtentReportManager.info("Step 2: Enter existing email");
         LOG.info("Step 2: Enter existing email");
-        registerPage.registerInvalid(newAcount, "Diqit0505@","Diqit0505@","Pham Thanh Nha","cam@gmail.com");
+        registerPage.registerInvalid(newAcount, "Diqit0505@", "Diqit0505@", "Pham Thanh Nha", "cam@gmail.com");
         //Step 3: Verify error message for existing email
         ExtentReportManager.info("Step 3: Verify error message for existing email");
         LOG.info("Step 3: Verify error message for existing email");
         String actualErrorMsg = registerPage.getErrorText();
         Assert.assertEquals(actualErrorMsg, "Email đã tồn tại!", "Không hiển thị đúng lỗi email đã tồn tại");
     }
+
     @Test
     public void TC07_verifyRegisterWithWeakPassword() {
         homePage = new HomePage(driver);
@@ -175,6 +179,7 @@ public class TC_RegisterTest extends BaseTest {
         String actualErrorMsg = registerPage.getErrorPassword();
         Assert.assertEquals(actualErrorMsg, "Mật khẩu phải có ít nhất 6 kí tự !", "Không hiển thị đúng lỗi mật khẩu yếu");
     }
+
     @Test
     public void TC08_navigateToLoginPageFromRegisterPage() {
         homePage = new HomePage(driver);

@@ -1,22 +1,22 @@
 package testcases.seat;
+
 import base.BaseTestWithLogin;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.SeatPage;
 import reports.ExtentReportManager;
 
-
 public class TC_SeatTest extends BaseTestWithLogin {
     SeatPage seatPage;
-    private void selectMovieAndShowTime(){
-        HomePage homePage = new HomePage(driver);
-        seatPage = homePage.buyTicketByFilter("gái già lắm chiêu",
-                "CGV - Vincom Gò Vấp",
-                "21/12/2021 ~ 16:00");
 
+    private void selectMovieAndShowTime() {
+        HomePage homePage = new HomePage(driver);
+        seatPage = homePage.buyTicketByFilter("The Gentlemen",
+                "CGV - Golden Plaza",
+                "07/12/2025 ~ 06:00");
     }
+
     @Test
     public void TC01_verifyColorOfSeatAfterSelected() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
@@ -32,9 +32,10 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 3: verify color of the selected seat");
         LOG.info("Step 3: verify color of the selected seat");
         String color = seatPage.getSeatColor(numberSeat);
-        Assert.assertEquals(color,"green",
+        Assert.assertEquals(color, "green",
                 "Ghế không đổi màu xanh sau khi chọn");
     }
+
     @Test
     public void TC02_verifyColorOfSeatAfterUnselectSeat() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
@@ -57,8 +58,9 @@ public class TC_SeatTest extends BaseTestWithLogin {
         Assert.assertTrue(color.isEmpty(),
                 "Ghế vẫn màu xanh dù đã bỏ chọn");
     }
+
     @Test
-    public void TC03_verifySelectedSeatShowsOnTicket(){
+    public void TC03_verifySelectedSeatShowsOnTicket() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -71,10 +73,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 3: verify the seat on ticket
         ExtentReportManager.info("Step 3: verify the seat on ticket");
         LOG.info("Step 3: verify the seat on ticket");
-       Assert.assertTrue(seatPage.isDisplayCorrectSeatOnTicket(),"Hiển thị ghế không đúng trên vé");
+        Assert.assertTrue(seatPage.isDisplayCorrectSeatOnTicket(), "Hiển thị ghế không đúng trên vé");
     }
+
     @Test
-    public void TC05_verifyDisplayCorrectPriceAtInformationOfTicket(){
+    public void TC05_verifyDisplayCorrectPriceAtInformationOfTicket() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -86,10 +89,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 3: verify the total price
         ExtentReportManager.info("Step 3: verify the total price");
         LOG.info("Step 3: verify the total price");
-        Assert.assertEquals(seatPage.getDisplayedPriceSeat(),seatPage.totalPrice(),"Gía hiển thị không đúng");
+        Assert.assertEquals(seatPage.getDisplayedPriceSeat(), seatPage.totalPrice(), "Gía hiển thị không đúng");
     }
+
     @Test
-    public void TC_verifySeatClearedWhenBrowserBack(){
+    public void TC_verifySeatClearedWhenBrowserBack() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -110,10 +114,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 5: verify seat on ticket be is reset on ticket");
         LOG.info("Step 5: verify seat on ticket be is reset on ticket");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
-        Assert.assertEquals(numberOfSelectedSeat,0,"Ghế không được bỏ chọn khi quay lại trang trước đó");
+        Assert.assertEquals(numberOfSelectedSeat, 0, "Ghế không được bỏ chọn khi quay lại trang trước đó");
     }
+
     @Test
-    public void TC_verifySeatClearedWhenReloadPage(){
+    public void TC_verifySeatClearedWhenReloadPage() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -130,11 +135,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 4: verify seat on ticket be is reset on ticket");
         LOG.info("Step 4: verify seat on ticket be is reset on ticket");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
-        Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được bỏ chọn khi quay lại trang trước đó");
+        Assert.assertEquals(numberOfSelectedSeat, 0, "Ghế không được bỏ chọn khi quay lại trang trước đó");
     }
 
     @Test
-    public void TC_verifyErrorMessageWhenBookTicketWithoutSelectingSeat(){
+    public void TC_verifyErrorMessageWhenBookTicketWithoutSelectingSeat() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -147,10 +152,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 3: Verify the error message when user doesn't select seat yet");
         LOG.info("Step 3: Verify the error message when user doesn't select seat yet");
         String errorMessage = seatPage.getErrorMessage();
-        Assert.assertEquals(errorMessage,"Bạn chưa chọn ghế","Thông báo lỗi không đúng khi đặt vé mà không chọn ghế");
+        Assert.assertEquals(errorMessage, "Bạn chưa chọn ghế", "Thông báo lỗi không đúng khi đặt vé mà không chọn ghế");
     }
+
     @Test
-    public void TC_verifySuccessMessageWhenBookTicketWithSelectingSeat(){
+    public void TC_verifySuccessMessageWhenBookTicketWithSelectingSeat() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -167,10 +173,11 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 4: Verify the success message");
         LOG.info("Step 4: Verify the success message");
         String successMessage = seatPage.getSuccessMessage();
-        Assert.assertEquals(successMessage,"Đặt vé thành công","Thông báo đặt vé không đúng khi đặt vé với ghế đã chọn");
+        Assert.assertEquals(successMessage, "Đặt vé thành công", "Thông báo đặt vé không đúng khi đặt vé với ghế đã chọn");
     }
+
     @Test
-    public void TC_navigateToPaymentPageAfterBookTicketWithSelectingSeat(){
+    public void TC_navigateToPaymentPageAfterBookTicketWithSelectingSeat() {
         //Step 1: Select movie name, cinema branch, show time at the filter section
         ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
@@ -179,19 +186,38 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 2: select the seat");
         LOG.info("Step 2: select the seat");
         seatPage.selectRandomSeat();
+        //Step 3: Click on the Book Ticket button
+        ExtentReportManager.info("Step 3: Click on the Book Ticket button");
+        LOG.info("Step 3: Click on the Book Ticket button");
         seatPage.clickBookTicketButton();
-        Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn//"),"Không điều hướng đến trang chủ sau khi đặt vé với ghế đã chọn");
+        //Step 4: Verify the system navigate to Home page
+        ExtentReportManager.info("Step 4: Verify the system navigate to Home page");
+        LOG.info("Step 4: Verify the system navigate to Home page");
+        Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn//"), "Không điều hướng đến trang chủ sau khi đặt vé với ghế đã chọn");
     }
+
     @Test
-    public void TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully(){
+    public void TC_verifyDataAtSeatPageAfterSelectSeatSuccessfully() {
+        //Step 1: Select movie name, cinema branch, show time at the filter section
+        ExtentReportManager.info("Step 1: Select movie name, cinema branch, show time at the filter section");
+        LOG.info("Step 1: Select movie name, cinema branch, show time at the filter section");
         selectMovieAndShowTime();
+        //Step 2: select the seat
+        ExtentReportManager.info("Step 2: select the seat");
+        LOG.info("Step 2: select the seat");
         seatPage.selectRandomSeat();
-        String seatNumber= seatPage.selectRandomSeat();
+        String seatNumber = seatPage.selectRandomSeat();
+        //Step 3: Click on the Book Ticket button
+        ExtentReportManager.info("Step 3: Click on the Book Ticket button");
+        LOG.info("Step 3: Click on the Book Ticket button");
         seatPage.clickBookTicketButton();
         seatPage.clickAgreeButtonInAlert();
-        Assert.assertTrue(seatPage.isDisableSeat(seatNumber),"Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
+        //Step 4: Verify status of the selected seat
+        ExtentReportManager.info("Step 4: Verify status of the selected seat");
+        LOG.info("Step 4: Verify status of the selected seate");
+        Assert.assertTrue(seatPage.isDisableSeat(seatNumber), "Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
-        Assert.assertEquals(numberOfSelectedSeat,0, "Ghế không được reset sau khi đặt vé thành công");
+        Assert.assertEquals(numberOfSelectedSeat, 0, "Ghế không được reset sau khi đặt vé thành công");
     }
 
 

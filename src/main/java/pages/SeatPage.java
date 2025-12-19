@@ -3,22 +3,13 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.ScenarioContext;
-import utils.WaitUtil;
-
 import javax.swing.*;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class SeatPage extends CommonPage {
-    //ScenarioContext context;
     private By byLbSeat = By.xpath("//h3[span[contains(text(),'Ghế ')]]");
     private By byListSeatOnTicket = By.xpath("//span[contains(text(),'Ghế ')]");
     private By byListSeat = By.xpath("//button[@type='button']");
@@ -36,14 +27,14 @@ public class SeatPage extends CommonPage {
 
     public SeatPage(WebDriver driver) {
         super(driver);
-
-
     }
+
     public void selectSeat(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[@type='button' and not(@disabled)]/span[text()='" + numberSeat + "']");
         waitUtil.waitForElementToBeClickable(bySeatAvailable);
         click(bySeatAvailable);
     }
+
     public String selectRandomSeat() {
         Random rand = new Random();
 
@@ -93,17 +84,18 @@ public class SeatPage extends CommonPage {
     public String getSeatColor(String numberSeat) {
         By bySeatAvailable = By.xpath("//button[.//span[text()='" + numberSeat + "']]");
         waitUtil.waitForVisibilityOfElementLocated(bySeatAvailable);
-        return driver.findElement(bySeatAvailable).getAttribute("style").replace("background-color: ","").replace(";", "");
+        return driver.findElement(bySeatAvailable).getAttribute("style").replace("background-color: ", "").replace(";", "");
     }
 
     public String getSeatID() {
         return getText(byLbSeat).replace(",", "").replace("Ghế ", "").trim();
 
     }
-    public List<WebElement> listSelectedSeat(){
+
+    public List<WebElement> listSelectedSeat() {
         List<WebElement> listSeat = driver.findElements(byListSeat);
         List<WebElement> listSelectedSeat = new ArrayList<>();
-        for (WebElement seat : listSeat){
+        for (WebElement seat : listSeat) {
             if (seat.getAttribute("style").contains("green")) {
                 listSelectedSeat.add(seat);
             }
@@ -138,6 +130,7 @@ public class SeatPage extends CommonPage {
         }
         return listVIPSeat.size();
     }
+
     public int getSelectedRegularSeatCount() {
         List<WebElement> listRegularSeat = new ArrayList<>();
         for (WebElement element : listSelectedSeat()) {
@@ -147,90 +140,99 @@ public class SeatPage extends CommonPage {
         }
         return listRegularSeat.size();
     }
-    public int totalPrice(){
+
+    public int totalPrice() {
         int priceVIPSeat = 90000;
         int priceRegularSeat = 75000;
-        return ((getSelectedVIPSeatCount()*priceVIPSeat) + (getSelectedRegularSeatCount()*priceRegularSeat));
+        return ((getSelectedVIPSeatCount() * priceVIPSeat) + (getSelectedRegularSeatCount() * priceRegularSeat));
     }
-    public String getNameCinemaBranch(){
+
+    public String getNameCinemaBranch() {
         return getText(byLbCinemaBrach).replace("Cụm Rạp:", "").trim();
     }
-    public String getAddressCinema(){
+
+    public String getAddressCinema() {
         return getText(byLbAddress).replace("Địa chỉ:", "").trim();
     }
-    public String getScreenID(){
-        return getText(byLbScreenID).replace("Rạp:","").trim();
+
+    public String getScreenID() {
+        return getText(byLbScreenID).replace("Rạp:", "").trim();
     }
-    public String getDateOfShowTime(){
+
+    public String getDateOfShowTime() {
         waitUtil.waitForVisibilityOfElementLocated(byLbDate);
-        return getText(byLbDate).replace(" -","").replace(getText(byLbTime),"").replace("/","-").trim();
+        return getText(byLbDate).replace(" -", "").replace(getText(byLbTime), "").replace("/", "-").trim();
 
     }
-    public String getTimeOfShowTime(){
+
+    public String getTimeOfShowTime() {
         waitUtil.waitForVisibilityOfElementLocated(byLbTime);
         return getText(byLbTime).trim();
     }
 
-    public String getMovieName(){
-        return getText(byLbNameMovie).replace("Tên Phim:","").trim();
+    public String getMovieName() {
+        return getText(byLbNameMovie).replace("Tên Phim:", "").trim();
     }
-    public List<String> getListSelectedSeatOnTicket(){
+
+    public List<String> getListSelectedSeatOnTicket() {
         waitUtil.waitForVisibilityOfElementLocated(byLbCinemaBrach);
         List<WebElement> listSeatTicket = driver.findElements(byListSeatOnTicket);
         List<String> listSeat = new ArrayList<>();
-        for (WebElement seat : listSeatTicket){
-            listSeat.add(seat.getText().replace("Ghế ","").replace(",","").trim());
+        for (WebElement seat : listSeatTicket) {
+            listSeat.add(seat.getText().replace("Ghế ", "").replace(",", "").trim());
         }
         return listSeat;
     }
-    public boolean isDisplayCorrectSeatOnTicket(){
+
+    public boolean isDisplayCorrectSeatOnTicket() {
         List<String> listSeatTicket = getListSelectedSeatOnTicket();
         List<String> listSelectedSeat = listSelectedSeat().stream()
                 .map(e -> e.getText().trim().replace(",", ""))
-                    .collect(Collectors.toList());
+                .collect(Collectors.toList());
         return listSeatTicket.containsAll(listSelectedSeat)
                 && listSelectedSeat.containsAll(listSeatTicket);
     }
-    public void clickBookTicketButton(){
+
+    public void clickBookTicketButton() {
         waitUtil.waitForElementToBeClickable(byBtnBookTicket);
         click(byBtnBookTicket);
-
-
     }
+
     public String getErrorMessage() {
         waitUtil.waitForVisibilityOfElementLocated(byMsgError);
         return getText(byMsgError).trim();
     }
+
     public String getSuccessMessage() {
         waitUtil.waitForVisibilityOfElementLocated(byMsgSuccess);
         return getText(byMsgSuccess).trim();
     }
+
     public void clickAgreeButtonInAlert() {
         waitUtil.waitForElementToBeClickable(byBtnAgree);
         click(byBtnAgree);
     }
-    public String getTimeBooking(){
+
+    public String getTimeBooking() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         scenarioContext.set("bookingTime", LocalDateTime.now().format(formatter));
         String expectOrderTime = scenarioContext.get("bookingTime", String.class);
         return expectOrderTime;
     }
-    public boolean isDisableSeat(String numberSeat){
+
+    public boolean isDisableSeat(String numberSeat) {
         waitUtil.waitForVisibilityOfElementLocated(byLbSeat);
         List<WebElement> seats = driver.findElements(
                 By.xpath("//button[span[text()='" + numberSeat + "']]")
         );
-        if(seats.isEmpty()) {
+        if (seats.isEmpty()) {
             return true; // không render -> coi như disabled
         }
-
         WebElement seat = seats.get(0);
 
         return !seat.isEnabled()
                 || seat.getAttribute("disabled") != null
                 || seat.getAttribute("class").contains("disabled");
     }
-
-
 
 }

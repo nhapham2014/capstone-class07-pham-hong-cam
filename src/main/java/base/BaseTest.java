@@ -12,9 +12,6 @@ import pages.HomePage;
 import pages.LoginPage;
 import reports.ExtentReportManager;
 import utils.ScenarioContext;
-
-import org.openqa.selenium.Dimension;
-
 import java.lang.reflect.Method;
 
 
@@ -25,6 +22,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected ScenarioContext context;
+
     public WebDriver getDriver() {
         return driver;
     }
@@ -47,9 +45,7 @@ public class BaseTest {
         DriverManager driverManager = DriverManagerFactory.getDriverManager(browser);
         driver = driverManager.createDriver();
         // Set fixed window size to ensure consistent behavior on CI (no display)
-//        driver.manage().window().setSize(new Dimension(1920, 1080));
-        Dimension size = driver.manage().window().getSize();
-        System.out.println("Window size: " + size);
+        driver.manage().window().maximize();
         driver.get(ConfigReader.get("baseUrl"));
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
@@ -60,6 +56,7 @@ public class BaseTest {
             doLogin();
         }
     }
+
     protected boolean needLogin() {
         return false;
     }
@@ -76,7 +73,7 @@ public class BaseTest {
     @AfterMethod
     public void afterMethod(ITestResult result) {
         LOG.info("After Method executed");
-        if(result.getStatus() == ITestResult.FAILURE) {
+        if (result.getStatus() == ITestResult.FAILURE) {
             ExtentReportManager.captureScreenshot(driver, result.getMethod().getMethodName());
         }
         if (driver != null) {

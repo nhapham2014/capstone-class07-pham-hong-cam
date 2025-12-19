@@ -1,22 +1,13 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
 
 public class HomePage extends CommonPage {
     DetailMoviePage detailMoviePage;
@@ -143,8 +134,9 @@ public class HomePage extends CommonPage {
     public DetailMoviePage clickBuyTicketAtMovie(String movie){
         By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]");
         waitUtil.waitForVisibilityOfElementLocated(byImageMovie);
-        By byBtnBookTicket = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
         hover(byImageMovie);
+        By byBtnBookTicket = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
+
         click(byBtnBookTicket);
         waitUtil.waitForPageLoaded();
         detailMoviePage = new DetailMoviePage(driver);

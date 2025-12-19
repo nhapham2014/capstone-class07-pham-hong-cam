@@ -17,12 +17,9 @@ public class ExtentReportManager {
 
     private static ExtentReports extent;
     private static ThreadLocal<ExtentTest> test = new ThreadLocal<>(); // mỗi thread 1 ExtentTest
-    private static final String REPORT_PATH =  "test-output/ExtentReport_" +
+    private static final String REPORT_PATH = "test-output/ExtentReport_" +
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) +
-            ".html";;
-//private static final String REPORT_PATH =
-//        "test-output/ExtentReport.html";
-
+            ".html";
     private static final String SCREENSHOT_PATH = "test-output/screenshots/";
 
     public static void initializeExtentReports() {
@@ -83,7 +80,7 @@ public class ExtentReportManager {
     }
 
     public static void flushReports() {
-        if(extent != null) {
+        if (extent != null) {
             extent.flush();
         }
     }

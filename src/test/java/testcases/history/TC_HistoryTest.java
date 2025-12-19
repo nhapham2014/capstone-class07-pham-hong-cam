@@ -1,4 +1,5 @@
 package testcases.history;
+
 import base.BaseTestWithLogin;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -6,8 +7,6 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;
 import reports.ExtentReportManager;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class TC_HistoryTest extends BaseTestWithLogin {
@@ -17,10 +16,9 @@ public class TC_HistoryTest extends BaseTestWithLogin {
 
     private void selectMovieAndShowTime() {
         HomePage homePage = new HomePage(driver);
-        homePage.selectMovie("gái già lắm chiêu");
-        homePage.selectCinema("CGV - Vincom Gò Vấp");
-        homePage.selectDate("21/12/2021 ~ 16:00");
-        seatPage = homePage.clickBuyTicket();
+        seatPage = homePage.buyTicketByFilter("The Gentlemen",
+                "CGV - Golden Plaza",
+                "07/12/2025 ~ 06:00");
 
     }
 
