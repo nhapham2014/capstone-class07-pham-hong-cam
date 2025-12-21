@@ -36,10 +36,11 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
     @Test
     public void TC02_navigateToSeatPageAfterSelectShowTime() {
         homePage = new HomePage(driver);
+
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
         LOG.info("Step 1: Click 'Mua Vé' button at a movie");
-        detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
+        detailMoviePage=homePage.clickBuyTicketAtMovie("avatar-2_gp09");
         // Step 2: Select a show time
         ExtentReportManager.info("Step 2: Select a show time");
         LOG.info("Step 2: Select a show time");
@@ -52,10 +53,11 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
     @Test
     public void TC03_verifyListCinemaWhenSelectCinemaLogoAtDetailMoviePage() {
         homePage = new HomePage(driver);
+
         // Step 1: Click 'Mua Vé' button at a movie
         ExtentReportManager.info("Step 1: Click 'Mua Vé' button at a movie");
         LOG.info("Step 1: Click 'Mua Vé' button at a movie");
-        detailMoviePage = homePage.clickBuyTicketAtMovie("avatar-2_gp09");
+        detailMoviePage=homePage.clickBuyTicketAtMovie("avatar-2_gp09");
         //Step 2: Select a logo of cinema
         ExtentReportManager.info("Step 2: Select a logo of cinema");
         LOG.info("Step 2: Select a logo of cinema");

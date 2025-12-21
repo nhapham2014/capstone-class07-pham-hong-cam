@@ -127,8 +127,8 @@ public class HomePage extends CommonPage {
             return false;
         }
     }
-    public DetailMoviePage clickBuyTicketAtMovie(String movie){
-        By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]");
+    public DetailMoviePage clickBuyTicketAtMovie(String movie) {
+        By byImageMovie = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div/div[1]");
         hover(byImageMovie);
         By byBtnBookTicketAtPoster = By.xpath("//div[contains(@style, '" + movie +"')]/following-sibling::div//a");
         click(byBtnBookTicketAtPoster);
