@@ -28,6 +28,8 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
         // Step 3: Verify all showtimes are after current time
         ExtentReportManager.info("Step 3: Verify all showtimes are after current time");
         LOG.info("Step 3: Verify all showtimes are after current time");
+        ExtentReportManager.verifyTrue(detailMoviePage.isAllShowtimesInFuture(),
+                "Ngày giờ suất chiếu phải lớn hơn hiện tại", driver);
         Assert.assertTrue(detailMoviePage.isAllShowtimesInFuture(),
                 "Ngày giờ suất chiếu phải lớn hơn hiện tại");
 
@@ -47,6 +49,9 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
         seatPage = detailMoviePage.selectShowTime("cgv", "CGV - VivoCity", "07-10-2021", "08:25");
         // Step 3: Verify navigate to seat page
         ExtentReportManager.info("Step 3: Verify navigate to seat page");
+        LOG.info("Step 3: Verify navigate to seat page");
+        ExtentReportManager.verifyTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"),
+                "Không điều hướng đến trang chọn ghế", driver);
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn/purchase"));
     }
 
@@ -65,6 +70,8 @@ public class TC_DetailMovieTest extends BaseTestWithLogin {
         //Step 3: Verify list cinema
         ExtentReportManager.info("Step 3: Verify list cinema ");
         LOG.info("Step 3: Verify list cinema ");
+        ExtentReportManager.verifyTrue(detailMoviePage.isCinemaBelongToSystem("CGV"),
+                "Có rạp KHÔNG thuộc hệ thống!", driver);
         Assert.assertTrue(detailMoviePage.isCinemaBelongToSystem("CGV"),
                 "Có rạp KHÔNG thuộc hệ thống!");
     }

@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class ExtentReportManager {
 
@@ -82,6 +83,68 @@ public class ExtentReportManager {
     public static void flushReports() {
         if (extent != null) {
             extent.flush();
+        }
+    }
+    public static void verifyTrue(
+            boolean actual,
+            String message,
+            WebDriver driver
+    ) {
+        try {
+            org.testng.Assert.assertTrue(actual);
+            getTest().pass("✅ " + message);
+        } catch (AssertionError e) {
+            getTest().fail("❌ " + message);
+            getTest().fail("Expected: TRUE");
+            getTest().fail("Actual: " + actual);
+
+           // captureScreenshot(driver, message.replace(" ", "_"));
+            throw e;
+        }
+    }
+    public static void verifyEqualsString(
+            String actual,
+            String expected,
+            String message,
+            WebDriver driver
+    ) {
+        getTest().info("🔎 Expected: <b>" + expected + "</b>");
+        getTest().info("📌 Actual: <b>" + actual + "</b>");
+
+        if (!actual.equals(expected)) {
+            getTest().fail("❌ " + message);
+         //   captureScreenshot(driver, message.replace(" ", "_"));
+        } else {
+            getTest().pass("✅ Verify passed");
+        }
+    }
+    public static void verifyEqualsNumber(
+            int actual,
+            int expected,
+            String message,
+            WebDriver driver
+    ) {
+        getTest().info("🔎 Expected: <b>" + expected + "</b>");
+        getTest().info("📌 Actual: <b>" + actual + "</b>");
+
+        if (actual!=expected) {
+            getTest().fail("❌ " + message);
+          //  captureScreenshot(driver, message.replace(" ", "_"));
+        } else {
+            getTest().pass("✅ Verify passed");
+        }
+    }
+
+
+    public static void verifyEqualsStringList(List<String> actual, List<String> expected, String message, WebDriver driver) {
+        getTest().info("🔎 Expected: <b>" + expected + "</b>");
+        getTest().info("📌 Actual: <b>" + actual + "</b>");
+
+        if (actual!=expected) {
+            getTest().fail("❌ " + message);
+            //  captureScreenshot(driver, message.replace(" ", "_"));
+        } else {
+            getTest().pass("✅ Verify passed");
         }
     }
 }

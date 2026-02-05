@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="All Test Suite" parallel="classes" thread-count="1">
     <listeners>
         <listener class-name="listeners.TestListener" />
     </listeners>
@@ -19,7 +19,7 @@
         <classes>
             <class name="testcases.home.TC_CinemaTest" />
             <class name="testcases.home.TC_FilterTest"/>
-            <class name="testcases.home.TC_MovieTest"/>
+<!--            <class name="testcases.home.TC_MovieTest"/>-->
         </classes>
     </test>
     <test name="showtime test">

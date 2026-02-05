@@ -32,6 +32,8 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 3: verify color of the selected seat");
         LOG.info("Step 3: verify color of the selected seat");
         String color = seatPage.getSeatColor(numberSeat);
+        ExtentReportManager.verifyEqualsString(color, "green",
+                "Ghế không đổi màu xanh sau khi chọn",driver);
         Assert.assertEquals(color, "green",
                 "Ghế không đổi màu xanh sau khi chọn");
     }
@@ -55,6 +57,8 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 4: verify color of the unselect seat");
         LOG.info("Step 4: verify color of the unselect seat");
         String color = seatPage.getSeatColor(numberSeat);
+        ExtentReportManager.verifyTrue(color.isEmpty(),
+                "Ghế vẫn màu xanh dù đã bỏ chọn",driver);
         Assert.assertTrue(color.isEmpty(),
                 "Ghế vẫn màu xanh dù đã bỏ chọn");
     }
@@ -89,6 +93,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 3: verify the total price
         ExtentReportManager.info("Step 3: verify the total price");
         LOG.info("Step 3: verify the total price");
+        ExtentReportManager.verifyEqualsNumber(seatPage.getDisplayedPriceSeat(), seatPage.totalPrice(), "Gía hiển thị không đúng",driver);
         Assert.assertEquals(seatPage.getDisplayedPriceSeat(), seatPage.totalPrice(), "Gía hiển thị không đúng");
     }
 
@@ -114,6 +119,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 5: verify seat on ticket be is reset on ticket");
         LOG.info("Step 5: verify seat on ticket be is reset on ticket");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
+        ExtentReportManager.verifyEqualsNumber(numberOfSelectedSeat, 0, "Ghế không được bỏ chọn khi quay lại trang trước đó",driver);
         Assert.assertEquals(numberOfSelectedSeat, 0, "Ghế không được bỏ chọn khi quay lại trang trước đó");
     }
 
@@ -135,6 +141,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 4: verify seat on ticket be is reset on ticket");
         LOG.info("Step 4: verify seat on ticket be is reset on ticket");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
+        ExtentReportManager.verifyEqualsNumber(numberOfSelectedSeat, 0, "Ghế không được bỏ chọn khi quay lại trang trước đó",driver);
         Assert.assertEquals(numberOfSelectedSeat, 0, "Ghế không được bỏ chọn khi quay lại trang trước đó");
     }
 
@@ -152,6 +159,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 3: Verify the error message when user doesn't select seat yet");
         LOG.info("Step 3: Verify the error message when user doesn't select seat yet");
         String errorMessage = seatPage.getErrorMessage();
+        ExtentReportManager.verifyEqualsString(errorMessage, "Bạn chưa chọn ghế", "Thông báo lỗi không đúng khi đặt vé mà không chọn ghế",driver);
         Assert.assertEquals(errorMessage, "Bạn chưa chọn ghế", "Thông báo lỗi không đúng khi đặt vé mà không chọn ghế");
     }
 
@@ -173,6 +181,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         ExtentReportManager.info("Step 4: Verify the success message");
         LOG.info("Step 4: Verify the success message");
         String successMessage = seatPage.getSuccessMessage();
+        ExtentReportManager.verifyEqualsString(successMessage, "Đặt vé thành công", "Thông báo đặt vé không đúng khi đặt vé với ghế đã chọn",driver);
         Assert.assertEquals(successMessage, "Đặt vé thành công", "Thông báo đặt vé không đúng khi đặt vé với ghế đã chọn");
     }
 
@@ -193,6 +202,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         //Step 4: Verify the system navigate to Home page
         ExtentReportManager.info("Step 4: Verify the system navigate to Home page");
         LOG.info("Step 4: Verify the system navigate to Home page");
+        ExtentReportManager.verifyTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn//"), "Không điều hướng đến trang chủ sau khi đặt vé với ghế đã chọn",driver);
         Assert.assertTrue(driver.getCurrentUrl().contains("https://demo1.cybersoft.edu.vn//"), "Không điều hướng đến trang chủ sau khi đặt vé với ghế đã chọn");
     }
 
@@ -217,6 +227,7 @@ public class TC_SeatTest extends BaseTestWithLogin {
         LOG.info("Step 4: Verify status of the selected seate");
         Assert.assertTrue(seatPage.isDisableSeat(seatNumber), "Ghế đã chọn không bị vô hiệu hóa sau khi đặt vé thành công");
         int numberOfSelectedSeat = seatPage.getListSelectedSeatOnTicket().size();
+        ExtentReportManager.verifyEqualsNumber(numberOfSelectedSeat, 0, "Ghế không được reset sau khi đặt vé thành công",driver);
         Assert.assertEquals(numberOfSelectedSeat, 0, "Ghế không được reset sau khi đặt vé thành công");
     }
 

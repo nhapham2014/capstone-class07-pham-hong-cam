@@ -13,16 +13,9 @@ public class TC_MovieTest extends BaseTestWithLogin {
     HomePage homePage;
     DetailMoviePage detailMoviePage;
     SeatPage seatPage;
-    final String movieID = "avatar-2_gp09";
-    final String movieName = "AVATAR 2";
-    final String cinemaBrand = "cgv";
-    final String cinemaBranch = "CGV - VivoCity";
-    final String showDate = "07-10-2021";
-    final String showTime = "08:25";
-    final String cinemaAddress = "Lầu 5, Trung tâm thương mại SC VivoCity - 1058 Nguyễn Văn Linh, Q. 7";
 
-    @Test
-    public void TC01_verifyMovieNameAtDetailPage() {
+    @Test (dataProvider = "movieNameData", dataProviderClass = dataproviders.MovieDataProvider.class)
+    public void TC01_verifyMovieNameAtDetailPage(String movieID, String movieName) {
         homePage = new HomePage(driver);
 
         //Step 1: Select a movie thumbnail
@@ -33,11 +26,13 @@ public class TC_MovieTest extends BaseTestWithLogin {
         // Step 2: Verify movie name at detail page
         ExtentReportManager.info("Step 2: Verify movie name at detail page");
         LOG.info("Step 2: Verify movie name at detail page");
+        ExtentReportManager.verifyEqualsString(detailMoviePage.getMovieDetailTitle(), movieName,
+                "Tên phim KHÔNG trùng nhau!", driver);
         Assert.assertEquals(detailMoviePage.getMovieDetailTitle(), movieName,
                 "Tên phim KHÔNG trùng nhau!");
     }
-    @Test
-    public void TC01_verifyTrailerPopupDisplay() {
+    @Test (dataProvider = "movieNameData", dataProviderClass = dataproviders.MovieDataProvider.class)
+    public void TC01_verifyTrailerPopupDisplay(String movieID, String movieName) {
         homePage = new HomePage(driver);
         //Step 1: Click trailer video icon
         ExtentReportManager.info("Step 1: Click trailer video icon");
@@ -46,14 +41,18 @@ public class TC_MovieTest extends BaseTestWithLogin {
         //Step 2: Verify trailer popup display
         ExtentReportManager.info("Step 2: Verify trailer popup display");
         LOG.info("Step 2: Verify trailer popup display");
+        ExtentReportManager.verifyTrue(
+                homePage.isTrailerDisplayed(),
+                "Trailer KHÔNG hiển thị sau khi click Video!", driver
+        );
         Assert.assertTrue(
                 homePage.isTrailerDisplayed(),
                 "Trailer KHÔNG hiển thị sau khi click Video!"
         );
     }
 
-    @Test
-    public void TC02_navigateToMovieDetailPageAfterClickBuyTicketButton()  {
+    @Test (dataProvider = "movieNameData", dataProviderClass = dataproviders.MovieDataProvider.class)
+    public void TC02_navigateToMovieDetailPageAfterClickBuyTicketButton(String movieID, String movieName) {
         homePage = new HomePage(driver);
 
         //Step 1: Click 'Mua Vé' button at a movie
@@ -63,13 +62,15 @@ public class TC_MovieTest extends BaseTestWithLogin {
         // Step 2: Verify navigate to movie detail page
         ExtentReportManager.info("Step 2: Verify navigate to movie detail page");
         LOG.info("Step 2: Verify navigate to movie detail page");
+        ExtentReportManager.verifyTrue(driver.getCurrentUrl().contains("detail"),
+                "Không chuyển sang màn hình chi tiết phim sau khi bấm nút Mua Vé", driver);
         Assert.assertTrue(driver.getCurrentUrl().contains("detail"),
                 "Không chuyển sang màn hình chi tiết phim sau khi bấm nút Mua Vé");
 
     }
 
-    @Test
-    public void TC03_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(){
+    @Test (dataProvider = "verifyDataAtCinemaAndSeatPage", dataProviderClass = dataproviders.MovieDataProvider.class)
+    public void TC03_verifyInformationOnTicketAtSeatPageWhenUserBuyTicketByPosterFilm(String movieID, String movieName, String cinemaBrand, String cinemaBranch, String showDate,String showTime, String cinemaAddress ) {
         SoftAssert softAssert = new SoftAssert();
         homePage = new HomePage(driver);
 
@@ -85,22 +86,27 @@ public class TC_MovieTest extends BaseTestWithLogin {
         //VP1: Verify the movie name
         ExtentReportManager.info("VP1: Verify the movie name");
         LOG.info("VP1: Verify the movie name");
+        ExtentReportManager.verifyEqualsString(seatPage.getMovieName(), movieName, "Hiển thị không đúng tên phim",driver);
         softAssert.assertEquals(seatPage.getMovieName(), movieName, "Hiển thị không đúng tên phim");
         //VP2: Verify the cinema branch
         ExtentReportManager.info("VP2: Verify the cinema branch");
         LOG.info("VP2: Verify the cinema branch");
+        ExtentReportManager.verifyEqualsString(seatPage.getNameCinemaBranch(), cinemaBranch, "Không hiển thị đúng tên cụm rạp",driver);
         softAssert.assertEquals(seatPage.getNameCinemaBranch(), cinemaBranch, "Không hiển thị đúng tên cụm rạp");
         //VP3: Verify the address cinema
         ExtentReportManager.info("VP3: Verify the address cinema");
         LOG.info("VP3: Verify the address cinema");
+        ExtentReportManager.verifyEqualsString(seatPage.getAddressCinema(), cinemaAddress, "Không hiển thị đúng địa chỉ cụm rạp",driver);
         softAssert.assertEquals(seatPage.getAddressCinema(), cinemaAddress, "Không hiển thị đúng địa chỉ cụm rạp");
         //VP4: Verify the date of show time
         ExtentReportManager.info("VP4: Verify the date of show time");
         LOG.info("VP4: Verify the date of show time");
+        ExtentReportManager.verifyEqualsString(seatPage.getDateOfShowTime(), showDate, "Không hiển thị đúng ngày chiếu",driver);
        softAssert.assertEquals(seatPage.getDateOfShowTime(), showDate, "Không hiển thị đúng ngày chiếu");
         //VP5: Verify the time of show time
         ExtentReportManager.info("VP5: Verify the time of show time");
         LOG.info("VP5: Verify the time of show time");
+        ExtentReportManager.verifyEqualsString(seatPage.getTimeOfShowTime(), showTime, "Không hiển thị đúng giờ chiếu",driver);
         softAssert.assertEquals(seatPage.getTimeOfShowTime(), showTime, "Không hiển thị đúng giờ chiếu");
         softAssert.assertAll();
     }
