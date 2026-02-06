@@ -6,7 +6,6 @@ import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.RegisterPage;
 import reports.ExtentReportManager;
 
 public class TC0_LoginTest extends BaseTest {
