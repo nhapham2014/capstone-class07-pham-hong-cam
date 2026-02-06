@@ -108,8 +108,8 @@ public class ExtentReportManager {
             String message,
             WebDriver driver
     ) {
-        getTest().info("🔎 Expected: <b>" + expected + "</b>");
-        getTest().info("📌 Actual: <b>" + actual + "</b>");
+        getTest().info("Expected: <b>" + expected + "</b>");
+        getTest().info("Actual: <b>" + actual + "</b>");
 
         if (!actual.equals(expected)) {
             getTest().fail("❌ " + message);
@@ -124,8 +124,8 @@ public class ExtentReportManager {
             String message,
             WebDriver driver
     ) {
-        getTest().info("🔎 Expected: <b>" + expected + "</b>");
-        getTest().info("📌 Actual: <b>" + actual + "</b>");
+        getTest().info("Expected: <b>" + expected + "</b>");
+        getTest().info("Actual: <b>" + actual + "</b>");
 
         if (actual!=expected) {
             getTest().fail("❌ " + message);
@@ -137,8 +137,8 @@ public class ExtentReportManager {
 
 
     public static void verifyEqualsStringList(List<String> actual, List<String> expected, String message, WebDriver driver) {
-        getTest().info("🔎 Expected: <b>" + expected + "</b>");
-        getTest().info("📌 Actual: <b>" + actual + "</b>");
+        getTest().info("Expected: <b>" + expected + "</b>");
+        getTest().info("Actual: <b>" + actual + "</b>");
 
         if (actual!=expected) {
             getTest().fail("❌ " + message);
