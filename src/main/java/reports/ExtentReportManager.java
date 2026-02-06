@@ -95,7 +95,7 @@ public class ExtentReportManager {
             getTest().pass("✅ " + message);
         } catch (AssertionError e) {
             getTest().fail("❌ " + message);
-            getTest().fail("Expected: TRUE");
+            getTest().fail("Expected: true");
             getTest().fail("Actual: " + actual);
 
            // captureScreenshot(driver, message.replace(" ", "_"));

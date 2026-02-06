@@ -21,10 +21,9 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         String methodName = result.getMethod().getMethodName();
+        ExtentReportManager.createTest(methodName);
         logger.info("===== START TEST: " + methodName + " =====");
-        ExtentReportManager.createTest(
-                result.getTestClass().getName() + " - " + methodName
-        );
+
 
     }
 

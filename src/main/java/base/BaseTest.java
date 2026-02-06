@@ -50,7 +50,7 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         LOG.info("Before Method executed");
-        ExtentReportManager.createTest(method.getName());
+//        ExtentReportManager.createTest(method.getName());
         context = new ScenarioContext();
         if (needLogin()) {
             doLogin();
